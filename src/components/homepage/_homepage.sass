@@ -3,6 +3,17 @@
   display: flex
   flex-direction: column
 
+// AOS FIX
+.section.active
+  [data-aos]
+    transition-delay: .3s !important
+    opacity: 1 !important
+    transform: none !important
+    pointer-events: auto !important
+
+
+
+
 .home-section
   flex: 1 0 auto
   display: flex
@@ -30,12 +41,102 @@
     flex-direction: column
     max-width: 1320px
     padding-left: 40px
-    padding-right: 20px
     margin-left: auto
+    will-change: transform
+    backface-visibility: hidden
+    transform-style: preserve-3d
 
   &__title
-    margin: auto 0
+    margin: auto 0 0
+    padding-right: 20px
     font-weight: 800
     font-size: 110px
-    line-height: 0.9
+    line-height: 1
 
+  &__description
+    padding-right: 20px
+    font-weight: 600
+    font-size: 22px
+    line-height: 1.5
+    margin-top: 1em
+
+  &__bottom
+    margin-top: 90px
+
+  &__news
+    border-top: 1px solid rgba(white, .3)
+
+  &__navmenu
+    background: white
+    color: $fontColor
+
+// news home
+.news-home
+  padding: 0px 0 60px
+  &__title
+    margin-top: 1.2em
+    font-weight: 500
+    font-size: 12px
+    text-transform: uppercase
+    opacity: 0.6
+  &__grid
+    display: flex
+    flex-wrap: wrap
+    margin: 10px -15px -15px
+  &__col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    flex: 0 0 $col4
+    max-width: $col4
+    padding: 15px
+    display: flex
+    flex-direction: column
+  &__card
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    &:hover
+      .news-home__content
+        color: $colorPrimary
+
+  &__date
+    font-size: 13px
+    line-height: 16px
+
+  &__content
+    max-width: 350px
+    margin-top: 1em
+    font-weight: 600
+    font-size: 16px
+    line-height: 1.75
+    transition: color .25s $ease
+
+
+// navmenu home
+.navmenu-home
+  padding: 30px 30px 60px
+  &__title
+    margin-top: 1.2em
+    font-weight: 500
+    font-size: 12px
+    text-transform: uppercase
+  &__grid
+    display: flex
+    margin: 10px -15px -15px
+  &__col
+    width: auto
+    min-width: 1px
+    min-height: 0
+    flex: 0 1 auto
+    max-width: 242px
+    padding: 15px
+    display: flex
+    flex-direction: column
+  &__link
+    font-weight: 600
+    font-size: 16px
+    line-height: 20px
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary

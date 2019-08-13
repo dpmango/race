@@ -19,5 +19,8 @@
     refresh: function() {
       AOS.refreshHard();
     },
+    // refreshSoft: function() {
+    //   // AOS.refresh();
+    // },
   };
 })(jQuery, window.APP);

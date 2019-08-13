@@ -29,6 +29,16 @@
         // scrollOverflow: true,
         // scrollOverflowReset: true,
         // responsiveWidth: 768,
+        onLeave: function(origin, destination, direction) {
+          // APP.Plugins.AOS.refreshSoft();
+        },
+        // afterLoad: function(origin, destination, direction) {},
+        // afterRender: function() {},
+        // afterResize: function(width, height) {},
+        // afterReBuild: function() {},
+        // afterResponsive: function(isResponsive) {},
+        // afterSlideLoad: function(section, origin, destination, direction) {},
+        // onSlideLeave: function(section, origin, destination, direction) {},
       };
 
       $fullpageDesktop.addClass('is-enabled');
