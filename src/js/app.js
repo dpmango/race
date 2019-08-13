@@ -72,16 +72,14 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.TextareaAutoExpand.init();
       APP.Plugins.Validations.init();
       APP.Plugins.LegacySupport.fixImages();
+      APP.Plugins.Fullpage.init();
 
       // APP.Plugins.Ymaps.init();
-      // APP.Plugins.Countdown.init();
-      // APP.Plugins.FooterReveal.init();
     };
 
     // All components from `src/componenets`
     app.initComponents = function(fromPjax) {
       APP.Components.Header.init(fromPjax);
-      APP.Components.Test.init();
     };
 
     return app;
