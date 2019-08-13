@@ -1,26 +1,37 @@
 // HEADER :: START
 header.header
-  .container
-    .header__wrapper
-      a(href="homepage.html").header__logo
-        +svgMono('email')
-      ul.header__menu
-        li
-          a(href="homepage.html") Homepage
-        li
-          a(href="page.html") Shop
-        li
-          a(href="page.html") Lorem
-      
-      .header__cta
-        .header__cart
-          +svgMono('email')
-      
-      .header__hamburger
-        .hamburger.hamburger--squeeze(js-hamburger)
-          .hamburger-box
-            .hamburger-inner
-    
+  .header__wrapper
+    a(href="homepage.html").header__logo
+      +svgColor('logo')
+    ul.header__menu
+      li
+        a(href="#") О компании
+      li
+        a(href="#") Продукция
+          span.header__menu-counter 7
+      li
+        a(href="#") Услуги
+          span.header__menu-counter 4
+      li
+        a(href="#") Решения
+          span.header__menu-counter 5
+
+    .header__cta
+      a(href="tel:+74959167223").header__phone
+        +svgMono('phone')
+        span +7 (495) 916-7223
+
+      a(href="#").header__search
+        +svgMono('search')
+
+      a(href="#").header__lang
+        span EN
+
+    .header__hamburger
+      .hamburger.hamburger--squeeze(js-hamburger)
+        .hamburger-box
+          .hamburger-inner
+
 // MOBILE NAVI
 .mobile-navi
   .mobile-navi__wrapper
