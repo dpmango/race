@@ -1,0 +1,109 @@
+// MOBILE NAVI
+.mobile-navi
+  .mobile-navi__wrapper
+    .mobile-navi__grid
+      // col for menu
+      .mobile-navi__col.mobile-navi__col--menu
+        .mobile-navi__background
+          img(src='img/mobileNaviBg.jpg' srcset='img/mobileNaviBg@2x.jpg 2x')
+        .mobile-navi__menu-grid
+          .mobile-navi__menu
+            .mobile-navi__menu-title О компании
+            ul.mobile-navi__menu-list
+              li
+                a(href="#") История компании
+              li
+                a(href="#") Инфраструктура
+              li
+                a(href="#") Клиенты и партнеры
+              li
+                a(href="#") Лицензии и сертификаты
+              li
+                a(href="#") Работа у нас
+              li
+                a(href="#") Новости
+              li
+                a(href="#") Контакты
+          .mobile-navi__menu
+            .mobile-navi__menu-title Продукция
+            ul.mobile-navi__menu-list
+              li
+                a(href="#") Мобильные спутниковые комплексы СНАРК
+              li
+                a(href="#") Земные станции спутниковой связи
+              li
+                a(href="#") Спутниковые усилители BUC
+              li
+                a(href="#") Телекоммуникационное о борудование
+
+          .mobile-navi__menu
+            .mobile-navi__menu-title Услуги
+            ul.mobile-navi__menu-list
+              li
+                a(href="#") Проектирование и строительство
+              li
+                a(href="#") Подключение к спутниковым сетям
+              li
+                a(href="#") Поставка оборудования и программного обеспечения
+              li
+                a(href="#") Разработка и внедрение ПО
+              li
+                a(href="#") Техническая поддержка
+              li
+                a(href="#") Аренда оборудования
+              li
+                a(href="#") Консалтинг в сфере ИТ и телеком
+              li
+                a(href="#") Проектирование и строительство
+
+          .mobile-navi__menu
+            .mobile-navi__menu-title Решения
+            ul.mobile-navi__menu-list
+              li
+                a(href="#") Корпоративные и ведомственные сети передачи данных
+              li
+                a(href="#") Создание ЗССС «под ключ»
+              li
+                a(href="#") Центры мониторинга и управления сетью
+              li
+                a(href="#") Производство VSAT оборудования
+              li
+                a(href="#") Мультисервисная рассылка
+
+      // col for menu
+      .mobile-navi__col.mobile-navi__col--forms
+        // TODO - sticky kit
+        //form
+        form.mobile-navi__form(action="#" js-validate-form)
+          .mobile-navi__form-title Написать нам
+          // TODO -changed ids for multiple forms
+          .ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="name") Представьтесь пожалуйста <span class="required">*</span>
+              input(type="text" name="name" id="name" required)
+          .ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="email") Напишите ваш e-mail  <span class="required">*</span>
+              input(type="email" name="email" id="email" required)
+          .ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="email") Сообщение <span class="required">*</span>
+              textarea(type="text" name="comment" id="comment" rows="1" data-min-rows="1" required)
+          .ui-group
+            button(type="submit").btn
+              span Отправить
+
+        // form
+        form.mobile-navi__form(action="#" js-validate-form)
+          .mobile-navi__form-title Заказать звонок
+          .ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="name") Представьтесь пожалуйста <span class="required">*</span>
+              input(type="text" name="name" id="name" required)
+          .ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="phone") Напишите ваш телефон <span class="required">*</span>
+              input(type="tel" name="phone" id="phone" required)
+          .ui-group
+            button(type="submit").btn
+              span Заказать

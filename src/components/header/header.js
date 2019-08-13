@@ -32,6 +32,7 @@
     },
     closeMobileMenu: function(isOnload) {
       $('[js-hamburger]').removeClass('is-active');
+      $('.header').removeClass('is-menu-active');
       $('.mobile-navi').removeClass('is-active');
 
       APP.Plugins.ScrollBlock.blockScroll(isOnload);
@@ -39,6 +40,7 @@
     hamburgerClickListener: function() {
       _document.on('click', '[js-hamburger]', function() {
         $(this).toggleClass('is-active');
+        $('.header').toggleClass('is-menu-active');
         $('.mobile-navi').toggleClass('is-active');
 
         APP.Plugins.ScrollBlock.blockScroll();

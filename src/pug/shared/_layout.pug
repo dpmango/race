@@ -9,7 +9,8 @@ html(lang="en")
     #barba-wrapper
       block header
         include ../../components/header/_header
-    
+        include ../../components/header/_mobile-navi
+
       // what should be changed with every pjax
       .page(class=outClass)
         .page__content
@@ -17,6 +18,6 @@ html(lang="en")
 
         block footer
           include ../../components/footer/_footer
-          
+
       block scripts
         include _scripts

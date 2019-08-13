@@ -1,9 +1,8 @@
 .mobile-navi
-  display: none
   position: fixed 0
   z-index: 8
-  background: $colorBg
-  // display: flex
+  background: #1D2841
+  display: flex
   flex-direction: column
   pointer-events: none
   transform: translate3d(0,-100%,0)
@@ -12,34 +11,87 @@
     flex: 1 1 auto
     display: flex
     flex-direction: column
-    padding: 50px 25px 20px
+    overflow-y: auto
+  &__grid
+    flex: 1 1 auto
+    display: flex
+  &__col
+    position: relative
+    // TODO - test those cols in IE, etc
+    // width: 100%
+    flex: 1 1 auto
+    min-width: 1px
+    min-height: 0
+    // TODO - posible naming refactor
+    &--menu
+      flex: 1 1 auto
+      max-width: 100%
+      padding: 120px 50px 50px
+    &--forms
+      flex: 0 0 550px
+      color: $fontColor
+      background: white
+      padding: 60px 60px
+
+  &__background
+    position: absolute 0
+    display: flex
+    flex-direction: column
+    img
+      flex: 1 1 auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &__menu-grid
+    position: relative
+    z-index: 2
+    display: flex
+    flex-wrap: wrap
+    margin: -15px
   &__menu
+    width: 100%
+    flex: 0 0 $col6
+    max-width: $col6
+    padding: 15px
+
+  &__menu-title
+    font-weight: bold
+    font-size: 24px
+    line-height: 29px
+    color: #F9F9F9
+
+  &__menu-list
     margin-top: auto
     padding: 20px 0
     list-style: none
-    text-align: center
     li
       display: block
-      font-size: 36px
-      margin-bottom: 30px
+      font-size: 13px
+      color: #F2F2F2
+      margin: 0 -5px 10px
       &:last-child
         margin-bottom: 0
     a
+      display: inline-block
+      padding: 5px
       transition: .25s $ease
       &:hover
-        color: $fontColor50
-  &__cta
-    text-align: center
-    margin-top: auto
-    a
-      transition: .25s $ease
-      &:hover
-        color: $fontColor50
+        color: $colorPrimary
 
+  &__form
+    margin: 50px 0
+
+  &__form-title
+    font-size: 24px
+    font-weight: bold
+    margin-bottom: 1em
+
+
+  // mobile navi modifiers
+  // TODO - current active for all
   &.is-active
+
     pointer-events: all
     transform: translate3d(0,0,0)
 
-+r($md)
-  .mobile-navi
-    display: flex
+
