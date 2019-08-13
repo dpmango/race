@@ -1,0 +1,24 @@
+// fullpage nav
+.fullpage-nav
+  .fullpage-nav__wrapper
+
+    // actions
+    .fullpage-nav__actions
+      a(href="mailto:test@me.com").fullpage-nav__action
+        +svgMono('mail')
+      a(href="tel:+74959167223").fullpage-nav__action
+        +svgMono('phone-outline')
+      a(href="#" js-fullpage-prev).fullpage-nav__action
+        +svgMono('arrow-top')
+
+    // dots
+    .fullpage-nav__dots
+      .fullpage-nav__dot.is-active
+      .fullpage-nav__dot
+      .fullpage-nav__dot
+      .fullpage-nav__dot
+
+    // next
+    .fullpage-nav__next
+      a(href="#" js-fullpage-next)
+        +svgMono('arrow-down-big')

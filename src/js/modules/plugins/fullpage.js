@@ -5,6 +5,7 @@
   APP.Plugins.Fullpage = {
     init: function() {
       this.start();
+      this.listenClicks();
       // this.listenResize();
     },
     // refresh: function() {
@@ -12,7 +13,11 @@
     listenResize: function() {
       _window.on('resize', debounce(this.start.bind(this), 200));
     },
-
+    listenClicks: function() {
+      _document
+        .on('click', '[js-fullpage-prev]', function() {})
+        .on('click', '[js-fullpage-next]', function() {});
+    },
     start: function() {
       var $fullpageDesktop = $('.page')
         .last()
