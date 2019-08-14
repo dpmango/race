@@ -2,7 +2,7 @@ ProjectTitle: Race
 
 PageList:
   - file: homepage.html
-    ready: 60
+    ready: 65
   - file: services.html
     ready: 0
   - file: services-article.html

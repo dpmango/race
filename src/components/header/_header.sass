@@ -13,13 +13,18 @@
     color: white
     display: flex
     align-items: center
-    padding: 0px 0 0 50px
+    padding: 0px 0 0 65px
 
   &__logo
     flex: 0 0 auto
     padding-right: 40px
-    .ico
-      font-size: 40px
+    transition: transform .25s $ease
+    will-change: transform
+    svg
+      width: auto
+      height: 40px
+    &:hover
+      transform: scale(1.03)
 
   &__menu
     flex: 0 1 auto
@@ -30,16 +35,30 @@
     font-family: 'Helvetica'
     li
       display: inline-block
-      margin-right: 20px
+      margin-right: 30px
       text-transform: uppercase
       font-size: 14px
       letter-spacing: 2px
+      &.is-active a
+        &::after
+          right: 5px
     a
       position: relative
       padding: 5px
       transition: color .25s $ease
+      &::after
+        display: block
+        content: ' '
+        position: absolute
+        bottom: 0
+        left: 5px
+        right: calc(100% - 5px)
+        background: $colorOrange
+        height: 2px
+        transition: right .25s $ease
       &:hover
-        color: $colorPrimary
+        &::after
+          right: 5px
 
   &__menu-counter
     position: absolute
@@ -64,7 +83,6 @@
     align-items: center
     font-weight: 600
     font-size: 14px
-    line-height: 17px
     letter-spacing: 2px
     text-transform: uppercase
     transition: color .25s $ease
@@ -75,15 +93,22 @@
     &:hover
       color: rgba(white, .7)
 
-  &__search
+  &__search, &__callback, &__mail
     padding: 10px
     margin-right: 30px
     font-size: 0
-    transition: color .25s $ease
+
+  &__callback
+    display: none
     .ico
       font-size: 18px
-    &:hover
-      color: rgba(white, .7)
+  &__mail
+    display: none
+    .ico
+      font-size: 14px
+  &__search
+    .ico
+      font-size: 18px
 
   &__lang
     padding: 10px
@@ -92,9 +117,30 @@
     line-height: 17px
     letter-spacing: 2px
     text-transform: uppercase
-    transition: color .25s $ease
+
+  // curcle hovers
+  &__search, &__callback, &__mail, &__lang
+    position: relative
+    &:after
+      display: block
+      content: ' '
+      position: absolute
+      size: 44px
+      top: 50%
+      left: 50%
+      background: transparent
+      border-radius: 50%
+      pointer-events: none
+      border: 1px solid $colorOrange
+      transform: translate3d(-50%,-50%,0) scale(1.2)
+      transition: opacity .25s $ease, transform .25s $ease
+      will-change: transform
+      opacity: 0
+      backface-visibility: hidden
     &:hover
-      color: rgba(white, .7)
+      &::after
+        opacity: 1
+        transform: translate3d(-50%,-50%,0) scale(1)
 
   &__hamburger
     .hamburger-inner
@@ -130,13 +176,78 @@
         transform: translate3d(0,-30px, 0)
         opacity: 0
 
++r($hd)
+  .header
+    &__wrapper
+      padding-left: 50px
+    &__logo
+      padding-right: 50px
+    &__menu
+      li
+        font-size: 12px
+        margin-right: 20px
+    &__cta
+      margin-right: 50px
+    &__phone
+      font-size: 12px
+      margin-right: 35px
+
+// 1280 and below
++r($xl)
+  .header
+    &__wrapper
+      padding-left: 40px
+    &__logo
+      padding-right: 20px
+    &__menu
+      display: none
+    &__cta
+      margin-right: 60px
+    &__callback, &__mail
+      display: block
+    &__search, &__callback, &__mail
+      margin-right: 20px
+
+// tablet
 +r($lg)
   .header
+    &__logo
+      svg
+        height: 32px
+    &__cta
+      margin-right: 30px
 
-
+// tablet
 +r($md)
   .header
+    &__phone
+      display: none
 
-
+// tablet
 +r($sm)
   .header
+    background: white
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1)
+    &__wrapper
+      padding-left: 20px
+      color: $fontColor
+
+    &__logo
+      svg
+        height: 24px
+      .svg-logo-letters
+        fill: $fontColor
+
+    &__cta
+      margin-right: 10px
+
+    &__search, &__callback, &__mail, &__lang
+      &::after
+        size: 36px
+
++r(414)
+  .header
+    &__mail
+      display: none
+    &__search, &__callback
+      margin-right: 10px

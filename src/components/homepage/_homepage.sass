@@ -2,6 +2,7 @@
 .section
   display: flex
   flex-direction: column
+  overflow: hidden
 
 // AOS FIX
 .section.active
@@ -77,8 +78,11 @@
     z-index: 2
     display: flex
     flex-direction: column
-    max-width: 1320px
-    padding-left: 40px
+    align-items: flex-start
+    max-width: 1440px
+    width: 100%
+    padding-left: 150px
+    padding-top: 80px
     margin-left: auto
     will-change: transform
     backface-visibility: hidden
@@ -97,6 +101,7 @@
     font-size: 22px
     line-height: 1.5
     margin-top: 1em
+    max-width: 830px
 
   &__cta
     margin: 2em 0 -1em
@@ -130,6 +135,7 @@
 
 
   &__bottom
+    width: 100%
     margin-top: 90px
 
   &__news
@@ -139,11 +145,27 @@
     background: white
     color: $fontColor
 
+
++r($hd)
+  .home-section
+    &__title
+      font-size: 85px
+      line-height: 1.22
+
+    &__description
+      font-size: 18px
+      line-height: 1.67
+
++r($xl)
+  .home-section
+    &__content
+      padding-left: 40px
+
 // news home
 .news-home
   padding: 0px 0 60px
   &__title
-    margin-top: 1.2em
+    margin-top: 1.4em
     font-weight: 500
     font-size: 12px
     text-transform: uppercase
@@ -175,7 +197,7 @@
 
   &__content
     max-width: 350px
-    margin-top: 1em
+    margin-top: 0.8em
     font-weight: 600
     font-size: 16px
     line-height: 1.75

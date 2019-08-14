@@ -5,16 +5,14 @@
   align-items: center
   justify-content: center
   cursor: pointer
-  transition-property: background-color, filter
-  transition-duration: 0.15s
-  transition-timing-function: linear
+  transition: background .25s $ease
   font: inherit
   color: inherit
   text-transform: none
   border: 0
   overflow: visible
   &:hover
-    background-color: rgba($colorOrange, .7)
+    background-color: $colorPrimary
 
 .hamburger-box
   width: 24px
@@ -27,6 +25,7 @@
   top: 50%
   width: 24px
   height: 3px
+  margin-top: -2px
   border-radius: 0px
   position: absolute
   transition-property: transform
@@ -69,3 +68,24 @@
       bottom: 0
       transform: rotate(-90deg)
       transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1)
+
++r($hd)
+  .hamburger
+    size: 80px
++r($sm)
+  .hamburger
+    size: 48px
+
+  .hamburger-box
+    width: 18px
+    height: 18px
+  .hamburger-inner
+    width: 18px
+    height: 2px
+    &::before, &::after
+      width: 18px
+      height: 2px
+    &::before
+      top: -6px
+    &::after
+      bottom: -6px

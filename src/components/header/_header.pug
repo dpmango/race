@@ -2,7 +2,7 @@
 header.header
   .header__wrapper
     a(href="homepage.html").header__logo
-      +svgColor('logo')
+      include ../../icons/svg-inline/logo.svg
     ul.header__menu
       li
         a(href="#") О компании
@@ -20,6 +20,12 @@ header.header
       a(href="tel:+74959167223").header__phone
         +svgMono('phone')
         span +7 (495) 916-7223
+
+      a(href="tel:+74959167223").header__callback
+        +svgMono('phone-outline')
+
+      a(href="mailto:test@me.com").header__mail
+        +svgMono('mail')
 
       a(href="#").header__search
         +svgMono('search')
