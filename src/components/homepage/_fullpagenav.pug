@@ -8,15 +8,15 @@
         +svgMono('mail')
       a(href="tel:+74959167223").fullpage-nav__action
         +svgMono('phone-outline')
-      a(href="#" js-fullpage-prev).fullpage-nav__action
+      a(href="#" js-fullpage-top).fullpage-nav__action
         +svgMono('arrow-top')
 
     // dots
-    .fullpage-nav__dots
-      .fullpage-nav__dot.is-active
-      .fullpage-nav__dot
-      .fullpage-nav__dot
-      .fullpage-nav__dot
+    ul.fullpage-nav__dots(js-fullpage-nav)
+      li.fullpage-nav__dot.is-active(data-fp-section="1")
+      li.fullpage-nav__dot(data-fp-section="2")
+      li.fullpage-nav__dot(data-fp-section="3")
+      li.fullpage-nav__dot(data-fp-section="4")
 
     // next
     .fullpage-nav__next
