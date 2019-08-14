@@ -2,7 +2,7 @@
 
 // WORKS KIND OF bootstrap - group have label and input
 .ui-group
-  margin-bottom: 20px
+  margin-bottom: 25px
   position: relative
   > label:not(.ui-input__validation)
     display: block
@@ -19,6 +19,8 @@
     font-weight: 500
     color: #828282
     transition: 0.25s $ease
+    span.required
+      color: $colorRed
   input, textarea
     -webkit-appearance: none
     display: block
@@ -36,16 +38,15 @@
 
     &::placeholder
       color: currentColor
+    &.has-error
+      border-color: $colorRed
+
   &.is-focused
     .ui-input__float-label
       top: 0
       font-size: 12px
       opacity: 0.5
 
-  &.has-error
-    color: $colorRed
-    &::placeholder
-      color: rgba($colorRed, 0.5)
 
 .ui-input textarea
   resize: vertical
@@ -53,7 +54,7 @@
 .ui-input__validation
   bottom: -1.3em
   color: $colorRed
-  font-size: 12px
+  font-size: 10px
   left: 0
   position: absolute
 
@@ -70,7 +71,7 @@
     &:checked
       + label
         &::before
-          border-color: $colorGreen
+          border-color: $colorPrimary
         &::after
           transform: translateY(-50%) scale(1)
   label
@@ -94,7 +95,7 @@
       transition: all $transitionSpeed ease-in-out
       vertical-align: middle
     &::after
-      background: $colorGreen
+      background: $colorPrimary
       border-radius: 50%
       content: ' '
       display: inline-block

@@ -13,12 +13,10 @@
     flex-direction: column
     overflow-y: auto
   &__grid
-    flex: 1 1 auto
+    flex: 1 0 auto
     display: flex
   &__col
     position: relative
-    // TODO - test those cols in IE, etc
-    // width: 100%
     flex: 1 1 auto
     min-width: 1px
     min-height: 0
@@ -26,7 +24,7 @@
     &--menu
       flex: 1 1 auto
       max-width: 100%
-      padding: 120px 50px 50px
+      padding: 120px 20px 50px
     &--forms
       flex: 0 0 550px
       color: $fontColor
@@ -47,12 +45,15 @@
     z-index: 2
     display: flex
     flex-wrap: wrap
-    margin: -15px
+    justify-content: space-between
+    margin: -15px auto
+    max-width: 720px
   &__menu
     width: 100%
     flex: 0 0 $col6
     max-width: $col6
-    padding: 15px
+    padding: 15px 30px
+    margin-bottom: 10px
 
   &__menu-title
     font-weight: bold
@@ -61,25 +62,30 @@
     color: #F9F9F9
 
   &__menu-list
-    margin-top: auto
-    padding: 20px 0
+    margin: 1em 0
+    padding: 0
     list-style: none
     li
       display: block
       font-size: 13px
+      line-height: 1.5
+      font-weight: 500
       color: #F2F2F2
-      margin: 0 -5px 10px
+      margin: 0 -5px 5px
       &:last-child
         margin-bottom: 0
     a
       display: inline-block
-      padding: 5px
+      padding: 4px 5px
       transition: .25s $ease
       &:hover
         color: $colorPrimary
 
   &__form
-    margin: 50px 0
+    margin: 60px 0
+    max-width: 350px
+    &:last-child
+      margin-bottom: 0
 
   &__form-title
     font-size: 24px

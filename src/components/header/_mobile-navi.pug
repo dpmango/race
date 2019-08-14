@@ -25,18 +25,6 @@
               li
                 a(href="#") Контакты
           .mobile-navi__menu
-            .mobile-navi__menu-title Продукция
-            ul.mobile-navi__menu-list
-              li
-                a(href="#") Мобильные спутниковые комплексы СНАРК
-              li
-                a(href="#") Земные станции спутниковой связи
-              li
-                a(href="#") Спутниковые усилители BUC
-              li
-                a(href="#") Телекоммуникационное о борудование
-
-          .mobile-navi__menu
             .mobile-navi__menu-title Услуги
             ul.mobile-navi__menu-list
               li
@@ -56,6 +44,17 @@
               li
                 a(href="#") Проектирование и строительство
 
+          .mobile-navi__menu
+            .mobile-navi__menu-title Продукция
+            ul.mobile-navi__menu-list
+              li
+                a(href="#") Мобильные спутниковые комплексы СНАРК
+              li
+                a(href="#") Земные станции спутниковой связи
+              li
+                a(href="#") Спутниковые усилители BUC
+              li
+                a(href="#") Телекоммуникационное о борудование
           .mobile-navi__menu
             .mobile-navi__menu-title Решения
             ul.mobile-navi__menu-list
@@ -90,7 +89,7 @@
               label.ui-input__float-label(for="email") Сообщение <span class="required">*</span>
               textarea(type="text" name="comment" id="comment" rows="1" data-min-rows="1" required)
           .ui-group
-            button(type="submit").btn
+            button(type="submit").btn.btn-primary
               span Отправить
 
         // form
@@ -105,5 +104,5 @@
               label.ui-input__float-label(for="phone") Напишите ваш телефон <span class="required">*</span>
               input(type="tel" name="phone" id="phone" required)
           .ui-group
-            button(type="submit").btn
+            button(type="submit").btn.btn-primary
               span Заказать
