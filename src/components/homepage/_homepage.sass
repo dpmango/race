@@ -13,7 +13,6 @@
 
 
 
-
 .home-section
   flex: 1 0 auto
   display: flex
@@ -22,11 +21,14 @@
   min-height: 100vh
   background: black
   color: white
+  overflow: hidden
   &__background
     position: absolute 0
     z-index: 1
     display: flex
     flex-direction: column
+    font-size: 0
+    pointer-events: none
     img, picture, video
       position: relative
       z-index: 1
@@ -43,11 +45,15 @@
         background: #202020
         opacity: 0.4
         z-index: 2
+        will-change: transform
+        backface-visibility: hidden
 
   &__background-overlay
     flex: 1 1 auto
     widows: 100%
     pointer-events: none
+    will-change: transform
+    backface-visibility: hidden
     &::after, &::before
       position: absolute
       left: -20%
@@ -91,6 +97,37 @@
     font-size: 22px
     line-height: 1.5
     margin-top: 1em
+
+  &__cta
+    margin: 2em 0 -1em
+    a
+      display: flex
+      align-items: center
+      &:hover
+        .home-section__cta-icon
+          transform: translate(7px,0)
+    span
+      display: inline-block
+      font-weight: 600
+      font-size: 18px
+      line-height: 22px
+      margin-right: 14px
+
+  &__cta-icon
+    size: 48px
+    background: $colorPrimary
+    color: white
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    font-size: 0
+    border-radius: 50%
+    transition: transform .25s $ease
+    will-change: transform
+    .ico
+      font-size: 12px
+
 
   &__bottom
     margin-top: 90px
