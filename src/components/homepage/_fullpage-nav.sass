@@ -48,26 +48,6 @@
         font-size: 18px
       &-mono-arrow-top
         font-size: 19px
-    &:after
-      display: block
-      content: ' '
-      position: absolute
-      size: 44px
-      top: 50%
-      left: 50%
-      background: transparent
-      border-radius: 50%
-      pointer-events: none
-      border: 1px solid $colorOrange
-      transform: translate3d(-50%,-50%,0) scale(1.2)
-      transition: opacity .25s $ease, transform .25s $ease
-      will-change: transform
-      opacity: 0
-      backface-visibility: hidden
-    &:hover
-      &::after
-        opacity: 1
-        transform: translate3d(-50%,-50%,0) scale(1)
 
   &__dots
     margin: auto 0 auto 0
@@ -83,7 +63,7 @@
     margin-bottom: 5px
     &:last-child
       margin-bottom: 0
-    &::after
+    &::before
       display: inline-block
       content: ' '
       position: absolute
@@ -95,7 +75,7 @@
       border-radius: 50%
       transition: background .25s $ease
     &.is-active, &:hover
-      &::after
+      &::before
         background: white
 
   &__next

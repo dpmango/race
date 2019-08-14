@@ -5,14 +5,19 @@
   align-items: center
   justify-content: center
   cursor: pointer
-  transition: background .25s $ease
+  // transition: background .25s $ease
   font: inherit
   color: inherit
   text-transform: none
   border: 0
   overflow: visible
   &:hover
-    background-color: $colorPrimary
+    // background-color: $colorPrimary
+    .hamburger-inner
+      &::before
+        top: -11px
+      &::after
+        bottom: -11px
 
 .hamburger-box
   width: 24px
@@ -75,6 +80,12 @@
 +r($sm)
   .hamburger
     size: 48px
+    &:hover
+      .hamburger-inner
+        &::before
+          top: -8px
+        &::after
+          bottom: -8px
 
   .hamburger-box
     width: 18px

@@ -1,0 +1,52 @@
+*, a
+  cursor: none
+
+.circle-cursor
+  position: fixed
+  left: 0
+  top: 0
+  pointer-events: none
+  border-radius: 50%
+  &--outer
+    width: 30px
+    height: 30px
+    border: 1px solid $colorOrange
+    z-index: 12000
+    opacity: 0.3
+
+  &--inner
+    width: 5px
+    height: 5px
+    left: -2.5px
+    top: -2.5px
+    z-index: 11000
+    background: $colorOrange
+
+.js-circle-nav
+  position: relative
+  &:after
+    display: block
+    content: ' '
+    position: absolute
+    size: 44px
+    top: 50%
+    left: 50%
+    background: transparent
+    border-radius: 50%
+    pointer-events: none
+    border: 1px solid $colorOrange
+    transform: translate3d(-50%,-50%,0) scale(1.2)
+    transition: opacity .25s $ease, transform .25s $ease
+    will-change: transform
+    opacity: 0
+    backface-visibility: hidden
+  &:hover
+    &::after
+      opacity: 1
+      transform: translate3d(-50%,-50%,0) scale(1)
+
+
++r($sm)
+  .js-circle-nav
+    &::after
+      size: 36px

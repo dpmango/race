@@ -59,6 +59,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.Clicks.init();
       APP.Plugins.AOS.init();
       APP.Plugins.Barba.init();
+      APP.Plugins.CustomCursor.init();
     };
 
     // Plugins which depends on DOM and page content

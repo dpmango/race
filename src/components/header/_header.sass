@@ -118,30 +118,6 @@
     letter-spacing: 2px
     text-transform: uppercase
 
-  // curcle hovers
-  &__search, &__callback, &__mail, &__lang
-    position: relative
-    &:after
-      display: block
-      content: ' '
-      position: absolute
-      size: 44px
-      top: 50%
-      left: 50%
-      background: transparent
-      border-radius: 50%
-      pointer-events: none
-      border: 1px solid $colorOrange
-      transform: translate3d(-50%,-50%,0) scale(1.2)
-      transition: opacity .25s $ease, transform .25s $ease
-      will-change: transform
-      opacity: 0
-      backface-visibility: hidden
-    &:hover
-      &::after
-        opacity: 1
-        transform: translate3d(-50%,-50%,0) scale(1)
-
   &__hamburger
     .hamburger-inner
       background-color: white
@@ -240,10 +216,6 @@
 
     &__cta
       margin-right: 10px
-
-    &__search, &__callback, &__mail, &__lang
-      &::after
-        size: 36px
 
 +r(414)
   .header
