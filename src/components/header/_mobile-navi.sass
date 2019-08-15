@@ -24,12 +24,12 @@
     &--menu
       flex: 1 1 auto
       max-width: 100%
-      padding: 120px 20px 50px
+      padding: 120px 20px 30px
     &--forms
       flex: 0 0 550px
       color: $fontColor
       background: white
-      padding: 60px 60px
+      padding: 60px 60px 30px
 
   &__background
     position: absolute 0
@@ -47,7 +47,7 @@
     flex-wrap: wrap
     justify-content: space-between
     margin: -15px auto
-    max-width: 720px
+    max-width: 740px
   &__menu
     width: 100%
     flex: 0 0 $col6
@@ -58,7 +58,7 @@
   &__menu-title
     font-weight: bold
     font-size: 24px
-    line-height: 29px
+    line-height: 1.2
     color: #F9F9F9
 
   &__menu-list
@@ -100,3 +100,48 @@
     transform: translate3d(0,0,0)
 
 
++rh(750)
+  .mobile-navi
+    &__col
+      &--menu
+        padding-top: 50px
+      &--forms
+        padding-top: 10px
+
++r($hd)
+  .mobile-navi
+    &__col
+      &--forms
+        flex-basis: 430px
+        padding-left: 45px
+        padding-right: 45px
+    &__menu-grid
+      max-width: 645px
+    &__menu
+      padding: 15px
+      margin-bottom: 0
+    &__menu-title
+      font-size: 20px
+    &__menu-list
+      margin-top: 0.7em
+      margin-bottom: 0
+    &__form
+      max-width: 280px
+      margin: 40px 0
+    &__form-title
+      font-size: 20px
+      margin-bottom: 0.5em
+
++r($xl)
+  .mobile-navi
+    &__menu-grid
+      max-width: 495px
+      margin-left: 0
+    &__menu-title
+      font-size: 18px
+    &__menu-list
+      li
+        font-size: 12px
+        margin-bottom: 3px
+    &__form-title
+      font-size: 18px

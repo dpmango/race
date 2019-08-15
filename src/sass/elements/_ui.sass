@@ -8,6 +8,10 @@
     display: block
     margin-bottom: 10px
 
++r($xl)
+  .ui-group
+    margin-bottom: 20px
+
 // for input or textarea element
 .ui-input
   position: relative
@@ -57,6 +61,20 @@
   font-size: 10px
   left: 0
   position: absolute
+
++r($xl)
+  .ui-input
+    &__float-label
+      top: 12px
+      font-size: 12px
+    input, textarea
+      font-size: 12px
+      padding: 12px 0px
+    &.is-focused
+      .ui-input__float-label
+        top: -2px
+        font-size: 10px
+
 
 /* Checkbox
 .ui-checkbox
@@ -115,3 +133,4 @@
       line-height: 1.3
       padding-left: 35px
       vertical-align: top
+
