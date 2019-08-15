@@ -13,6 +13,7 @@
       if (!fromPjax) {
         this.getHeaderParams();
         this.hamburgerClickListener();
+        this.mobileNaviClickListener();
         this.listenScroll();
         this.listenResize();
       }
@@ -44,6 +45,22 @@
         $('.mobile-navi').toggleClass('is-active');
 
         APP.Plugins.ScrollBlock.blockScroll();
+      });
+    },
+    mobileNaviClickListener: function() {
+      var _this = this;
+
+      // will close navi on tablet on outside clicks
+      _document.on('click', function(e) {
+        if (window.innerWidth < 1280) {
+          var $target = $(e.target);
+          var $closestHeader = $target.closest('.header').length === 0;
+          var $closestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
+
+          if ($closestHeader && $closestNaviWrapper) {
+            _this.closeMobileMenu();
+          }
+        }
       });
     },
     listenScroll: function() {

@@ -17,7 +17,7 @@
 
   &__logo
     flex: 0 0 auto
-    padding-right: 40px
+    margin-right: 40px
     transition: transform .25s $ease
     will-change: transform
     svg
@@ -147,17 +147,20 @@
     transform: translate3d(0,-100%,0) !important
 
   &.is-menu-active
+    pointer-events: none
     .header
       &__logo, &__menu, &__cta
         transform: translate3d(0,-30px, 0)
         opacity: 0
+      &__hamburger
+        pointer-events: all
 
 +r($hd)
   .header
     &__wrapper
       padding-left: 50px
     &__logo
-      padding-right: 50px
+      margin-right: 50px
     &__menu
       li
         font-size: 12px
@@ -174,7 +177,7 @@
     &__wrapper
       padding-left: 40px
     &__logo
-      padding-right: 20px
+      margin-right: 20px
     &__menu
       display: none
     &__cta
@@ -192,6 +195,13 @@
         height: 32px
     &__cta
       margin-right: 30px
+
+    &.is-menu-active
+      .header
+        &__logo
+          transform: translate3d(0,0px, 0)
+          opacity: 1
+          pointer-events: all
 
 // tablet
 +r($md)
