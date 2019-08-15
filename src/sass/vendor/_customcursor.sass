@@ -1,5 +1,15 @@
-*, a
+*
   cursor: none
+
+.js-circle-nav
+  cursor: none
+  *
+    cursor: none
+
+a
+  cursor: pointer
+  *
+    cursor: pointer
 
 .circle-cursor
   position: fixed
@@ -8,17 +18,17 @@
   pointer-events: none
   border-radius: 50%
   &--outer
-    width: 30px
-    height: 30px
+    width: 36px
+    height: 36px
     border: 1px solid $colorOrange
     z-index: 12000
     opacity: 0.3
 
   &--inner
-    width: 5px
-    height: 5px
-    left: -2.5px
-    top: -2.5px
+    width: 6px
+    height: 6px
+    left: -3px
+    top: -3px
     z-index: 11000
     background: $colorOrange
 
