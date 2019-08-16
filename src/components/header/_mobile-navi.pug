@@ -6,7 +6,7 @@
       .mobile-navi__col.mobile-navi__col--menu
         .mobile-navi__background
           img(src='img/mobileNaviBg.jpg' srcset='img/mobileNaviBg@2x.jpg 2x')
-        .mobile-navi__menu-grid
+        .mobile-navi__menu-grid(js-mobile-navi-menu)
           .mobile-navi__menu
             .mobile-navi__menu-title О компании
             ul.mobile-navi__menu-list
@@ -71,38 +71,43 @@
 
       // col for menu
       .mobile-navi__col.mobile-navi__col--forms
-        // TODO - sticky kit
-        //form
-        form.mobile-navi__form(action="#" js-validate-form)
-          .mobile-navi__form-title Написать нам
-          // TODO -changed ids for multiple forms
+        .mobile-navi__mobile-panelbts
+          a(href="#" js-open-mobile-navi-panel data-panel="request").btn.btn-primary
+            span Написать нам
+          a(href="#" js-open-mobile-navi-panel data-panel="callback").btn.btn-primary
+            span Заказать звонок
+
+        // forms are also used as panels on tablet/mobile
+        //form request
+        form.mobile-navi__form(action="ajax-endpoint.php" js-validate-form data-panel="request")
+          .mobile-navi__form-title(js-close-mobile-navi-panel) Написать нам
           .ui-group
             .ui-input(js-input-focus)
-              label.ui-input__float-label(for="name") Представьтесь пожалуйста <span class="required">*</span>
-              input(type="text" name="name" id="name" required)
+              label.ui-input__float-label(for="req_name") Представьтесь пожалуйста <span class="required">*</span>
+              input(type="text" name="name" id="req_name" required)
           .ui-group
             .ui-input(js-input-focus)
-              label.ui-input__float-label(for="email") Напишите ваш e-mail  <span class="required">*</span>
-              input(type="email" name="email" id="email" required)
+              label.ui-input__float-label(for="req_email") Напишите ваш e-mail  <span class="required">*</span>
+              input(type="email" name="email" id="req_email" required)
           .ui-group
             .ui-input(js-input-focus)
-              label.ui-input__float-label(for="email") Сообщение <span class="required">*</span>
-              textarea(type="text" name="comment" id="comment" rows="1" data-min-rows="1" required)
+              label.ui-input__float-label(for="req_comment") Сообщение <span class="required">*</span>
+              textarea(type="text" name="comment" id="req_comment" rows="1" data-min-rows="1" required)
           .ui-group
             button(type="submit").btn.btn-primary
               span Отправить
 
-        // form
-        form.mobile-navi__form(action="#" js-validate-form)
-          .mobile-navi__form-title Заказать звонок
+        // form callback
+        form.mobile-navi__form(action="ajax-endpoint.php" js-validate-form data-panel="callback")
+          .mobile-navi__form-title(js-close-mobile-navi-panel) Заказать звонок
           .ui-group
             .ui-input(js-input-focus)
-              label.ui-input__float-label(for="name") Представьтесь пожалуйста <span class="required">*</span>
-              input(type="text" name="name" id="name" required)
+              label.ui-input__float-label(for="cb_name") Представьтесь пожалуйста <span class="required">*</span>
+              input(type="text" name="name" id="cb_name" required)
           .ui-group
             .ui-input(js-input-focus)
-              label.ui-input__float-label(for="phone") Напишите ваш телефон <span class="required">*</span>
-              input(type="tel" name="phone" id="phone" required)
+              label.ui-input__float-label(for="cb_phone") Напишите ваш телефон <span class="required">*</span>
+              input(type="tel" name="phone" id="cb_phone" required)
           .ui-group
             button(type="submit").btn.btn-primary
               span Заказать

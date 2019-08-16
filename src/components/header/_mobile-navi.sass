@@ -16,15 +16,16 @@
     flex-direction: column
     overflow-y: auto
   &__grid
+    position: relative
     flex: 1 0 auto
     display: flex
   &__col
-    position: relative
     flex: 1 1 auto
     min-width: 1px
     min-height: 0
     // TODO - posible naming refactor
     &--menu
+      position: relative
       flex: 1 1 auto
       max-width: 100%
       padding: 120px 20px 30px
@@ -95,6 +96,14 @@
     font-weight: bold
     margin-bottom: 1em
 
+  &__mobile-panelbts
+    display: none
+    .btn
+      width: 100%
+      margin: 7px
+      max-width: 155px
+      padding-left: 10px
+      padding-right: 10px
   // mobile navi modifiers
   &.is-active
     pointer-events: all
@@ -154,7 +163,8 @@
     opacity: 0
     transition: transform .3s $ease, opacity .3s $ease
     &__wrapper
-      max-width: 500px
+      width: 100%
+      max-width: 495px
       margin-left: auto
       background: white
       color: $fontColor
@@ -166,7 +176,10 @@
     &__grid
       display: block
     &__col
-
+      &--menu
+        padding: 50px calc(45px + 50px) 23px 45px
+      &--forms
+        padding: 20px calc(53px + 50px) 20px 53px
     &__background
       display: none
 
@@ -175,12 +188,121 @@
     &__menu
       flex-basis: 100%
       max-width: 100%
+      padding: 5px
     &__menu-title
+      position: relative
       color: $fontColor
+      padding: 10px
+      cursor: pointer
+      transition: color .25s $ease
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 10px
+        right: 10px
+        bottom: 0
+        height: 1px
+        background: #F2F2F2
+        transition: opacity .25s $ease
+        pointer-events: none
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        right: 15px
+        top: 50%
+        background: svg-load('../icons/svg-mono/arrow-crumb-down.svg') no-repeat center center
+        background-size: contain
+        size: 10px 6px
+        z-index: 2
+        transform: translateY(-50%)
+        transition: transform .25s $ease
+        backface-visibility: hidden
+        transform-style: preserve-3d
+        will-change: transform
+      &:hover
+        color: $colorOrange
+      &.is-active
+        &::before
+          transform: translateY(-50%) rotate(180deg)
+        &::after
+          opacity: 0
 
     &__menu-list
+      position: relative
+      display: none
+      margin-top: 0.35em
+      padding-left: 10px
+      padding-right: 10px
+      padding-bottom: 10px
       li
         color: $fontColor
+        font-size: 14px
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 10px
+        right: 10px
+        bottom: 0
+        height: 1px
+        background: #F2F2F2
+        transition: opacity .25s $ease
+        pointer-events: none
+
+    &__mobile-panelbts
+      display: block
+
+    &__form
+      position: absolute
+      top: 0
+      left: 60px
+      right: 110px
+      bottom: 0
+      max-width: 100%
+      widows: 100%
+      display: flex
+      flex-direction: column
+      margin-bottom: 60px
+      opacity: 0
+      transform: translate3d(10px,0px,0)
+      pointer-events: none
+      transition: opacity .25s $ease, transform .25s $ease
+      &:last-child
+        margin-bottom: 60px
+      .ui-group
+        &:last-child
+          margin-top: auto
+          .btn
+            width: 100%
+            display: block
+            border-width: 2px
+
+    &__form-title
+      position: relative
+      padding: 10px 0 10px 33px
+      margin-bottom: 30px
+      border-bottom: 1px solid #F2F2F2
+      cursor: pointer
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 0px
+        top: 50%
+        background: svg-load('../icons/svg-mono/btn-arrow-prev.svg') no-repeat center center
+        background-size: contain
+        size: 20px 10px
+        z-index: 2
+        transform: translate3d(0,-50%,0)
+        transition: transform .25s $ease
+        backface-visibility: hidden
+        transform-style: preserve-3d
+        will-change: transform
+      &:hover
+        &::before
+          transform: translate3d(-10px,-50%,0)
 
     &.is-active
       opacity: 1
@@ -188,3 +310,31 @@
         &__wrapper
           pointer-events: all
           transform: translate3d(0,0,0)
+
+    &[data-active-panel="request"]
+      .mobile-navi__form
+        &[data-panel="request"]
+          opacity: 1
+          pointer-events: all
+          transform: translate3d(0,0,0)
+
+    &[data-active-panel="callback"]
+      .mobile-navi__form
+        &[data-panel="callback"]
+          opacity: 1
+          pointer-events: all
+          transform: translate3d(0,0,0)
+
+    &__menu-grid,
+    &__mobile-panelbts
+      opacity: 1
+      transition: opacity .15s $ease, transform .25s $ease
+      transform: translate3d(0,0px,0)
+
+    &[data-active-panel]
+        .mobile-navi
+          &__menu-grid,
+          &__mobile-panelbts
+            opacity: 0
+            pointer-events: none
+            transform: translate3d(0,10px,0)

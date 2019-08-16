@@ -51,17 +51,49 @@
       var _this = this;
 
       // will close navi on tablet on outside clicks
-      _document.on('click', function(e) {
-        if (window.innerWidth < 1280) {
-          var $target = $(e.target);
-          var $closestHeader = $target.closest('.header').length === 0;
-          var $closestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
+      _document
+        .on('click', '[js-mobile-navi-menu] .mobile-navi__menu-title', function() {
+          if (window.innerWidth <= 1024) {
+            var $title = $(this);
+            var $menuContainer = $title.closest('.mobile-navi__menu');
+            var $siblingMenus = $menuContainer.siblings();
 
-          if ($closestHeader && $closestNaviWrapper) {
-            _this.closeMobileMenu();
+            // toggle classes
+            $siblingMenus.find('.mobile-navi__menu-title').removeClass('is-active');
+            $title.toggleClass('is-active');
+
+            $siblingMenus.find('ul').slideUp();
+            $menuContainer.find('ul').slideToggle();
           }
-        }
-      });
+        })
+        .on('click', function(e) {
+          if (window.innerWidth <= 1024) {
+            var $target = $(e.target);
+            var $closestHeader = $target.closest('.header').length === 0;
+            var $closestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
+
+            if ($closestHeader && $closestNaviWrapper) {
+              _this.closeMobileMenu();
+            }
+          }
+        })
+        .on('click', '[js-open-mobile-navi-panel]', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          var dataPanel = $(this).data('panel');
+
+          $(this)
+            .closest('.mobile-navi')
+            .attr('data-active-panel', dataPanel);
+        })
+        .on('click', '[js-close-mobile-navi-panel]', function() {
+          if (window.innerWidth <= 1024) {
+            $(this)
+              .closest('.mobile-navi')
+              .removeAttr('data-active-panel');
+          }
+        });
     },
     listenScroll: function() {
       _window.on('scroll', this.scrollHeader.bind(this));
