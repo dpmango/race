@@ -44,7 +44,7 @@
       var defaultFpOptions = {
         // scrollOverflow: true,
         // scrollOverflowReset: true,
-        dragAndMove: true,
+        // dragAndMove: true,
         // responsiveWidth: 768,
         onLeave: function(origin, destination, direction) {
           // APP.Plugins.AOS.refreshSoft();

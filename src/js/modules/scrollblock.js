@@ -24,6 +24,10 @@
         'margin-top': '-' + this.data.lastForBodyLock + 'px',
       });
       $('body').addClass('body-lock');
+      if ($.fn.fullpage) {
+        $.fn.fullpage.setMouseWheelScrolling(false);
+        $.fn.fullpage.setAllowScrolling(false);
+      }
     },
 
     enableScroll: function(isOnload) {
@@ -36,6 +40,10 @@
       if (!isOnload) {
         _window.scrollTop(this.data.lastForBodyLock);
         this.data.lastForBodyLock = 0;
+      }
+      if ($.fn.fullpage) {
+        $.fn.fullpage.setMouseWheelScrolling(true);
+        $.fn.fullpage.setAllowScrolling(true);
       }
     },
 

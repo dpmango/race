@@ -11,7 +11,7 @@
   text-transform: none
   border: 0
   overflow: visible
-  &:hover
+  &:hover:not(.is-active)
     // background-color: $colorPrimary
     .hamburger-inner
       &::before
@@ -80,7 +80,7 @@
 +r($sm)
   .hamburger
     size: 48px
-    &:hover
+    &:hover:not(.is-active)
       .hamburger-inner
         &::before
           top: -8px

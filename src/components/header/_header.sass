@@ -227,6 +227,14 @@
     &__cta
       margin-right: 10px
 
+    &.is-menu-active
+      pointer-events: all
+      .header
+        &__logo, &__menu, &__cta
+          transform: translate3d(0,0px, 0)
+          opacity: 1
+          pointer-events: all
+
 +r(414)
   .header
     &__mail
