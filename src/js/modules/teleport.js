@@ -57,6 +57,9 @@
             $el.html(obj.html);
             $target.html('');
           }
+
+          // re-init sliders and other components
+          APP.Plugins.Sliders.init();
         }
       });
     },

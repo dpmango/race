@@ -2,7 +2,7 @@
 .fullpage(js-fullpage)
 
   // fp section MAIN
-  .section
+  .section.section--main
     .home-section
       .home-section__background.home-section__background--with-overlay
         .home-section__background-overlay
@@ -35,9 +35,8 @@
                     .news-home__date 13 марта 2019
                     .news-home__content ГК "Рэйс" организовала спутниковую связь на Geek Picnic.
 
-
   // fp section SERVICES
-  .section
+  .section(js-teleport data-teleport-to="home-slide-1" data-teleport-condition="<577")
     .home-section
       .home-section__background
         img(src='img/homeSectionBg_2.jpg' srcset='img/homeSectionBg_2@2x.jpg 2x')
@@ -70,7 +69,7 @@
 
 
   // fp section PROD
-  .section
+  .section(js-teleport data-teleport-to="home-slide-2" data-teleport-condition="<577")
     .home-section
       .home-section__background
         img(src='img/homeSectionBg_3.jpg' srcset='img/homeSectionBg_3@2x.jpg 2x')
@@ -100,7 +99,7 @@
                   a(href='#').navmenu-home__link= navlink
 
   // fp section SOLUTIONS
-  .section
+  .section(js-teleport data-teleport-to="home-slide-3" data-teleport-condition="<577")
     .home-section
       .home-section__background
         img(src='img/homeSectionBg_4.jpg' srcset='img/homeSectionBg_4@2x.jpg 2x')
@@ -129,3 +128,11 @@
                 // col
                 .navmenu-home__col(data-aos="fade-up")
                   a(href='#').navmenu-home__link= navlink
+
+  // homepage mobile slider
+  .home-mobslider
+    .swiper-container(js-home-swiper)
+      .swiper-wrapper
+        .swiper-slide(data-teleport-target="home-slide-1")
+        .swiper-slide(data-teleport-target="home-slide-2")
+        .swiper-slide(data-teleport-target="home-slide-3")

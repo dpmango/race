@@ -10,6 +10,10 @@
           instance: undefined,
           disableOn: 1024,
         },
+        homeSections: {
+          instance: undefined,
+          disableOn: 576,
+        },
       },
     },
     init: function() {
@@ -57,9 +61,13 @@
       if ($(homeNews).length > 0) {
         this.initHomeNewsSwiper(homeNews);
       }
+      var homeSlider = '[js-home-swiper]';
+      if ($(homeSlider).length > 0) {
+        this.initHomeSwiper(homeSlider);
+      }
     },
     initHomeNewsSwiper: function(selector) {
-      var dataObj = this.data.responsiveSwipers.homeNews;
+      var dataObj = this.data.responsiveSwipers.homeSections;
 
       if ($(selector).length > 0) {
         if (window.innerWidth >= dataObj.disableOn) {
@@ -82,6 +90,28 @@
               //     spaceBetween: 0,
               //   },
               // },
+            });
+          }
+        }
+      }
+    },
+    initHomeSwiper: function(selector) {
+      var dataObj = this.data.responsiveSwipers.homeNews;
+
+      if ($(selector).length > 0) {
+        if (window.innerWidth >= dataObj.disableOn) {
+          if (dataObj.instance !== undefined) {
+            dataObj.instance.destroy(true, true);
+            dataObj.instance = undefined;
+          }
+        } else {
+          if (dataObj.instance === undefined) {
+            dataObj.instance = new Swiper(selector, {
+              setWrapperSize: false,
+              spaceBetween: 0,
+              slidesPerView: 1,
+              normalizeSlideIndex: true,
+              freeMode: false,
             });
           }
         }

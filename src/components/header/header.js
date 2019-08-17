@@ -67,13 +67,14 @@
           }
         })
         .on('click', function(e) {
+          // close on outside clicks
           if (window.innerWidth <= 1024) {
             var $target = $(e.target);
             var $closestHeader = $target.closest('.header').length === 0;
             var $closestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
 
             if ($closestHeader && $closestNaviWrapper) {
-              _this.closeMobileMenu();
+              // _this.closeMobileMenu();
             }
           }
         })

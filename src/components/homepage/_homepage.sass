@@ -3,6 +3,13 @@
   display: flex
   flex-direction: column
   overflow: hidden
+  // &--main
+
++r($sm)
+  .section
+    display: none
+    &--main
+      display: flex
 
 // AOS FIX
 .section.active
@@ -264,3 +271,16 @@
 +r($sm)
   .navmenu-home
     display: none
+
+
+
+// mobile-slider section
+.home-mobslider
+  display: none
+  padding: 15px
+  .home-section__title
+    margin-top: 0
+
++r($sm)
+  .home-mobslider
+    display: block
