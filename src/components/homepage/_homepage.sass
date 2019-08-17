@@ -150,7 +150,6 @@
   .home-section
     &__title
       font-size: 85px
-      line-height: 1.22
 
     &__description
       font-size: 18px
@@ -160,6 +159,21 @@
   .home-section
     &__content
       padding-left: 40px
+
++r($lg)
+  .home-section
+    &__title
+      font-size: 60px
+
++r($md)
+  .home-section
+    &__title
+      font-size: 40px
+
++r($sm)
+  .home-section
+    &__title
+      font-size: 24px
 
 // news home
 .news-home
@@ -203,6 +217,21 @@
     line-height: 1.75
     transition: color .25s $ease
 
++r($hd)
+  .news-home
+    margin-right: 50px
+    &__content
+      max-width: 300px
+      font-size: 14px
+
++r($lg)
+  .news-home
+    //slider goes here
+    margin-right: 0
+    &__col
+      flex-basis: 300px
+      max-width: 300px
+
 
 // navmenu home
 .navmenu-home
@@ -231,3 +260,7 @@
     transition: color .25s $ease
     &:hover
       color: $colorPrimary
+
++r($sm)
+  .navmenu-home
+    display: none

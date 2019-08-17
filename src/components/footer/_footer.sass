@@ -1,7 +1,69 @@
 // FOOTER
 .footer
-  background: #f5f5f5
+  background: #020102
+  color: white
+  padding-top: 30px
+
   &__wrapper
     display: flex
+    flex-direction: column
     align-items: center
-    height: 100px
+    text-align: center
+    padding: 1em 0 1.5em
+
+  &__address
+    display: inline-block
+    font-weight: 600
+    font-size: 14px
+    line-height: 1.57
+    transition: color .25s $ease
+    span
+      display: inline
+      margin-right: 0.5em
+    .ico
+      transform: translateY(0.3em)
+      fill: $colorOrange
+      font-size: 20px
+      transition: transform .25s $ease
+    &:hover
+      color: $colorPrimary
+      .ico
+        transform: translateY(0.3em) scale(1.2)
+
+  &__phone
+    display: inline-block
+    margin: 1em 0
+    font-weight: 700
+    font-size: 20px
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+
+  &__mail
+    display: inline-block
+    margin: 0.5em 0
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    color: $colorOrange
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+
+  &__bottom
+    border-top: 1px solid #4F4F4F
+    text-align: center
+    padding-bottom: 1em
+
+  &__copy
+    font-weight: 500
+    font-size: 12px
+    margin: 2em 0
+
++r($sm)
+  .footer
+    &__wrapper
+      text-align: left
+      align-items: flex-start
+    &__bottom
+      text-align: left

@@ -1,6 +1,12 @@
 // FOOTER :: START
 footer.footer
-  .container
+  .container.container--full
     .footer__wrapper
-
+      a(href="https://maps.yandex.ru/" target="_blank").footer__address
+        span 141407, МО, Химки, ул. Панфилова, 19, Кантри Парк
+        +svgMono('out-link')
+      a(href="tel:+74956416155").footer__phone +7 (495) 641 61 55
+      a(href="mailto:info@race.ru").footer__mail info@race.ru
+    .footer__bottom
+      p.footer__copy 1995-2019 © Race Communications
 // FOOTER :: END

@@ -17,22 +17,23 @@
           // news-home
           .home-section__news.news-home
             .news-home__title(data-aos="fade-up") 25 лет на рынке телекоммуникаций.
-            .news-home__grid
-              // col
-              .news-home__col(data-aos="fade-up")
-                a(href="#").news-home__card
-                  .news-home__date 13 марта 2019
-                  .news-home__content Специалисты Группы компаний приняли участие в «SATCOMRUS 2018: SMART SATELLITE – идеи и инновации».
-              // col
-              .news-home__col(data-aos="fade-up")
-                a(href="#").news-home__card
-                  .news-home__date 13 марта 2019
-                  .news-home__content Специалисты ГК "Рэйс" представили новые разработки на форуме "Армия-2018"
-              // col
-              .news-home__col(data-aos="fade-up")
-                a(href="#").news-home__card
-                  .news-home__date 13 марта 2019
-                  .news-home__content ГК "Рэйс" организовала спутниковую связь на Geek Picnic.
+            .news-home__grid.swiper-container(js-home-news-swiper)
+              .swiper-wrapper
+                // col
+                .news-home__col.swiper-slide(data-aos="fade-up")
+                  a(href="#").news-home__card
+                    .news-home__date 13 марта 2019
+                    .news-home__content Специалисты Группы компаний приняли участие в «SATCOMRUS 2018: SMART SATELLITE – идеи и инновации».
+                // col
+                .news-home__col.swiper-slide(data-aos="fade-up")
+                  a(href="#").news-home__card
+                    .news-home__date 13 марта 2019
+                    .news-home__content Специалисты ГК "Рэйс" представили новые разработки на форуме "Армия-2018"
+                // col
+                .news-home__col.swiper-slide(data-aos="fade-up")
+                  a(href="#").news-home__card
+                    .news-home__date 13 марта 2019
+                    .news-home__content ГК "Рэйс" организовала спутниковую связь на Geek Picnic.
 
 
   // fp section SERVICES

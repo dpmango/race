@@ -6,9 +6,9 @@
     data: {
       swipers: [],
       responsiveSwipers: {
-        featuredProducts: {
+        homeNews: {
           instance: undefined,
-          disableOn: 1201,
+          disableOn: 1024,
         },
       },
     },
@@ -53,13 +53,13 @@
     },
 
     initResponsiveSwipers: function() {
-      var featuredProducts = '[js-featured-products-swiper]';
-      if ($(featuredProducts).length > 0) {
-        this.initFeaturedProductsSwiper(featuredProducts);
+      var homeNews = '[js-home-news-swiper]';
+      if ($(homeNews).length > 0) {
+        this.initHomeNewsSwiper(homeNews);
       }
     },
-    initFeaturedProductsSwiper: function(selector) {
-      var dataObj = this.data.responsiveSwipers.featuredProducts;
+    initHomeNewsSwiper: function(selector) {
+      var dataObj = this.data.responsiveSwipers.homeNews;
 
       if ($(selector).length > 0) {
         if (window.innerWidth >= dataObj.disableOn) {
@@ -70,12 +70,18 @@
         } else {
           if (dataObj.instance === undefined) {
             dataObj.instance = new Swiper(selector, {
+              watchOverflow: true,
+              setWrapperSize: false,
+              spaceBetween: 0,
               slidesPerView: 'auto',
-              breakpoints: {
-                992: {
-                  spaceBetween: 0,
-                },
-              },
+              normalizeSlideIndex: true,
+              freeMode: true,
+              freeModeSticky: true,
+              // breakpoints: {
+              //   992: {
+              //     spaceBetween: 0,
+              //   },
+              // },
             });
           }
         }

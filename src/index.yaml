@@ -4,7 +4,7 @@ PageList:
   - file: homepage.html
     ready: 75
   - file: services.html
-    ready: 0
+    ready: 10
   - file: services-article.html
     ready: 0
   - file: production.html
