@@ -21,10 +21,34 @@
   &__link
     font-weight: 600
     font-size: 16px
-    line-height: 20px
+    line-height: 1.25
     transition: color .25s $ease
     &:hover
       color: $colorPrimary
+
++r($hd)
+  .navmenu-home
+    padding-bottom: 40px
+    &__link
+      font-size: 14px
+
++r($lg)
+  .navmenu-home
+    // slider goes here
+    &__grid
+      margin-right: -30px
+      &::after
+        display: inline
+        content: ' '
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        z-index: 2
+        width: 60px
+        background: linear-gradient(to right, rgba(white, .01) 0%, rgba(white, .99) 100%)
+    &__col
+      flex-shrink: 0
 
 +r($sm)
   .navmenu-home

@@ -9,10 +9,9 @@
         video(muted loop autoplay poster="img/homeSectionBg_1.jpg")
           source(src="video/testBgVideo.mp4" type="video/mp4")
           source(src="video/testBgVideo.webm" type="video/webm")
-
         //- img(src='img/homeSectionBg_1.jpg' srcset='img/homeSectionBg_1@2x.jpg 2x')
       .home-section__content
-        .home-section__title(data-aos="fade-up") Мы строим телекоммуникации
+        .home-section__title(data-aos="fade-up") Мы строим <br/>телекоммуникации
         .home-section__bottom
           // news-home
           .home-section__news.news-home(data-aos="fade-up")
@@ -61,11 +60,12 @@
                 "Аренда оборудования",
                 "Консалтинг в сфере ИТ и телеком"
               ]
-            .navmenu-home__grid
-              each navlink in servicesList
-                // col
-                .navmenu-home__col(data-aos="fade-up")
-                  a(href='#').navmenu-home__link= navlink
+            .navmenu-home__grid.swiper-container(js-home-navmenu-swiper)
+              .swiper-wrapper
+                each navlink in servicesList
+                  // col
+                  .navmenu-home__col.swiper-slide(data-aos="fade-up")
+                    a(href='#').navmenu-home__link= navlink
 
 
   // fp section PROD
@@ -92,11 +92,12 @@
                 "Спутниковые усилители BUC",
                 "Телекоммуникационное оборудование",
               ]
-            .navmenu-home__grid
-              each navlink in servicesList
-                // col
-                .navmenu-home__col(data-aos="fade-up")
-                  a(href='#').navmenu-home__link= navlink
+            .navmenu-home__grid.swiper-container(js-home-navmenu-swiper)
+              .swiper-wrapper
+                each navlink in servicesList
+                  // col
+                  .navmenu-home__col.swiper-slide(data-aos="fade-up")
+                    a(href='#').navmenu-home__link= navlink
 
   // fp section SOLUTIONS
   .section(js-teleport data-teleport-to="home-slide-3" data-teleport-condition="<577")
@@ -123,11 +124,12 @@
                 "Производство VSAT оборудования",
                 "Мультисервисная рассылка",
               ]
-            .navmenu-home__grid
-              each navlink in servicesList
-                // col
-                .navmenu-home__col(data-aos="fade-up")
-                  a(href='#').navmenu-home__link= navlink
+            .navmenu-home__grid.swiper-container(js-home-navmenu-swiper)
+              .swiper-wrapper
+                each navlink in servicesList
+                  // col
+                  .navmenu-home__col.swiper-slide(data-aos="fade-up")
+                    a(href='#').navmenu-home__link= navlink
 
   // homepage mobile slider
   .home-mobslider

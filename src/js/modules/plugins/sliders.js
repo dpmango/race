@@ -10,6 +10,10 @@
           instance: undefined,
           disableOn: 1024,
         },
+        homeNavMenu: {
+          instances: [undefined, undefined, undefined],
+          disableOn: 1024,
+        },
         homeSections: {
           instance: undefined,
           disableOn: 576,
@@ -17,46 +21,51 @@
       },
     },
     init: function() {
-      this.initSwipers();
+      // this.initSwipers();
       this.initResponsiveSwipers();
       this.listenResize();
+    },
+    reinit: function() {
+      // without resize listeners double check
+      // this.initSwipers();
+      this.initResponsiveSwipers(true);
     },
     listenResize: function() {
       _window.on('resize', debounce(this.initResponsiveSwipers.bind(this), 200));
     },
     initSwipers: function() {
       // EXAMPLE SWIPER
-      new Swiper('[js-slider]', {
-        wrapperClass: 'swiper-wrapper',
-        slideClass: 'example-slide',
-        direction: 'horizontal',
-        loop: false,
-        watchOverflow: true,
-        setWrapperSize: false,
-        spaceBetween: 0,
-        slidesPerView: 'auto',
-        // loop: true,
-        normalizeSlideIndex: true,
-        // centeredSlides: true,
-        freeMode: true,
-        // effect: 'fade',
-        autoplay: {
-          delay: 5000,
-        },
-        navigation: {
-          nextEl: '.example-next',
-          prevEl: '.example-prev',
-        },
-        breakpoints: {
-          // when window width is <= 992px
-          992: {
-            autoHeight: true,
-          },
-        },
-      });
+      // new Swiper('[js-slider]', {
+      //   wrapperClass: 'swiper-wrapper',
+      //   slideClass: 'example-slide',
+      //   direction: 'horizontal',
+      //   loop: false,
+      //   watchOverflow: true,
+      //   setWrapperSize: false,
+      //   spaceBetween: 0,
+      //   slidesPerView: 'auto',
+      //   // loop: true,
+      //   normalizeSlideIndex: true,
+      //   // centeredSlides: true,
+      //   freeMode: true,
+      //   // effect: 'fade',
+      //   autoplay: {
+      //     delay: 5000,
+      //   },
+      //   navigation: {
+      //     nextEl: '.example-next',
+      //     prevEl: '.example-prev',
+      //   },
+      //   breakpoints: {
+      //     // when window width is <= 992px
+      //     992: {
+      //       autoHeight: true,
+      //     },
+      //   },
+      // });
     },
 
-    initResponsiveSwipers: function() {
+    initResponsiveSwipers: function(isHardReset) {
       var homeNews = '[js-home-news-swiper]';
       if ($(homeNews).length > 0) {
         this.initHomeNewsSwiper(homeNews);
@@ -65,9 +74,13 @@
       if ($(homeSlider).length > 0) {
         this.initHomeSwiper(homeSlider);
       }
+      var homeNavmenu = '[js-home-navmenu-swiper]';
+      if ($(homeNavmenu).length > 0) {
+        this.initHomeNavMenuSwiper(homeNavmenu, isHardReset);
+      }
     },
     initHomeNewsSwiper: function(selector) {
-      var dataObj = this.data.responsiveSwipers.homeSections;
+      var dataObj = this.data.responsiveSwipers.homeNews;
 
       if ($(selector).length > 0) {
         if (window.innerWidth >= dataObj.disableOn) {
@@ -83,20 +96,50 @@
               spaceBetween: 0,
               slidesPerView: 'auto',
               normalizeSlideIndex: true,
-              // freeMode: true,
-              // freeModeSticky: true,
-              // breakpoints: {
-              //   414: {
-              //     slidesPerView: 1,
-              //   },
-              // },
+            });
+          }
+        }
+      }
+    },
+    initHomeNavMenuSwiper: function(selector, isHardReset) {
+      // may have multiple intances
+      var dataObj = this.data.responsiveSwipers.homeNavMenu;
+      var $selectorObjects = $(selector);
+      var someInstanceUndefined = false;
+      $.each(dataObj.instances, function(i, instance) {
+        if (instance === undefined) {
+          someInstanceUndefined = true;
+        }
+      });
+
+      // destroy / init all instances
+      if ($selectorObjects.length > 0) {
+        if (window.innerWidth >= dataObj.disableOn) {
+          $.each(dataObj.instances, function(i, instance) {
+            if (instance !== undefined) {
+              instance.destroy(true, true);
+              dataObj.instances[i] = undefined;
+            }
+          });
+        } else {
+          if (someInstanceUndefined || isHardReset) {
+            $selectorObjects.each(function(i, selector) {
+              // console.log('try initialization', dataObj.instances[i], selector);
+              dataObj.instances[i] = new Swiper(selector, {
+                watchOverflow: true,
+                setWrapperSize: false,
+                spaceBetween: 0,
+                slidesPerView: 'auto',
+                normalizeSlideIndex: true,
+                slidesOffsetAfter: 15,
+              });
             });
           }
         }
       }
     },
     initHomeSwiper: function(selector) {
-      var dataObj = this.data.responsiveSwipers.homeNews;
+      var dataObj = this.data.responsiveSwipers.homeSections;
 
       if ($(selector).length > 0) {
         if (window.innerWidth >= dataObj.disableOn) {
@@ -108,12 +151,8 @@
           if (dataObj.instance === undefined) {
             dataObj.instance = new Swiper(selector, {
               setWrapperSize: false,
-              // spaceBetween: 30,
               slidesPerView: 1,
               normalizeSlideIndex: true,
-              freeMode: false,
-              // slidesOffsetBefore: 15,
-              // slidesOffsetAfter: 15,
               pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
