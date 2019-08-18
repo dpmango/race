@@ -83,11 +83,11 @@
               spaceBetween: 0,
               slidesPerView: 'auto',
               normalizeSlideIndex: true,
-              freeMode: true,
-              freeModeSticky: true,
+              // freeMode: true,
+              // freeModeSticky: true,
               // breakpoints: {
-              //   992: {
-              //     spaceBetween: 0,
+              //   414: {
+              //     slidesPerView: 1,
               //   },
               // },
             });
@@ -108,10 +108,17 @@
           if (dataObj.instance === undefined) {
             dataObj.instance = new Swiper(selector, {
               setWrapperSize: false,
-              spaceBetween: 0,
+              // spaceBetween: 30,
               slidesPerView: 1,
               normalizeSlideIndex: true,
               freeMode: false,
+              // slidesOffsetBefore: 15,
+              // slidesOffsetAfter: 15,
+              pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+              },
             });
           }
         }

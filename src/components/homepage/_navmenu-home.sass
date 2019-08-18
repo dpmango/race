@@ -1,0 +1,31 @@
+// navmenu home
+.navmenu-home
+  padding: 30px 30px 60px
+  &__title
+    margin-top: 1.2em
+    font-weight: 500
+    font-size: 12px
+    text-transform: uppercase
+  &__grid
+    display: flex
+    margin: 10px -15px -15px
+  &__col
+    width: auto
+    min-width: 1px
+    min-height: 0
+    flex: 0 1 auto
+    max-width: 242px
+    padding: 15px
+    display: flex
+    flex-direction: column
+  &__link
+    font-weight: 600
+    font-size: 16px
+    line-height: 20px
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+
++r($sm)
+  .navmenu-home
+    display: none

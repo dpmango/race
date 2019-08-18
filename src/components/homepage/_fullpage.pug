@@ -3,7 +3,7 @@
 
   // fp section MAIN
   .section.section--main
-    .home-section
+    .home-section.home-section--main
       .home-section__background.home-section__background--with-overlay
         .home-section__background-overlay
         video(muted loop autoplay poster="img/homeSectionBg_1.jpg")
@@ -15,22 +15,22 @@
         .home-section__title(data-aos="fade-up") Мы строим телекоммуникации
         .home-section__bottom
           // news-home
-          .home-section__news.news-home
-            .news-home__title(data-aos="fade-up") 25 лет на рынке телекоммуникаций.
+          .home-section__news.news-home(data-aos="fade-up")
+            .news-home__title 25 лет на рынке телекоммуникаций.
             .news-home__grid.swiper-container(js-home-news-swiper)
               .swiper-wrapper
                 // col
-                .news-home__col.swiper-slide(data-aos="fade-up")
+                .news-home__col.swiper-slide
                   a(href="#").news-home__card
                     .news-home__date 13 марта 2019
                     .news-home__content Специалисты Группы компаний приняли участие в «SATCOMRUS 2018: SMART SATELLITE – идеи и инновации».
                 // col
-                .news-home__col.swiper-slide(data-aos="fade-up")
+                .news-home__col.swiper-slide
                   a(href="#").news-home__card
                     .news-home__date 13 марта 2019
                     .news-home__content Специалисты ГК "Рэйс" представили новые разработки на форуме "Армия-2018"
                 // col
-                .news-home__col.swiper-slide(data-aos="fade-up")
+                .news-home__col.swiper-slide
                   a(href="#").news-home__card
                     .news-home__date 13 марта 2019
                     .news-home__content ГК "Рэйс" организовала спутниковую связь на Geek Picnic.
@@ -136,3 +136,5 @@
         .swiper-slide(data-teleport-target="home-slide-1")
         .swiper-slide(data-teleport-target="home-slide-2")
         .swiper-slide(data-teleport-target="home-slide-3")
+
+      .swiper-pagination

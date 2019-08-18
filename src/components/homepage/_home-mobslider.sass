@@ -1,0 +1,41 @@
+
+// mobile-slider section
+.home-mobslider
+  display: none
+  margin: 35px 0px 80px
+  .home-section__title
+    margin-top: 0
+  .swiper-slide
+    padding-left: 15px
+    padding-right: 15px
+  .swiper-pagination
+    position: absolute
+    bottom: 10px
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2
+    display: flex
+    flex-wrap: wrap
+  .swiper-pagination-bullet
+    position: relative
+    padding: 8px
+    display: inline-block
+    cursor: pointer
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate3d(-50%,-50%,0)
+      size: 4px
+      border-radius: 50%
+      background: rgba(#202020, .4)
+      transition: background .25s $ease
+  .swiper-pagination-bullet-active
+    &::after
+      background: white
+
++r($sm)
+  .home-mobslider
+    display: block
