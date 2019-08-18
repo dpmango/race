@@ -4,9 +4,17 @@
 (function($, APP) {
   APP.Plugins.CustomCursor = {
     init: function() {
-      this.initCursor();
-      this.initHoversCircle();
-      this.initHoversMain();
+      if (!APP.Browser().data.isMobile) {
+        this.initCursor();
+        this.initHoversCircle();
+        this.initHoversMain();
+      } else {
+        this.disableCursor();
+      }
+    },
+    disableCursor: function() {
+      $('.circle-cursor--outer').hide();
+      $('.circle-cursor--inner').hide();
     },
     initCursor: function() {
       const { Back } = window;
