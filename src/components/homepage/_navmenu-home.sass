@@ -35,6 +35,8 @@
 +r($lg)
   .navmenu-home
     // slider goes here
+    padding-top: 15px
+    padding-bottom: 25px
     &__grid
       margin-right: -30px
       &::after
@@ -49,6 +51,12 @@
         background: linear-gradient(to right, rgba(white, .01) 0%, rgba(white, .99) 100%)
     &__col
       flex-shrink: 0
+
+@media only screen and (max-height: 600px)
+  .navmenu-home
+    padding-top: 15px
+    padding-bottom: 25px
+
 
 +r($sm)
   .navmenu-home
