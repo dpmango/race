@@ -1,0 +1,46 @@
+
+// MODALS
+// request modal
+.modal#modal-request
+  //form request
+  form.modal__form(action="ajax-endpoint.php" js-validate-form)
+    .modal__title Написать нам
+    .ui-group
+      .ui-input(js-input-focus)
+        label.ui-input__float-label(for="mreq_name") Представьтесь пожалуйста <span class="required">*</span>
+        input(type="text" name="name" id="mreq_name" required)
+    .ui-group
+      .ui-input(js-input-focus)
+        label.ui-input__float-label(for="mreq_email") Напишите ваш e-mail  <span class="required">*</span>
+        input(type="email" name="email" id="mreq_email" required)
+    .ui-group
+      .ui-input(js-input-focus)
+        label.ui-input__float-label(for="mreq_comment") Сообщение <span class="required">*</span>
+        textarea(type="text" name="comment" id="mreq_comment" rows="1" data-min-rows="1" required)
+    .ui-group
+      button(type="submit").btn.btn-primary
+        span Отправить
+    .modal__form-note Нажимая кнопку "Отправить" Вы соглашаетесь с политикой конфиденциальности.
+
+
+// callback modal
+.modal#modal-callback
+  // form callback
+  form.modal__form(action="ajax-endpoint.php" js-validate-form)
+    .modal__title Заказать звонок
+    .ui-group
+      .ui-input(js-input-focus)
+        label.ui-input__float-label(for="mcb_name") Представьтесь пожалуйста <span class="required">*</span>
+        input(type="text" name="name" id="mcb_name" required)
+    .ui-group
+      .ui-input(js-input-focus)
+        label.ui-input__float-label(for="mcb_phone") Напишите ваш телефон <span class="required">*</span>
+        input(type="tel" name="phone" id="mcb_phone" required)
+    .ui-group
+      button(type="submit").btn.btn-primary
+        span Заказать
+    .modal__form-note Нажимая кнопку "Заказать" Вы соглашаетесь с политикой конфиденциальности.
+
+// thanks modal
+.modal#thanks-modal
+  .modal__title Спасибо! Мы обязательно с вами свяжемся в ближайшее время.

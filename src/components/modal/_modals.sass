@@ -1,0 +1,49 @@
+
+.modal
+  background: white
+  padding: 120px 60px 60px
+  text-align: left
+  max-width: 550px
+  margin: 40px auto
+  position: relative
+  &__form
+    .btn
+      border-width: 2px
+  &__title
+    font-weight: 700
+    font-size: 24px
+    line-height: 1.2
+    margin-bottom: 0.35em
+
+  &__form-note
+    font-weight: 500
+    font-size: 14px
+    line-height: 1.86
+    color: #828282
+
+  .mfp-close
+    background: $colorOrange
+    color: white
+    size: 100px
+    opacity: 1
+    font-size: 45px
+
++r($md)
+  .modal
+    padding-top: 80px
+    .mfp-close
+      size: 80px
+      font-size: 40px
+
++r($sm)
+  .modal
+    padding: 60px 30px 40px
+    max-width: 420px
+    .mfp-close
+      size: 60px
+      font-size: 32px
+    &__title
+      font-size: 18px
+      margin-bottom: 0.5em
+    &__form-note
+      font-size: 12px

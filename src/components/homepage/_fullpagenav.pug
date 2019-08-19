@@ -1,12 +1,11 @@
 // fullpage nav
 .fullpage-nav
   .fullpage-nav__wrapper
-
     // actions
     .fullpage-nav__actions
-      a(href="mailto:test@me.com").fullpage-nav__action.js-circle-nav
+      a(href="#modal-request" js-popup).fullpage-nav__action.js-circle-nav
         +svgMono('mail')
-      a(href="tel:+74959167223").fullpage-nav__action.js-circle-nav
+      a(href="#modal-callback" js-popup).fullpage-nav__action.js-circle-nav
         +svgMono('phone-outline')
       a(href="#" js-fullpage-top).fullpage-nav__action.js-circle-nav
         +svgMono('arrow-top')

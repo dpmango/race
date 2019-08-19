@@ -42,23 +42,26 @@
       },
       validateSubmitHandler: function(form) {
         $(form).addClass('loading');
-        $.ajax({
-          type: 'POST',
-          url: $(form).attr('action'),
-          data: $(form).serialize(),
-          success: function(response) {
-            $(form).removeClass('loading');
-            var data = $.parseJSON(response);
-            if (data.status === 'success') {
-              // do something I can't test
-            } else {
-              $(form)
-                .find('[data-error]')
-                .html(data.message)
-                .show();
-            }
-          },
-        });
+
+        // TODO - move those to sucess callback
+        APP.Plugins.Modals.openMfp('#thanks-modal');
+        // $.ajax({
+        //   type: 'POST',
+        //   url: $(form).attr('action'),
+        //   data: $(form).serialize(),
+        //   success: function(response) {
+        //     $(form).removeClass('loading');
+        //     var data = $.parseJSON(response);
+        //     if (data.status === 'success') {
+        //       // do something I can't test
+        //     } else {
+        //       $(form)
+        //         .find('[data-error]')
+        //         .html(data.message)
+        //         .show();
+        //     }
+        //   },
+        // });
       },
       masks: {
         phone: {

@@ -3,9 +3,8 @@
 //////////
 (function($, APP) {
   APP.Plugins.Modals = {
-    init: function() {
-      var startWindowScroll = 0;
-      $('[js-popup]').magnificPopup({
+    data: {
+      shared: {
         type: 'inline',
         fixedContentPos: true,
         fixedBgPos: true,
@@ -14,17 +13,29 @@
         preloader: false,
         midClick: true,
         removalDelay: 300,
-        mainClass: 'popup-buble',
-        callbacks: {
-          beforeOpen: function() {
-            startWindowScroll = _window.scrollTop();
-            // $('html').addClass('mfp-helper');
+        mainClass: 'mfp-zoom-in',
+      },
+    },
+    init: function() {
+      var startWindowScroll = 0;
+      var _this = this;
+      $('[js-popup]').magnificPopup(
+        $.extend(_this.data.shared, {
+          callbacks: {
+            // beforeOpen: function() {
+            //   // startWindowScroll = _window.scrollTop();
+            //   // $('html').addClass('mfp-helper');
+            // },
+            // close: function() {
+            //   // $('html').removeClass('mfp-helper');
+            //   _window.scrollTop(startWindowScroll);
+            // },
           },
-          close: function() {
-            // $('html').removeClass('mfp-helper');
-            _window.scrollTop(startWindowScroll);
-          },
-        },
+        })
+      );
+
+      _document.on('click', '.js-close-modal', function() {
+        $.magnificPopup.close();
       });
 
       $('[js-popup-gallery]').magnificPopup({
@@ -41,6 +52,17 @@
           tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
         },
       });
+    },
+    openMfp: function(sourceSeledctor) {
+      var _this = this;
+      $.magnificPopup.open(
+        $.extend(_this.data.shared, {
+          items: {
+            src: sourceSeledctor,
+          },
+          type: 'inline',
+        })
+      );
     },
     destroy: function() {
       // ... code ...
