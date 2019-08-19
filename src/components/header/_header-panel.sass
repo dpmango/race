@@ -1,0 +1,88 @@
+.header-panel
+  position: fixed 0
+  z-index: 10
+  background: rgba($fontColor, .7)
+  display: flex
+  flex-direction: column
+  pointer-events: none
+  opacity: 0
+  transform: translate3d(0,-0%,0)
+  transition: opacity .25s $ease
+  &__wrapper
+    flex: 1 1 auto
+    overflow-y: auto
+    opacity: 0
+    transform: translate3d(0,-40px,0)
+    transition: opacity .25s $ease, transform .25s $ease
+    will-change: transform
+    backface-visibility: hidden
+    transform-style: preserve-3d
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 2
+    .hamburger-inner
+      background-color: white
+      &::before, &::after
+        background-color: white
+
+  &.is-active
+    pointer-events: all
+    // transform: translate3d(0,0,0)
+    opacity: 1
+    .header-panel
+      &__wrapper
+        opacity: 1
+        transform: translate3d(0,0,0)
+
+// search
+.header-search
+  width: 100%
+  max-width: 810px
+  padding: 220px 40px 40px
+  margin: auto
+  &__form
+    position: relative
+
+  input
+    -webkit-appearance: none
+    display: block
+    width: 100%
+    color: #F9F9F9
+    background: transparent
+    border: 0
+    border-bottom: 2px solid #F9F9F9
+    font-weight: 600
+    font-size: 20px
+    line-height: 1.65
+    padding: 7px 35px 7px 0
+    font-family: $baseFont
+    &::placeholder
+      color: #F9F9F9
+
+  button
+    display: inline-block
+    position: absolute
+    top: 50%
+    right: -10px
+    padding: 10px
+    background: transparent
+    font-size: 0
+    color: white
+    transform: translateY(-50%)
+    .ico
+      font-size: 17px
+
++r($lg)
+  .header-search
+    padding-top: 160px
+    input
+      font-size: 18px
++r($sm)
+  .header-search
+    padding-top: 140px
+    padding-left: 20px
+    padding-right: 20px
+    input
+      font-size: 16px

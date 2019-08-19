@@ -153,6 +153,7 @@
               setWrapperSize: false,
               slidesPerView: 1,
               normalizeSlideIndex: true,
+              loop: true,
               pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',

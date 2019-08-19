@@ -27,7 +27,7 @@ header.header
       a(href="#modal-request" js-popup).header__mail.js-circle-nav
         +svgMono('mail')
 
-      a(href="#").header__search.js-circle-nav
+      a(href="#" js-open-header-panel data-panel="search").header__search.js-circle-nav
         +svgMono('search')
 
       a(href="#").header__lang.js-circle-nav
@@ -37,3 +37,17 @@ header.header
       .hamburger.hamburger--squeeze(js-hamburger)
         .hamburger-box
           .hamburger-inner
+
+// Header search
+.header-panel(data-header-panel="search")
+  .header-panel__close(js-close-header-panel)
+    .hamburger.hamburger--squeeze.is-active
+      .hamburger-box
+        .hamburger-inner
+
+  .header-panel__wrapper
+    .header-search
+      form.header-search__form(action="")
+        input(type="text" placeholder="Поиск по сайту")
+        button.js-circle-nav
+          +svgMono('search')

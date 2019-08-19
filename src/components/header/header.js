@@ -94,6 +94,25 @@
               .closest('.mobile-navi')
               .removeAttr('data-active-panel');
           }
+        })
+        .on('click', '[js-open-header-panel]', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          var dataPanel = $(this).data('panel');
+
+          $('[data-header-panel="' + dataPanel + '"]').addClass('is-active');
+          APP.Plugins.ScrollBlock.disableScroll();
+        })
+        .on('click', '[js-close-header-panel]', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          $(this)
+            .closest('.header-panel')
+            .removeClass('is-active');
+
+          APP.Plugins.ScrollBlock.enableScroll();
         });
     },
     listenScroll: function() {
