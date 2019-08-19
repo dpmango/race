@@ -44,7 +44,7 @@
         $(form).addClass('loading');
 
         // TODO - move those to sucess callback
-        APP.Plugins.Modals.openMfp('#thanks-modal');
+        APP.Plugins.Modals.openMfp('#modal-thanks');
         $(form)
           .find('input')
           .val('');
