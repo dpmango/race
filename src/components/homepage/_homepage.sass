@@ -47,6 +47,8 @@
       height: 100%
       width: 100%
       object-fit: cover
+    video + img, picture
+      display: none
     &--with-overlay
       &::after
         display: inline-block
@@ -139,7 +141,9 @@
     font-size: 0
     border-radius: 50%
     transition: transform .25s $ease
+    backface-visibility: hidden
     will-change: transform
+    transform-style: preserve-3d
     .ico
       font-size: 12px
 
@@ -153,6 +157,29 @@
   &__navmenu
     background: white
     color: $fontColor
+
+// IE FIX
+.is-ie
+  +r($sm)
+    .section
+      flex: 0 0 auto
+      display: block
+  .home-section
+    &__background-overlay
+      display: none
+    &__background
+      video
+        display: none
+        & + img, picture
+          display: block
+    &__content
+      height: 100vh
+      +r($sm)
+        height: auto
+    &__cta-icon
+      background-image: svg-load('../icons/svg-mono/btn-arrow-next.svg')
+      background-repeat: no-repeat
+      background-position: center center
 
 +r($hd)
   .home-section
