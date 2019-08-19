@@ -45,6 +45,10 @@
 
         // TODO - move those to sucess callback
         APP.Plugins.Modals.openMfp('#thanks-modal');
+        $(form)
+          .find('input')
+          .val('');
+
         // $.ajax({
         //   type: 'POST',
         //   url: $(form).attr('action'),
