@@ -97,3 +97,57 @@ p + p
       color: $colorOrange
       &::after
         transform: translate(7px, -50%)
+
+/* lists
+.ul-list, .ol-list
+  padding: 0
+  // TODO ul styles are not quite here.
+  li
+    position: relative
+    display: block
+    font-weight: 500
+    font-size: 14px
+    line-height: 1.86
+    padding: 1em
+    margin-bottom: 10px
+    &:last-of-type
+      margin-bottom: 0
+    &::before
+      position: absolute
+      top: 0
+      left: 0.65em
+      display: inline-block
+
+  &--bordered
+    li
+      border: 1px solid $borderColor
+
+
+.ul-list
+  li
+    &::before
+      content: '—'
+
+.ol-list
+  counter-reset: ol-counter
+  li
+    counter-increment: ol-counter
+    padding: 0.8em 48px 1.2em 48px
+    &::before
+      content: counter(ol-counter)
+      font-weight: bold
+      font-size: 24px
+      color: #32A457
+
+ul.ul-list, ol.ol-list
+  margin: 2.5em 0
+
+// +r($lg)
+//   .ul-list, .ol-list
+//     li
+//       font-size: 14px
+
+// +r($sm)
+//   .ul-list, .ol-list
+//     li
+//       font-size: 12px

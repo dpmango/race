@@ -1,0 +1,70 @@
+// ARTICLE
+.article
+  max-width: 1080px
+  margin: 0 auto
+  padding: 100px 40px 100px
+  &__title
+    margin: 0
+  &__wrapper
+    display: flex
+    margin: 0 -15px
+  &__content, &__sidebar
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 0 15px
+  &__content
+    flex: 1 1 100%
+    max-width: 100%
+    padding-right: 30px
+
+  &__sidebar
+    flex: 0 0 370px
+    max-width: 370px
+    margin-right: -135px
+
+.sidebar
+  margin-top: 24px
+  &__wrapper
+    background: #2C2F33
+    color: white
+
+  &__menu
+    list-style: none
+    margin: 0
+    padding: 35px 0
+    li
+      display: block
+      font-weight: 600
+      font-size: 14px
+      line-height: 17px
+      margin-bottom: 7px
+      &:last-child
+        margin-bottom: 0
+      &.is-active
+        a
+          color: white
+          &::before
+            opacity: 1
+            transform: none
+    a
+      position: relative
+      display: inline-block
+      padding: 5px 32px
+      color: #D9DBDE
+      transition: color .25s $ease
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 12px
+        left: 5px
+        size: 16px 2px
+        background: $colorPrimary
+        opacity: 0
+        transform: translate(-5px,0)
+        position: none
+        transition: transform .25s $ease, opacity .25s $ease
+      &:hover
+        color: white
+

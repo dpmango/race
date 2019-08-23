@@ -6,7 +6,7 @@ PageList:
   - file: services.html
     ready: 60
   - file: services-article.html
-    ready: 0
+    ready: 50
   - file: production.html
     ready: 40
   - file: production-article.html
