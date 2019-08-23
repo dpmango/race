@@ -1,0 +1,24 @@
+---
+title: UI
+---
+extends shared/_layout
+block content
+
+  // control header class
+  div(js-header-class data-class='is-black')
+
+  .content
+    .container
+      h2.h2-title Иконки
+      +svgMono('arrow-crumb-down')
+      +svgMono('arrow-down-big')
+      +svgMono('arrow-top')
+      +svgMono('btn-arrow-next')
+      +svgMono('btn-arrow-prev')
+      +svgMono('email')
+      +svgMono('mail')
+      +svgMono('out-link')
+      +svgMono('phone-outline')
+      +svgMono('phone')
+      +svgMono('search')
+      +svgMono('arrow-crumb-right')

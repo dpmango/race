@@ -36,6 +36,21 @@ $aos-distance: 10px !default;
       transform: translate3d($aos-distance, 0, 0);
     }
 
+    /**
+    * Blur animation
+    */
+    [data-aos^='blur'] {
+      filter: blur(5px);
+      transition-property: filter;
+      will-change: filter;
+      backface-visibility: hidden;
+
+      &.aos-animate {
+        filter: none;
+      }
+    }
+
+
     // [data-aos='fade-up-right'] {
     //   transform: translate3d(-$aos-distance, $aos-distance, 0);
     // }

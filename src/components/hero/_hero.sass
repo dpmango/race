@@ -1,0 +1,38 @@
+.hero
+  position: relative
+  min-height: 590px
+  display: flex
+  flex-direction: column
+  &__breadcrumbs
+    position: absolute
+    z-index: 3
+    top: 75px
+    left: 233px
+    right: 170px
+    border-bottom: 1px solid rgba(white, 0.2)
+
+  &__background
+    position: absolute 0
+    display: flex
+    flex-direction: column
+    z-index: 1
+    img
+      flex: 1 1 auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__content
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    position: relative
+    z-index: 2
+    color: white
+    padding: 140px 0 50px
+
+  &__title
+    margin: 0.25em 0
+  &__description
+    max-width: 750px

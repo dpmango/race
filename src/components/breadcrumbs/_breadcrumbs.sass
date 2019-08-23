@@ -1,0 +1,28 @@
+// Breadcrumbs
+.breadcrumbs
+  margin: 5px 0
+  &__list
+    list-style: none
+    margin: 0 -5px
+    padding: 0
+    li
+      display: inline-block
+      font-size: 12px
+      font-weight: 500
+    a, span
+      display: inline-block
+      padding: 5px
+      line-height: 1.42
+      color: #BDBDBD
+    a
+      transition: color .25s $ease
+      &::after
+        display: inline-block
+        content: ' '
+        background: svg-load('../icons/svg-mono/arrow-crumb-right.svg') no-repeat center
+        background-size: contain
+        size: 6px 9px
+        margin-left: 1.5em
+        // margin-right: -0.5em
+      &:hover
+        color: white

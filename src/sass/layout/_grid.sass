@@ -1,0 +1,25 @@
+.col-border-left
+  padding-left: 45px
+  &::before
+    display: inline-block
+    content: ' '
+    position: absolute
+    left: 15px
+    top: 1em
+    bottom: 0
+    width: 1px
+    background: #F2F2F2
+
+.row-border-bottom
+  position: relative
+  > [class*="col"]
+    padding-bottom: 70px
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    left: 15px
+    right: 15px
+    bottom: 0
+    height: 1px
+    background: #F2F2F2

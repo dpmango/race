@@ -9,6 +9,10 @@
   will-change: transform
   backface-visibility: hidden
   transform-style: preserve-3d
+  pointer-events: none
+  &__logo, &__menu, &__cta, &__hamburger
+    pointer-events: all
+
   &__wrapper
     color: white
     display: flex
@@ -148,6 +152,7 @@
       &__logo, &__menu, &__cta
         transform: translate3d(0,-30px, 0)
         opacity: 0
+        pointer-events: none
       &__hamburger
         pointer-events: all
 

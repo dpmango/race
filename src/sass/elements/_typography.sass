@@ -1,26 +1,30 @@
 // titles
 .h1-title
-  font-size: 72px
+  font-size: 70px
   font-weight: 700
-  line-height: 1
-  letter-spacing: em(-1.22, 72)
+  line-height: 1.2
 
 .h2-title
   font-size: 48px
   font-weight: 700
-  letter-spacing: em(-.33, 48)
 
 .h3-title
   font-size: 28px
-  letter-spacing: em(-0.17, 28)
   font-weight: 700
 
 // paragraphs
+.p-big
+  font-size: 20px
+  line-height: 1.65
+  font-weight: 600
+
 .p-main
   font-size: 18px
 
-.p-main
-  margin: 0
+.p-small
+  font-size: 14px
+  line-height: 1.86
+
 
 p + p
   margin-top: 1em
@@ -54,3 +58,41 @@ p + p
 // color modifiers
 .c-red
   color: $colorRed
+
+
+// lists
+.ul-list-links
+  font-size: 20px
+  list-style: none
+  margin: 1em 0
+  padding: 0
+  li
+    display: block
+    font-weight: 600
+    font-size: 18px
+    line-height: 1.22
+    margin: -10px -10px 30px
+    &:last-child
+      margin-bottom: 0
+  a
+    position: relative
+    padding: 10px
+    padding-right: 40px
+    display: inline-block
+    transition: color .25s $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      right: 0px
+      top: 50%
+      transform: translateY(-50%)
+      size: 17px 9px
+      background: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorPrimary) no-repeat center
+      background-size: contain
+      transition: transform .25s $ease
+
+    &:hover
+      color: $colorOrange
+      &::after
+        transform: translate(7px, -50%)
