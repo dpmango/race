@@ -1,0 +1,13 @@
+include ../breadcrumbs/_breadcrumbs
+
+// HERO
+.hero
+  .hero__breadcrumbs(data-aos="fade-down")
+    +breadcrumbs(["Главная", "Продукция"])
+
+  .hero__background(data-aos="blur")
+    img(src='img/heroBackground_2.jpg' srcset='img/heroBackground_2@2x.jpg 2x')
+  .hero__content(data-aos="fade-up")
+    .container.container--1080
+      h1.h1-title.hero__title(data-aos="fade-up") Продукция
+      p.p-big.hero__description(data-aos="fade-up") Группа компаний Race осуществляет организацию канальной инфраструктуры в отдаленных районах при помощи современных технологий построения спутниковых систем связи.

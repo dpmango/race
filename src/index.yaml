@@ -8,11 +8,11 @@ PageList:
   - file: services-article.html
     ready: 0
   - file: production.html
-    ready: 0
+    ready: 40
   - file: production-article.html
     ready: 0
   - file: solutions.html
-    ready: 0
+    ready: 60
   - file: solutions-article.html
     ready: 0
 
