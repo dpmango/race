@@ -1,7 +1,8 @@
 // CONTENT
 include ../breadcrumbs/_breadcrumbs
+include _partials/_sidebar
 
-.content(data-aos="fade-up")
+.content
   .content__breadcrumbs
     +breadcrumbs(["Главная", "Услуги", "Техническая поддержка"])
 
@@ -11,7 +12,7 @@ include ../breadcrumbs/_breadcrumbs
     .article__wrapper
       // article content
       .article__content
-        // caption like
+        // caption
         p.p-big(data-aos="fade-up") Группа компаний Race предлагает клиентам широкий спектр услуг по предоставлению круглосуточной технической поддержки наземных и спутниковых сетей передачи данных, а также по ремонту и замене оборудования различных производителей.
 
         div(js-stick-to-window data-position="left" data-stop="<992")
@@ -38,19 +39,11 @@ include ../breadcrumbs/_breadcrumbs
           p Одним из новых направлений технической поддержки является поддержка пользователей спутникового доступа в Интернет StarBlazer. Инженеры службы поддержки своевременно отслеживают появление новых обращений пользователей услуги и отвечают на вопросы через отдельный интерфейс поддержки пользователей услуги или на форумах StarBlazer
 
       // sidebar
-      .article__sidebar.sidebar
-        .sidebar__wrapper(js-sticky data-offset-top="100")
-          -
-            var menu = [
-              {name: "Подключение к спутниковым сетям"},
-              {name: "Поставка оборудования и программного обеспечения"},
-              {name: "Разработка и внедрение ПО"},
-              {name: "Техническая поддержка", active: true},
-              {name: "Аренда оборудования"},
-              {name: "Консалтинг в сфере ИТ и телеком"}
-            ]
-          .sidebar__menu
-            each li in menu
-              li(class={"is-active": li.active})
-                a(href="#")= li.name
-
+      +sidebarMenu([
+        {name: "Подключение к спутниковым сетям"},
+        {name: "Поставка оборудования и программного обеспечения"},
+        {name: "Разработка и внедрение ПО"},
+        {name: "Техническая поддержка", active: true},
+        {name: "Аренда оборудования"},
+        {name: "Консалтинг в сфере ИТ и телеком"}
+      ])

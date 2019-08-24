@@ -1,0 +1,31 @@
+// REQUEST FORM
+.reqform
+  .reqform__background(js-parallax-scale-background data-scale-power="2")
+    img(src='img/regFormBackground.jpg' srcset='img/regFormBackground@2x.jpg 2x')
+  .reqform__content
+    .container
+      form(action="ajax-endpoint.php" js-validate-form)
+        .reqform__title(data-aos="fade-up") Оставить заявку
+        .reqform__fields(data-aos="fade-up")
+          .reqform__col.ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="rf_name") Представьтесь пожалуйста <span class="required">*</span>
+              input(type="text" name="name" id="rf_name" required)
+          .reqform__col.ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="rf_email") Напишите ваш e-mail  <span class="required">*</span>
+              input(type="email" name="email" id="rf_email" required)
+          .reqform__col.ui-group
+            .ui-input(js-input-focus)
+              label.ui-input__float-label(for="rf_phone") Напишите ваш телефон <span class="required">*</span>
+              input(type="tel" name="phone" id="rf_phone" required)
+        .reqform__cta(data-aos="fade-up")
+          .ui-group
+            button(type="submit").btn.btn-primary.btn--c-white
+              span Отправить
+          .reqform__checkbox
+            .ui-group
+              .ui-checkbox
+                input(type="checkbox" checked id="rf_agree" name="agree" required)
+                label(for="rf_agree")
+                  span Я согласен на обработку <a href="#" target="_blank">персональных данных</a>, а также с условиями оферты.

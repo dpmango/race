@@ -32,8 +32,6 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
 
     app.refresh = function() {
       APP.Components.Header.closeMobileMenu(true);
-      APP.Plugins.Sharer.refresh();
-      APP.Plugins.Sliders.reinit();
       app.initPlugins(true);
       app.initComponents(true);
     };
@@ -66,9 +64,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     // Plugins which depends on DOM and page content
     app.initPlugins = function(fromPjax) {
       APP.Plugins.Teleport.init();
-      if (!fromPjax) {
-        APP.Plugins.Sliders.init();
-      }
+      APP.Plugins.Sliders.init();
       APP.Plugins.Modals.init();
       APP.Plugins.Masks.init();
       APP.Plugins.Selectric.init();
@@ -80,9 +76,8 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.Fullpage.init();
       APP.Plugins.FooterReveal.init();
       APP.Plugins.Sticky.init();
-      APP.Plugins.LAYOUT.init();
-
-      // APP.Plugins.Ymaps.init();
+      APP.Plugins.LAYOUT.init(fromPjax);
+      APP.Plugins.CustomParallax.init(fromPjax);
     };
 
     // All components from `src/componenets`

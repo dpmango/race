@@ -6,10 +6,12 @@
     data: {
       stickToWindow: undefined,
     },
-    init: function() {
+    init: function(fromPjax) {
       this.getData();
-      this.listenResize();
       this.applyLayout();
+      if (!fromPjax) {
+        this.listenResize();
+      }
     },
     getData: function() {
       this.data.stickToWindow = $('[js-stick-to-window]');

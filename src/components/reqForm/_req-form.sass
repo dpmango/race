@@ -1,0 +1,51 @@
+// REQ FORM
+.reqform
+  position: relative
+  z-index: 2
+  &__background
+    position: absolute 0
+    display: flex
+    flex-direction: column
+    font-size: 0
+    overflow: hidden
+    img
+      flex: 1 1 auto
+      height: 100%
+      width: 100%
+      object-fit: cover
+      object-position: center top
+      will-change: transform
+      transition: transform .3s linear
+  &__content
+    position: relative
+    z-index: 2
+    padding: 150px 0 300px
+    color: white
+
+  &__title
+    font-weight: 700
+    font-size: 30px
+
+  &__fields
+    display: flex
+    flex-wrap: wrap
+    margin: 25px -10px 15px
+
+  &__col
+    width: 100%
+    flex: 0 0 $col4
+    max-width: $col4
+    min-width: 1px
+    min-height: 0
+    padding-left: 10px
+    padding-right: 10px
+
+  &__cta
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .ui-input__float-label
+    color: #BDBDBD
+  .ui-checkbox
+    color: #BDBDBD

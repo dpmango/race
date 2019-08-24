@@ -100,6 +100,7 @@ p + p
 
 /* lists
 .ul-list, .ol-list
+  margin: 0
   padding: 0
   // TODO ul styles are not quite here.
   li
@@ -108,14 +109,14 @@ p + p
     font-weight: 500
     font-size: 14px
     line-height: 1.86
-    padding: 1em
+    padding: 0.3em 1em
     margin-bottom: 10px
     &:last-of-type
       margin-bottom: 0
     &::before
       position: absolute
       top: 0
-      left: 0.65em
+      left: 0
       display: inline-block
 
   &--bordered
@@ -125,8 +126,13 @@ p + p
 
 .ul-list
   li
+    padding: 0em 12px 0em 24px
     &::before
-      content: '—'
+      content: " "
+      top: 8px
+      size: 10px 8px
+      background: svg-load('../icons/svg-mono/checkmark.svg', fill=$colorPrimary) no-repeat center
+      background-size: cover
 
 .ol-list
   counter-reset: ol-counter
@@ -135,12 +141,11 @@ p + p
     padding: 0.8em 48px 1.2em 48px
     &::before
       content: counter(ol-counter)
+      left: 0.65em
       font-weight: bold
       font-size: 24px
       color: #32A457
 
-ul.ul-list, ol.ol-list
-  margin: 2.5em 0
 
 // +r($lg)
 //   .ul-list, .ol-list

@@ -1,0 +1,62 @@
+// PRODUCTION
+.production
+  max-width: 1600px
+  margin: 0 auto
+  padding: 24px 40px
+  &__grid
+    display: flex
+    flex-wrap: wrap
+    margin: -10px
+  &__col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+    &:nth-child(odd)
+      flex: 0 0 $col7
+      max-width: $col7
+    &:nth-child(even)
+      flex: 0 0 $col5
+      max-width: $col5
+
+// production card
+.production-card
+  display: block
+  position: relative
+  min-height: 350px
+  overflow: hidden
+  &__background
+    position: absolute 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    font-size: 0
+    will-change: transform
+    transition: transform .4s ease-out
+    img
+      flex: 1 1 auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: right bottom
+
+  &__content
+    position: relative
+    z-index: 2
+    padding: 40px 32px
+
+  &__title
+    font-weight: 600
+    font-size: 26px
+    line-height: 32px
+  &__description
+    margin-top: 1em
+    font-weight: 500
+    font-size: 14px
+    line-height: 1.86
+    color: #4F4F4F
+
+  &:hover
+    .production-card
+      &__background
+        transform: scale(1.02)

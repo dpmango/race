@@ -1,0 +1,8 @@
+
+mixin sidebarMenu(menu)
+  .article__sidebar.sidebar(data-aos="fade" data-aos-delay="500")
+    .sidebar__wrapper
+      .sidebar__menu
+        each li in menu
+          li(class={"is-active": li.active})
+            a(href="#")= li.name

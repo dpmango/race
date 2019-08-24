@@ -51,16 +51,9 @@
       font-size: 12px
       opacity: 0.5
 
-
 .ui-input textarea
   resize: vertical
 
-.ui-input__validation
-  bottom: -1.3em
-  color: $colorRed
-  font-size: 10px
-  left: 0
-  position: absolute
 
 +r($xl)
   .ui-input
@@ -75,23 +68,41 @@
         top: -2px
         font-size: 10px
 
+/* validation error
+.ui-input__validation
+  bottom: -1.3em
+  color: $colorRed
+  font-size: 10px
+  left: 0
+  position: absolute
+
+.ui-checkbox
+  + .ui-input__validation
+    bottom: -1.5em
+    left: 30px
 
 /* Checkbox
 .ui-checkbox
   input
-    display: none
+    width: 0.1px
     height: 0.1px
-    left: 0
     opacity: 0
     position: absolute
     top: 0
-    width: 0.1px
+    left: 0
     &:checked
       + label
         &::before
+          background: $colorPrimary
           border-color: $colorPrimary
         &::after
           transform: translateY(-50%) scale(1)
+    &.has-error
+      + label
+        &::before
+          border-color: $colorRed
+          box-shadow: 0px 0px 4px $colorRed
+
   label
     cursor: pointer
     display: block
@@ -99,38 +110,40 @@
     width: 100%
     &::before
       background-color: white
-      border: 1px solid #afb7c0
-      border-radius: 4px
+      border: 1px solid white
+      border-radius: 0px
       content: ' '
       cursor: pointer
       cursor: pointer
       display: inline-block
       left: 0
       position: absolute
-      size: 20px
+      size: 18px
       top: 50%
       transform: translateY(-50%)
       transition: all $transitionSpeed ease-in-out
       vertical-align: middle
     &::after
-      background: $colorPrimary
-      border-radius: 50%
       content: ' '
       display: inline-block
-      left: 6px
+      left: 5px
       position: absolute
-      size: 10px
+      size: 10px 8px
       top: 50%
       transform: translateY(-50%) scale(0)
-      // background-image: svg-load('../../images/svg/checkbox.svg')
-      // background-repeat: no-repeat
-      // background-position: center
+      background: svg-load('../icons/svg-mono/checkmark.svg', fill=white) no-repeat center
+      background-size: cover
       transition: transform 0.2s ease
     span
       cursor: pointer
       display: inline-block
-      font-size: 14px
-      line-height: 1.3
-      padding-left: 35px
+      font-weight: 500
+      font-size: 12px
+      line-height: 1.35
+      padding-left: 30px
       vertical-align: top
+      a
+        text-decoration: underline
+        &:hover
+          text-decoration: none
 

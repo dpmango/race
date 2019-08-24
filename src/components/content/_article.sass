@@ -4,7 +4,7 @@
   margin: 0 auto
   padding: 100px 40px 100px
   &__title
-    margin: 0
+    margin: 0 -135px 0 0
   &__wrapper
     display: flex
     margin: 0 -15px
@@ -23,8 +23,11 @@
     max-width: 370px
     margin-right: -135px
 
+
+/* Sidebar
 .sidebar
   margin-top: 24px
+  // margin-bottom: 12px
   &__wrapper
     background: #2C2F33
     color: white
@@ -68,3 +71,122 @@
       &:hover
         color: white
 
+/* Article img sep
+.article-img-sep
+  position: relative
+  margin: 20px 0 100px
+  // emulate async background
+  &::before
+    display: inline-block
+    content: ' '
+    position: absolute
+    top: 80px
+    left: 0
+    right: 0
+    bottom: 0
+    background: #D7DED0
+  > .container
+    position: relative
+    z-index: 2
+
+  &__content
+    flex: 0 1 auto
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 80px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    p
+      max-width: 365px
+      font-weight: 500
+      font-size: 18px
+      line-height: 1.67
+      color: #4F4F4F
+  &__bg
+    flex: 0 1 auto
+    margin-left: auto
+    margin-right: -135px
+    padding-left: 15px
+    padding-right: 15px
+    padding-bottom: 24px
+    img
+      max-width: 100%
+
+/* article slider
+.article-slider
+  &__caption
+    padding: 16px 0
+    font-style: italic
+    font-weight: 500
+    font-size: 14px
+    line-height: 1.2
+    color: #828282
+    border-bottom: 1px solid #F2F2F2
+
+  &__image
+    position: relative
+    font-size: 0
+    img
+      width: 100%
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 1
+      height: 120px
+      background: linear-gradient(0.11deg, rgba(32, 32, 32, 0.7) 22.97%, rgba(14, 10, 29, 0) 99.41%)
+
+  &__navgiation
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 14px 20px
+
+  .swiper-pagination
+    display: flex
+    padding: 0 30px
+  .swiper-pagination-bullet
+    padding: 12px
+    position: relative
+    cursor: pointer
+    transition: opacity .25s $ease
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      size: 6px
+      border-radius: 50%
+      background: #FFFFFF
+      opacity: 0.4
+    &:hover
+      &::after
+        opacity: 1
+  .swiper-pagination-bullet-active
+    &::after
+      opacity: 1
+
+  .swiper-button-prev, .swiper-button-next
+    flex: 0 0 auto
+    display: block
+    padding: 10px
+    color: white
+    font-size: 0
+    transition: color .25s $ease
+    cursor: pointer
+    .ico
+      pointer-events: none
+      font-size: 18px
+    &:hover
+      color: $colorPrimary

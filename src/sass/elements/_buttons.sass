@@ -15,14 +15,10 @@ button
   transition: all $transitionSpeed $ease
   &:focus, &:active
     outline: none
-  &--block
-    display: block
-    width: 100%
-
   &-primary
     // please use paddings instead of line-height to control btn height
     background: transparent
-    border: 1px solid $colorPrimary
+    border: 2px solid $colorPrimary
     font-size: 14px
     font-weight: 500
     padding: 15px 25px
@@ -48,6 +44,11 @@ button
       color: white
       &::after
         transform: translateY(0)
+  &--block
+    display: block
+    width: 100%
+  &--c-white
+    color: white
 
 +r($xl)
   .btn

@@ -1,0 +1,81 @@
+// CONTENT
+include ../breadcrumbs/_breadcrumbs
+include _partials/_sidebar
+
+.content
+  .content__breadcrumbs
+    +breadcrumbs(["Главная", "Продукция", "Мобильные спутниковые комплексы СНАРК"])
+
+  // article
+  article.article
+    h1.h1-title.article__title(data-aos="fade-up") Мобильные спутниковые комплексы СНАРК
+    .article__wrapper
+      // article content
+      .article__content
+        // caption
+        p.p-big(data-aos="fade-up") Носимые станции спутниковой связи семейства СНАРК – это земные VSAT станции класса FlyAway (перевозимые в багаже самолета) и ManPack (в ранцевой упаковке), предназначенные для организации широкополосной спутниковой связи в полевых условиях, например, при организации мобильных пунктов связи, ликвидации стихийных бедствий, строительстве временных объектов, проведении геологоразведочных работ, бурении скважин, трансляции телевизионных репортажей и т.п.
+
+      // sidebar
+      +sidebarMenu([
+        {name: "Мобильные спутниковые комплексы CHAPK"},
+        {name: "Земные станции спутниковой связи"},
+        {name: "Разработка и внедрение ПО"},
+        {name: "Техническая поддержка", active: true},
+        {name: "Аренда оборудования"},
+        {name: "Консалтинг в сфере ИТ и телеком"}
+      ])
+
+  // IMAGE SEPARATOR
+  .article-img-sep
+    .container
+      .article__wrapper
+        .article-img-sep__content(data-aos="fade-up")
+          p Характеристики станций позволяют обеспечивать высокоскоростную передачу данных, включая видео. Конструкция станции и система наведения не требуют высокой квалификации персонала и дополнительных инструментов.
+
+        .article-img-sep__bg(data-aos="fade-up")
+          img(js-lazy data-src='img/articleImgSpacer.png' data-srcset='img/articleImgSpacer@2x.png 2x' alt="")
+
+
+  .container
+    // article image slider
+    .article-slider(data-aos="fade-up")
+      .swiper-container(js-swiper-article)
+        .swiper-wrapper
+          each group in [1,2,3,4,5]
+            .swiper-slide
+              .article-slider__image
+                img(src='img/articleImageSlider_1.jpg' srcset='img/articleImageSlider_1@2x.jpg 2x')
+            .swiper-slide
+              .article-slider__image
+                img(src='img/articleImageSlider_2.jpg' srcset='img/articleImageSlider_2@2x.jpg 2x')
+
+        // swiper navigation
+        .article-slider__navgiation
+          .swiper-button-prev
+            +svgMono('swiper-arrow-prev')
+          .swiper-pagination
+          .swiper-button-next
+            +svgMono('swiper-arrow-next')
+
+      .article-slider__caption Фотографии предоставлены участниками проекта "Заповедный пояс"
+
+
+    .row.mt-3
+      .col-12.col-md-7(data-aos="fade-up")
+        .wysiwyg
+          h3 Особенности:
+          ul.ul-list.mt-0
+            li Сделано в России, собственная разработка и производство;
+            li Готовый комплект со спутниковым модемом Истар, <strong>BUC, LNB,</strong> кабелями – разверни и работай;
+            li Развертывание за <strong>10 -15</strong> минут одним человеком без дополнительного инструмента;
+            li Перевозка любыми видами транспорта, занимает <strong>1</strong> или <strong>2</strong> места багажа;
+            li Контроллер управления и наведения, двухступенчатое (быстрое и точное) наведение;
+            li Разъемы <strong>“push-pull”</strong>;
+            li Пылевлагозащита не хуже <strong>IP65</strong>;
+            li Ветровая нагрузка – до <strong>15 м/с</strong>;
+            li Исполнение для стандартного (–30...+45оC) и расширенного (–50…+50оC) диапазона температур.
+
+      .col-12.col-md-5.col-border-left(data-aos="fade-up")
+        .wysiwyg
+          p Компанией накоплен большой опыт работы станций СНАРК с использованием ресурса спутников национальных спутниковых группировок ФГУП «Космическая связь» и ОАО «Газпром космические системы», в том числе в высоких широтах, при малых углах места и в суровом климате. Предлагаются различные варианты комплектации и транспортной упаковки под требования заказчика.
+
