@@ -1,0 +1,18 @@
+// about navi
+.about-navi
+  .container
+    .about-navi__heading(data-aos="fade-up") Подразделы
+    .about-navi__list(data-aos="fade-up")
+      -
+        var list = [
+          "История компании",
+          "Инфраструктура",
+          "Клиенты и партнеры",
+          "Лицензии и сертификаты",
+          "Работа у нас",
+          "Новости",
+          "Контакты"
+        ]
+      each li in list
+        li
+          a(href="#")= li
