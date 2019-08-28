@@ -1,0 +1,58 @@
+// next page
+.next-page
+  position: relative
+  display: block
+  overflow: hidden
+  &__background
+    position: absolute 0
+    display: flex
+    flex-direction: column
+    z-index: 1
+    img
+      flex: 1 1 auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center bottom
+      will-change: transform
+      transition: transform .3s linear
+
+  &__content
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    position: relative
+    z-index: 2
+    color: white
+    min-height: 650px
+    padding: 160px 0 50px
+  &__wrapper
+    text-align: center
+  &__section-name
+    font-weight: 600
+    font-size: 18px
+    line-height: 1.2
+    margin-bottom: 1em
+
+  &__name
+    display: inline-block
+    position: relative
+    font-weight: 700
+    font-size: 56px
+    line-height: 1.2
+    padding: 10px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 10px
+      right: 10px
+      bottom: 0
+      height: 1px
+      background: rgba(white, .3)
+      transition: right .35s ease-out
+  &:hover
+    .next-page__name
+      color: rgba(white, .7)
+      &::after
+        right: 101%
