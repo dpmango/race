@@ -171,6 +171,21 @@
       &.is-menu-active
         background: transparent
         box-shadow: none
+  &.is-fixed
+    background: white
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1)
+    .hamburger
+      size: 80px
+    &.is-menu-active
+      background: transparent
+      box-shadow: none
+    .header
+      &__wrapper
+        color: $fontColor
+      &__logo
+        .svg-logo-letters
+          fill: $fontColor
+
 
 +r($hd)
   .header

@@ -17,7 +17,7 @@ PageList:
     ready: 60
 
   - file: about.html
-    ready: 0
+    ready: 30
   - file: history.html
     ready: 0
   - file: infrastructure.html
