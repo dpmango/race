@@ -24,8 +24,8 @@
         'margin-top': '-' + this.data.lastForBodyLock + 'px',
       });
       $('body').addClass('body-lock');
-      console.log($.fn.fullpage);
-      if ($.fn.fullpage) {
+
+      if ($.fn.fullpage && $('html').hasClass('fp-enabled')) {
         $.fn.fullpage.setMouseWheelScrolling(false);
         $.fn.fullpage.setAllowScrolling(false);
       }
@@ -42,7 +42,8 @@
         _window.scrollTop(this.data.lastForBodyLock);
         this.data.lastForBodyLock = 0;
       }
-      if ($.fn.fullpage) {
+
+      if ($.fn.fullpage && $('html').hasClass('fp-enabled')) {
         $.fn.fullpage.setMouseWheelScrolling(true);
         $.fn.fullpage.setAllowScrolling(true);
       }
