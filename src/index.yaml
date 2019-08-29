@@ -21,7 +21,7 @@ PageList:
   - file: history.html
     ready: 40
   - file: infrastructure.html
-    ready: 0
+    ready: 40
   - file: clients.html
     ready: 0
   - file: certificates.html
