@@ -24,6 +24,7 @@
         'margin-top': '-' + this.data.lastForBodyLock + 'px',
       });
       $('body').addClass('body-lock');
+      console.log($.fn.fullpage);
       if ($.fn.fullpage) {
         $.fn.fullpage.setMouseWheelScrolling(false);
         $.fn.fullpage.setAllowScrolling(false);

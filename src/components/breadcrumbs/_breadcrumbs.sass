@@ -33,3 +33,25 @@
     .breadcrumbs__list
       a:hover
         color: $colorOrange
+
+// breadcrumbs position header
+.bc-container
+  position: absolute
+  z-index: 3
+  top: 75px
+  left: 233px
+  right: 170px
+  border-bottom: 1px solid $borderColor
+  &--border-white
+    border-bottom: 1px solid rgba(white, 0.2)
+
++r($hd)
+  .bc-container
+    top: 60px
+    left: 225px
+    right: 140px
+
++r($lg)
+  .bc-container
+    left: 40px
+    right: 40px
