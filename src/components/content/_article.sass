@@ -23,6 +23,25 @@
     max-width: 370px
     margin-right: -135px
 
++r($hd)
+  .article
+    max-width: 1060px
+    padding: 70px 40px
+    &__title
+      margin-right: 0
+    &__content
+      padding-right: 5px
+    &__sidebar
+      flex-basis: 310px
+      max-width: 310px
+      margin-right: 0
+
++r($lg)
+  .article
+    &__content
+      padding-right: 15px
+    &__sidebar
+      display: none
 
 /* Sidebar
 .sidebar
@@ -70,6 +89,16 @@
         transition: transform .25s $ease, opacity .25s $ease
       &:hover
         color: white
+
++r($hd)
+  .sidebar
+    &__menu
+      padding: 25px 0
+      li
+        font-size: 12px
+        margin-bottom: 5px
+      a
+        padding-right: 16px
 
 /* Article img sep
 .article-img-sep

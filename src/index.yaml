@@ -10,7 +10,7 @@ PageList:
   - file: production.html
     ready: 60
   - file: production-article.html
-    ready: 60
+    ready: 70
   - file: solutions.html
     ready: 60
   - file: solutions-article.html

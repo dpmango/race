@@ -26,3 +26,10 @@
         // margin-right: -0.5em
       &:hover
         color: white
+
+// attach to header modifier element
+[data-class="is-black"]
+  + .content
+    .breadcrumbs__list
+      a:hover
+        color: $colorOrange

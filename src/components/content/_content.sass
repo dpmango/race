@@ -9,6 +9,18 @@
     right: 170px
     border-bottom: 1px solid $borderColor
 
++r($hd)
+  .content
+    &__breadcrumbs
+      top: 60px
+      left: 225px
+      right: 140px
+
++r($lg)
+  .content
+    &__breadcrumbs
+      left: 40px
+      right: 40px
 
 .wysiwyg
   h2
@@ -25,6 +37,8 @@
     font-size: 14px
     line-height: 1.86
     color: #4F4F4F
+    & + p
+      margin-top: 2em
 
   figure
     margin: 2em 0
