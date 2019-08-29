@@ -33,16 +33,17 @@
           if (stopWatching === null || !stopWatching) {
             // get position of element to window
             var $elPosLeft = $el.position().left;
-            var wWidth = window.innerWidth;
-            var $elWidth = $el.outerWidth();
 
             // set values
             if (position === 'left') {
               setMarginPx = $elPosLeft * -1;
               $el.css({ 'margin-left': setMarginPx });
             } else if (position === 'right') {
-              // TODO fix calculations
-              setMarginPx = ($elPosLeft + $elWidth) * -1;
+              var wWidth = window.innerWidth;
+              var $elWidth = $el.innerWidth();
+              var elMarginRight = Math.abs(parseInt($el.css('margin-right')));
+
+              setMarginPx = (wWidth - $elPosLeft - ($elWidth - elMarginRight)) * -1;
               $el.css({ 'margin-right': setMarginPx });
             }
           } else {
