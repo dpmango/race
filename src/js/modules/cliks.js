@@ -39,6 +39,14 @@
           });
 
           return false;
+        })
+        .on('click', '[js-scroll-page-top]', function() {
+          TweenLite.to(window, 1, {
+            scrollTo: { y: 0, autoKill: false },
+            ease: easingSwing,
+          });
+
+          return false;
         });
     },
     destroy: function() {

@@ -38,6 +38,18 @@ header.header
         .hamburger-box
           .hamburger-inner
 
+// Header nav
+.header-nav
+  .header-nav__wrapper
+    // actions
+    .header-nav__actions
+      a(href="#modal-request" js-popup).header-nav__action.js-circle-nav
+        +svgMono('mail')
+      a(href="#modal-callback" js-popup).header-nav__action.js-circle-nav
+        +svgMono('phone-outline')
+      a(href="#" js-scroll-page-top).header-nav__action.js-circle-nav
+        +svgMono('arrow-top')
+
 // Header search
 .header-panel(data-header-panel="search")
   .header-panel__close(js-close-header-panel)

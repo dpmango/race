@@ -29,6 +29,7 @@
       this.data.header = {
         container: $header,
         bottomPoint: headerHeight,
+        headerNav: $('.header-nav'),
       };
     },
     closeMobileMenu: function(isOnload) {
@@ -133,11 +134,14 @@
 
         if (scroll.y > this.data.header.bottomPoint) {
           this.data.header.container.addClass(fixedClass);
+          this.data.header.headerNav.addClass(fixedClass);
 
           if (scroll.y > this.data.header.bottomPoint * 2 && scroll.direction === 'up') {
             this.data.header.container.addClass(visibleClass);
+            this.data.header.headerNav.addClass(visibleClass);
           } else {
             this.data.header.container.removeClass(visibleClass);
+            this.data.header.headerNav.removeClass(visibleClass);
           }
         } else {
           // emulate position absolute by giving negative transform on initial scroll
@@ -150,6 +154,7 @@
           });
 
           this.data.header.container.removeClass(fixedClass);
+          this.data.header.headerNav.removeClass(fixedClass);
         }
       }
     },
@@ -172,6 +177,7 @@
     },
     controlHeaderClass: function() {
       this.data.header.container.attr('data-modifier', false);
+      this.data.header.headerNav.attr('data-modifier', false);
 
       var $modifierElement = $('.page')
         .last()
@@ -179,6 +185,7 @@
 
       if ($modifierElement.length > 0) {
         this.data.header.container.attr('data-modifier', $modifierElement.data('class'));
+        this.data.header.headerNav.attr('data-modifier', $modifierElement.data('class'));
       }
     },
   };
