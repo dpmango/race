@@ -1,0 +1,37 @@
+// CONTENT
+include ../breadcrumbs/_breadcrumbs
+include _partials/_sidebar
+
+.content
+  .content__breadcrumbs
+    +breadcrumbs(["Главная", "О компании", "Клиенты и партнеры"])
+
+  // article
+  article.article
+    h1.h1-title.article__title(data-aos="fade-up") Клиенты и партнеры
+    .article__wrapper
+      // article content
+      .article__content
+        // caption
+        p.p-big(data-aos="fade-up") Компания «Рэйс-Коммуникейшн» имеет возможность предоставлять услуги связи корпоративным и ведомственным заказчикам на базе собственных спутниковых и оптических каналов связи.
+
+        .wysiwyg.wysiwyg--primary(data-aos="fade-up")
+
+          h3 КЛИЕНТЫ
+          p «Рэйс-Коммуникейшн» предоставляет услуги связи, поставляет телекоммуникационное и VSAT-оборудование, осуществляет строительство сооружений связи, техническое обслуживание и эксплуатацию сетей в интересах таких компаний, как:
+          include ../logoList/_clients
+
+          h3 ПАРТНЕРЫ
+          p Race Communications сотрудничает с ведущими операторами спутниковой и проводной связи, является авторизированным партнером и осуществляет поставку продукции ведущих мировых производителей:
+          include ../logoList/_partners
+
+      // sidebar
+      +sidebarMenu([
+        {name: "История компании"},
+        {name: "Инфраструктура"},
+        {name: "Клиенты и партнеры", active: true},
+        {name: "Лицензии и сертификаты"},
+        {name: "Работа у нас"},
+        {name: "Новости"},
+        {name: "Контакты"}
+      ])

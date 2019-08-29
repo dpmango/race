@@ -1,0 +1,30 @@
+// CONTENT
+include ../breadcrumbs/_breadcrumbs
+include _partials/_sidebar
+
+.content
+  .content__breadcrumbs
+    +breadcrumbs(["Главная", "О компании", "Лицензии и сертификаты"])
+
+  // article
+  article.article
+    h1.h1-title.article__title(data-aos="fade-up") Лицензии и сертификаты
+    .article__wrapper
+      // article content
+      .article__content
+        // caption
+        p.p-big(data-aos="fade-up") «Рэйс-Коммуникейшн» имеет все виды государственных лицензий и сертификатов, необходимых для работы в области системной интеграции, строительства инженерных систем и предоставления услуг связи.
+
+        // TODO - certificates list
+        div(style="background-color: tomato; height: 200px; padding: 20px") Список сертификатов
+
+      // sidebar
+      +sidebarMenu([
+        {name: "История компании"},
+        {name: "Инфраструктура"},
+        {name: "Клиенты и партнеры"},
+        {name: "Лицензии и сертификаты", active: true},
+        {name: "Работа у нас"},
+        {name: "Новости"},
+        {name: "Контакты"}
+      ])

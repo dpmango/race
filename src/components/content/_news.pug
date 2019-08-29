@@ -1,0 +1,32 @@
+// CONTENT
+include ../breadcrumbs/_breadcrumbs
+include _partials/_sidebar
+
+.content
+  .content__breadcrumbs
+    +breadcrumbs(["Главная", "О компании", "Новости"])
+
+  // article
+  article.article
+    h1.h1-title.article__title(data-aos="fade-up") Новости
+    .article__wrapper
+      // article content
+      .article__content
+
+        // TODO - news list
+        include ../news/_list
+
+        // TODO - pagination
+        div(style="background-color: tomato; height: 200px; padding: 20px") пагиниаця
+
+
+      // sidebar
+      +sidebarMenu([
+        {name: "История компании"},
+        {name: "Инфраструктура"},
+        {name: "Клиенты и партнеры"},
+        {name: "Лицензии и сертификаты"},
+        {name: "Работа у нас"},
+        {name: "Новости",  active: true},
+        {name: "Контакты"}
+      ])

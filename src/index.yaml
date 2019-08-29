@@ -23,14 +23,14 @@ PageList:
   - file: infrastructure.html
     ready: 40
   - file: clients.html
-    ready: 0
+    ready: 40
   - file: certificates.html
-    ready: 0
+    ready: 40
   - file: vacancies.html
-    ready: 0
+    ready: 40
   - file: news.html
-    ready: 0
+    ready: 40
   - file: news-article.html
-    ready: 0
+    ready: 40
   - file: contacts.html
-    ready: 0
+    ready: 40

@@ -1,0 +1,38 @@
+// CONTENT
+include ../breadcrumbs/_breadcrumbs
+include _partials/_sidebar
+
+.content
+  .content__breadcrumbs
+    +breadcrumbs(["Главная", "О компании", "Работа у нас"])
+
+  // article
+  article.article
+    h1.h1-title.article__title(data-aos="fade-up") Работа у нас
+    .article__wrapper
+      // article content
+      .article__content
+        // caption
+        p.p-big(data-aos="fade-up") ООО «Рэйс-Коммуникейшн» занимается разработкой и производством оборудования спутниковой связи, а также проектированием и строительством сетей связи и специальных телекоммуникационных систем.
+        .wysiwyg.wysiwyg--primary(data-aos="fade-up")
+          p Мы рады специалистам, готовым к творческой работе в сфере новых и быстроразвивающихся технологий. Компания придерживается принципа преемственности поколений и принимает на работу высококвалифицированных специалистов разных возрастов.
+
+        div(js-stick-to-window data-position="right" data-stop="<992")
+          img.img-w100(js-lazy data-src='img/vacanciesArticle.jpg' data-srcset='img/vacanciesArticle@2x.jpg 2x')
+
+        // TODO - benefits list
+        div(style="background-color: tomato; height: 200px; padding: 20px") Бенефиты вакансий
+
+        // TODO vancies list
+        div(style="background-color: tomato; height: 200px; padding: 20px") Вакансии
+
+      // sidebar
+      +sidebarMenu([
+        {name: "История компании"},
+        {name: "Инфраструктура"},
+        {name: "Клиенты и партнеры"},
+        {name: "Лицензии и сертификаты"},
+        {name: "Работа у нас", active: true},
+        {name: "Новости"},
+        {name: "Контакты"}
+      ], false)
