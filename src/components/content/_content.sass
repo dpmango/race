@@ -45,9 +45,19 @@
 .img-w100
   width: 100%
 
++r($xl)
+  .content
+    &--production
+      margin: 12px 0 44px
+  .wysiwyg
+    h2
+      font-size: 18px
+
 +r($lg)
   .content
     margin: 36px 0 67px
+    &--production
+      margin: 0px 0 80px
   .wysiwyg
     p
       font-size: 12px
@@ -55,7 +65,19 @@
 +r($md)
   .content
     margin: 36px 0 74px
+    &--production
+      margin: 2px 0 93px
 
 +r($sm)
   .content
     margin: 0 0 71px
+    &--production
+      margin: 28px 0 73px
+
+  .wysiwyg
+    h2
+      font-size: 16px
+
+  .wysiwyg
+    h3
+      text-transform: none

@@ -24,12 +24,23 @@
     height: 1px
     background: $borderColor
 
++r($xl)
+  .row
+    &--production
+      max-width: 840px
+      margin: 0 auto
+      &::after
+        display: none
+
 +r($lg)
   .row-border-bottom
     > [class*="col"]
       padding-bottom: 20px
     &::after
       display: none
+  .row
+    &--production
+      max-width: 660px
 
 +r($md)
   .col-border-left
@@ -39,6 +50,13 @@
   .row-border-bottom
     > [class*="col"]
       padding-bottom: 0px
+
+  .row
+    &--production
+      max-width: 100%
+      > [class*="col"]
+        padding-left: 0
+        padding-right: 0
 
 +r($sm)
   .col-border-left
