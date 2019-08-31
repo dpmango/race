@@ -28,3 +28,40 @@
     margin: 0.25em 0
   &__description
     max-width: 750px
+
++r($xl)
+  .hero
+    min-height: 608px
+    &__content
+      padding-bottom: 60px
+
++r($lg)
+  .hero
+    min-height: 486px
+    &__content
+      padding-bottom: 27px
+
++r($md)
+  .hero
+    min-height: 450px
+
++r($sm)
+  .hero
+    min-height: 448px
+    &__content
+      padding-top: 158px
+      padding-bottom: 30px
+    &__description
+      margin: 32px -16px -30px
+      padding: 21px 16px 7px
+      background: #fff
+      width: calc(100% + 32px)
+      color: $fontColor
+      font-size: 16px
+      &::after
+        display: block
+        width: 100%
+        height: 1px
+        content: ''
+        background: $borderColor
+        margin-top: 27px

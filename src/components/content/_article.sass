@@ -23,6 +23,9 @@
     max-width: 370px
     margin-right: -135px
 
+  &__button
+    display: none
+
 +r($hd)
   .article
     max-width: 1060px
@@ -36,12 +39,45 @@
       max-width: 310px
       margin-right: 0
 
++r($xl)
+  .article
+    padding: 77px 40px
+  .sidebar
+    &__menu
+      li
+        margin-bottom: 4px
+
 +r($lg)
   .article
+    padding: 115px 40px 21px
     &__content
       padding-right: 15px
+    // &__sidebar
+    //   display: none
+
++r($md)
+  .article
+    padding-top: 106px
+    padding-bottom: 14px
     &__sidebar
       display: none
+
++r($sm)
+  .article
+    padding: 90px 16px 0
+    &__button
+      display: block
+      width: 100%
+      font-size: 12px
+      line-height: 1.25
+      padding: 13px 13px 12px
+      margin-top: 35px
+      color: #fff
+      background: $colorGreen
+      text-transform: uppercase
+      &:hover
+        background: darken($colorGreen, 5)
+
 
 /* Sidebar
 .sidebar

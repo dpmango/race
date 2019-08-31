@@ -1,6 +1,6 @@
 // CONTENT
 .content
-  margin: 60px 0 95px
+  margin: 55px 0 95px
 
 .wysiwyg
   h2
@@ -17,6 +17,7 @@
     font-size: 14px
     line-height: 1.86
     color: #4F4F4F
+    letter-spacing: 0.1px
     & + p
       margin-top: 2em
 
@@ -43,3 +44,52 @@
 
 .img-w100
   width: 100%
+
++r($xl)
+  .content
+    &--production
+      margin: 12px 0 44px
+  .wysiwyg
+    h2
+      font-size: 18px
+
++r($xl)
+  .wysiwyg
+    ul.ul-list, ol.ol-list
+      margin: 2.25em 0 2.65em
+
+
++r($lg)
+  .content
+    margin: 36px 0 67px
+    &--production
+      margin: 0px 0 80px
+  .wysiwyg
+    p
+      font-size: 12px
+
++r($md)
+  .content
+    margin: 36px 0 74px
+    &--production
+      margin: 2px 0 93px
+
++r($sm)
+  .content
+    margin: 0 0 71px
+    &--production
+      margin: 28px 0 73px
+
+  .wysiwyg
+    ul.ul-list, ol.ol-list
+      margin: 2.25em 0 1.65em
+    figure
+      margin: 1.65em 0 2.2em
+
+  .wysiwyg
+    h2
+      font-size: 16px
+
+  .wysiwyg
+    h3
+      text-transform: none

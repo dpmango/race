@@ -60,3 +60,72 @@
     .production-card
       &__background
         transform: scale(1.02)
+
+
++r($xl)
+  .production
+    &__grid
+      margin: 38px 0 0
+    &__col
+      &:nth-child(even)
+        flex: 0 0 50%
+        max-width: 50%
+      &:nth-child(odd)
+        flex: 0 0 50%
+        max-width: 50%
+    &-card
+      min-height: 328px
+
+
++r($lg)
+  .production
+    padding: 20px 30px
+    &__grid
+      margin-top: 27px
+    &-card
+      &__title
+        font-size: 20px
+        line-height: 1.35
+        br
+          display: none
+      &__description
+        font-size: 12px
+        line-height: 1.85
+
+
++r($md)
+  .production
+    &__grid
+      margin-top: 28px
+    &__col
+      padding: 8px 10px
+      &:nth-child(even)
+        flex: 0 0 100%
+        max-width: 100%
+      &:nth-child(odd)
+        flex: 0 0 100%
+        max-width: 100%
+    &-card
+      min-height: 260px
+      &__title
+        max-width: 360px
+
++r($sm)
+  .production
+    padding: 0 16px
+    &__grid
+      margin-top: 13px
+    &__col
+      padding: 4px 0
+
+    &-card
+      min-height: 320px
+      &__title
+        font-size: 16px
+      &__content
+        padding: 24px 17px
+      &__description
+        margin-top: 5px
+        line-height: 1.7
+        br
+          display: none
