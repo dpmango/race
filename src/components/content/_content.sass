@@ -1,6 +1,6 @@
 // CONTENT
 .content
-  margin: 60px 0 95px
+  margin: 55px 0 95px
 
 .wysiwyg
   h2
@@ -17,6 +17,7 @@
     font-size: 14px
     line-height: 1.86
     color: #4F4F4F
+    letter-spacing: 0.1px
     & + p
       margin-top: 2em
 
@@ -43,3 +44,18 @@
 
 .img-w100
   width: 100%
+
++r($lg)
+  .content
+    margin: 36px 0 67px
+  .wysiwyg
+    p
+      font-size: 12px
+
++r($md)
+  .content
+    margin: 36px 0 74px
+
++r($sm)
+  .content
+    margin: 0 0 71px

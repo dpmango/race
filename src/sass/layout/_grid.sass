@@ -23,3 +23,23 @@
     bottom: 0
     height: 1px
     background: $borderColor
+
++r($lg)
+  .row-border-bottom
+    > [class*="col"]
+      padding-bottom: 20px
+    &::after
+      display: none
+
++r($md)
+  .col-border-left
+    padding-left: 15px
+    &::before
+      display: none
+  .row-border-bottom
+    > [class*="col"]
+      padding-bottom: 0px
+
++r($sm)
+  .col-border-left
+    padding-top: 32px

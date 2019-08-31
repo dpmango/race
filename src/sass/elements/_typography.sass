@@ -36,11 +36,15 @@ p + p
 
 +r($lg)
   .h1-title
-    font-size: 46px
+    font-size: 45px
+
++r($md)
+  .h1-title
+    font-size: 40px
 
 +r($sm)
   .h1-title
-    font-size: 36px
+    font-size: 24px
 
 
 // little inline helpers
@@ -75,13 +79,13 @@ p + p
     font-weight: 600
     font-size: 18px
     line-height: 1.22
-    margin: -10px -10px 30px
+    margin: -10px -10px 31px
     &:last-child
       margin-bottom: 0
   a
     position: relative
     padding: 10px
-    padding-right: 40px
+    padding-right: 37px
     display: inline-block
     transition: color .25s $ease
     &::after
@@ -100,6 +104,29 @@ p + p
       color: $colorOrange
       &::after
         transform: translate(7px, -50%)
+
++r($lg)
+  .ul-list-links
+    li
+      margin-bottom: 13px
+      font-size: 16px
+      line-height: 1.25
+
++r($sm)
+  .ul-list-links
+    margin: 0
+    li
+      font-size: 14px
+      line-height: 1.2
+      margin: 0 0 2px 0
+      a
+        padding: 17px 40px 17px 0
+        border-bottom: 1px solid $borderColor
+        width: 100%
+        &::after
+          right: 2px
+
+
 
 /* lists
 .ul-list, .ol-list
