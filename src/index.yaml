@@ -4,17 +4,17 @@ PageList:
   - file: homepage.html
     ready: 100
   - file: services.html
-    ready: 60
+    ready: 75
   - file: services-article.html
-    ready: 60
+    ready: 75
   - file: production.html
-    ready: 60
+    ready: 75
   - file: production-article.html
-    ready: 70
+    ready: 75
   - file: solutions.html
-    ready: 60
+    ready: 75
   - file: solutions-article.html
-    ready: 60
+    ready: 75
 
   - file: about.html
     ready: 40

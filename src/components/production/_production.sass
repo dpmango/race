@@ -19,26 +19,63 @@
       flex: 0 0 $col5
       max-width: $col5
 
+    &:nth-child(1)
+      .production-card
+        background: #D7DED0
+      .production-card__image
+        bottom: 12px
+        right: 24px
+        max-height: 90%
+        max-width: 55%
+
+    &:nth-child(2)
+      .production-card
+        background: #D0DEDB
+      .production-card__image
+        bottom: 20px
+        right: 24px
+        max-height: 42%
+        max-width: 73%
+
+
+    &:nth-child(3)
+      .production-card
+        background: #D0D0DE
+      .production-card__image
+        bottom: 0
+        right: 48px
+        max-height: 94%
+        max-width: 45%
+
+    &:nth-child(4)
+      .production-card
+        background: #DED5D0
+      .production-card__image
+        bottom: 0
+        right: 25px
+        max-height: 72%
+        max-width: 45%
+
 // production card
 .production-card
   display: block
   position: relative
   min-height: 350px
   overflow: hidden
-  &__background
-    position: absolute 0
-    z-index: 1
-    display: flex
-    flex-direction: column
-    font-size: 0
-    will-change: transform
-    transition: transform .4s ease-out
-    img
-      flex: 1 1 auto
-      width: 100%
-      height: 100%
-      object-fit: cover
-      object-position: right bottom
+  // &__background
+  //   position: absolute 0
+  //   z-index: 1
+  //   display: flex
+  //   flex-direction: column
+  //   font-size: 0
+  //   will-change: transform
+  //   transition: transform .4s ease-out
+  //   img
+  //     flex: 1 1 auto
+  //     width: 100%
+  //     height: 100%
+  //     object-fit: cover
+  //     object-position: right bottom
 
   &__content
     position: relative
@@ -49,20 +86,36 @@
     font-weight: 600
     font-size: 26px
     line-height: 32px
+    max-width: 400px
   &__description
     margin-top: 1em
     font-weight: 500
     font-size: 14px
     line-height: 1.86
     color: #4F4F4F
+    // max-width: 400px
+
+  &__image
+    position: absolute
+    right: 0
+    bottom: 0
+    transition: transform .4s ease-out
+    font-size: 0
+    img
+      height: auto
+      width: 100%
 
   &:hover
-    .production-card
-      &__background
-        transform: scale(1.02)
+    // .production-card
+    //   &__background
+    //     transform: scale(1.02)
+
+    .production-card__image
+      transform: scale(1.02)
 
 
-+r($xl)
+
++r($hd)
   .production
     &__grid
       margin: 38px 0 0
@@ -73,27 +126,46 @@
       &:nth-child(odd)
         flex: 0 0 50%
         max-width: 50%
-    &-card
-      min-height: 328px
+      &:nth-child(2)
+        .production-card__description
+          max-width: 100%
+        .production-card__image
+          bottom: 16px
+          right: 39px
+          max-width: 69%
+
+      &:nth-child(3)
+        .production-card__image
+          right: 20px
+
+      &:nth-child(4)
+        .production-card__image
+          right: 40px
+          max-width: 39%
+
+  .production-card
+    min-height: 328px
+    &__description
+      font-size: 12px
+      line-height: 1.85
+      max-width: 50%
+      br
+        display: none
 
 
-+r($lg)
++r($xl)
   .production
     padding: 20px 30px
     &__grid
       margin-top: 27px
-    &-card
-      &__title
-        font-size: 20px
-        line-height: 1.35
-        br
-          display: none
-      &__description
-        font-size: 12px
-        line-height: 1.85
+
+  .production-card
+    &__title
+      font-size: 20px
+      line-height: 1.35
 
 
-+r($md)
++r($lg)
   .production
     &__grid
       margin-top: 28px
@@ -105,12 +177,38 @@
       &:nth-child(odd)
         flex: 0 0 100%
         max-width: 100%
-    &-card
-      min-height: 260px
-      &__title
-        max-width: 360px
+      &:nth-child(1)
+        .production-card__image
+          bottom: 18px
+          right: 38px
+          max-width: 41%
 
-+r($sm)
+      &:nth-child(2)
+        .production-card__image
+          bottom: 23px
+          right: 30px
+          max-height: 42%
+          max-width: 50%
+
+      &:nth-child(3)
+        .production-card__image
+          bottom: 0
+          right: 55px
+          max-width: 29%
+
+      &:nth-child(4)
+        .production-card__image
+          right: 60px
+          max-width: 28%
+
+  .production-card
+    min-height: 260px
+    &__title
+      max-width: 360px
+      br
+        display: none
+
++r($md)
   .production
     padding: 0 16px
     &__grid
@@ -118,14 +216,57 @@
     &__col
       padding: 4px 0
 
-    &-card
-      min-height: 320px
-      &__title
-        font-size: 16px
-      &__content
-        padding: 24px 17px
-      &__description
-        margin-top: 5px
-        line-height: 1.7
-        br
-          display: none
++r($sm)
+  .production
+    &__col
+      &:nth-child(1)
+        .production-card__image
+          right: auto
+          max-width: 100%
+          height: 145px
+
+      &:nth-child(2)
+        .production-card__image
+          right: auto
+          max-width: 100%
+          height: 120px
+          left: 60%
+
+      &:nth-child(3)
+        .production-card__image
+          right: auto
+          max-width: 100%
+          height: 175px
+
+      &:nth-child(4)
+        .production-card__image
+          right: auto
+          max-width: 100%
+          height: 150px
+  .production-card
+    min-height: 320px
+    &__title
+      font-size: 16px
+      max-width: 100%
+    &__content
+      padding: 24px 17px
+    &__description
+      margin-top: 5px
+      line-height: 1.7
+      max-width: 100%
+      br
+        display: none
+    &__image
+      left: 50%
+      transform: translateX(-50%)
+      right: auto
+      max-height: 100%
+      height: 150px
+      max-width: 100%
+      img
+        width: auto
+        height: 100%
+
+    &:hover
+      .production-card__image
+        transform: translateX(-50%) scale(1.05)

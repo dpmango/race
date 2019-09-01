@@ -50,6 +50,9 @@
   .ui-checkbox
     color: #BDBDBD
 
+  .modal__form-note
+    display: none
+
 +r($hd)
   .reqform
     &__content
@@ -63,7 +66,7 @@
     &__fields
       margin-top: 38px
 
-+r($md)
++r($lg)
   .reqform
     &__content
       padding: 56px 0
@@ -93,6 +96,25 @@
         width: 100%
         margin-bottom: 27px
 
-+r($sm)
++r($md)
   .reqform
-    display: none
+    padding: 0 16px 70px
+    &__background
+      display: none
+    &__content
+      padding: 0
+    &__cta
+      .btn
+        color: $fontColor
+        padding: 12px 25px
+        font-size: 12px
+        width: auto
+        &:hover
+          color: #fff
+      .ui-group
+        margin-bottom: 20px
+    &__checkbox
+      display: none
+
+    .modal__form-note
+      display: block

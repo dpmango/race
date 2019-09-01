@@ -1,9 +1,10 @@
 // REQUEST FORM
 .reqform
+  a.btn.btn--modal(href="#modal-application" js-popup) Оставить заявку
   .reqform__background(js-parallax-scale-background data-scale-power="2")
     img(src='img/regFormBackground.jpg' srcset='img/regFormBackground@2x.jpg 2x')
   .reqform__content
-    .container
+    .container(js-teleport data-teleport-to="modal-application" data-teleport-condition="<767")
       form(action="ajax-endpoint.php" js-validate-form)
         .reqform__title(data-aos="fade-up") Оставить заявку
         .reqform__fields(data-aos="fade-up")
@@ -29,3 +30,4 @@
                 input(type="checkbox" checked id="rf_agree" name="agree" required)
                 label(for="rf_agree")
                   span Я согласен на обработку <a href="#" target="_blank">персональных данных</a>, а также с условиями оферты.
+          .modal__form-note Нажимая кнопку "Отправить" Вы соглашаетесь с политикой конфиденциальности.

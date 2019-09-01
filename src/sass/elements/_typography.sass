@@ -35,26 +35,23 @@ p + p
     font-size: 18px
 
 +r($xl)
-  .p-big
-    margin-top: 21px
-    line-height: 1.7
-
-+r($lg)
   .h1-title
     font-size: 45px
 
-+r($md)
++r($lg)
   .h1-title
     font-size: 40px
   .p-big
     font-size: 16px
-    margin-top: 13px
     line-height: 1.65
-    margin-bottom: 0
 
-+r($sm)
++r($md)
   .h1-title
     font-size: 24px
+  .p-big
+    &--size14
+      font-size: 14px
+      line-height: 1.75
 
 
 // little inline helpers
@@ -89,7 +86,7 @@ p + p
     font-weight: 600
     font-size: 18px
     line-height: 1.22
-    margin: -10px -10px 31px
+    margin: -10px -10px 30px
     &:last-child
       margin-bottom: 0
   a
@@ -115,14 +112,14 @@ p + p
       &::after
         transform: translate(7px, -50%)
 
-+r($lg)
++r($xl)
   .ul-list-links
     li
       margin-bottom: 13px
       font-size: 16px
       line-height: 1.25
 
-+r($sm)
++r($md)
   .ul-list-links
     margin: 0
     li
