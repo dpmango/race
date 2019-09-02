@@ -47,15 +47,23 @@
 
 +r($md)
   .hero
-    min-height: 448px
     &__content
-      padding-top: 158px
       padding-bottom: 30px
+
++r($sm)
+  .hero
+    min-height: 1px
+    &__background
+      margin-top: 48px
+      position: static
+      min-height: 200px
+    &__content
+      margin-top: -100px
+      padding-top: 0
     &__description
-      margin: 32px -16px -30px
-      padding: 21px 16px 7px
+      margin: 32px -16px -32px
+      padding: 20px 16px 8px
       background: #fff
-      width: calc(100% + 32px)
       color: $fontColor
       font-size: 16px
       &::after
@@ -65,3 +73,4 @@
         content: ''
         background: $borderColor
         margin-top: 27px
+
