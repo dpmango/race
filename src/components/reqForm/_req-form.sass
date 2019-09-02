@@ -49,29 +49,33 @@
     color: #BDBDBD
   .ui-checkbox
     color: #BDBDBD
-
-  .modal__form-note
+  .btn--modal
     display: none
+
 
 +r($hd)
   .reqform
     &__content
       padding: 150px 0 150px
 
-
 +r($xl)
   .reqform
     &__content
-      padding: 158px 0
+      padding: 130px 0 170px
     &__fields
-      margin-top: 38px
+      margin-top: 35px
 
 +r($lg)
   .reqform
     &__content
-      padding: 56px 0
+      padding: 110px 0 150px
+
++r($md)
+  .reqform
+    &__content
+      padding: 50px 0px 70px
     .container
-      max-width: 534px
+      max-width: 535px
     &__title
       font-size: 24px
     &__fields
@@ -87,39 +91,22 @@
       flex-direction: column
       align-items: flex-start
       justify-content: flex-start
-      margin-top: 32px
+      margin-top: 30px
       .btn
         width: 100%
         font-size: 14px
         padding: 14px 25px
       .ui-group
         width: 100%
-        margin-bottom: 27px
 
-+r($md)
+
++r($sm)
   .reqform
-    padding: 0 40px 70px
+    padding: 0 16px 70px
     &__background
       display: none
     &__content
       display: none
       padding: 0
-    &__cta
-      .btn
-        color: $fontColor
-        padding: 12px 25px
-        font-size: 12px
-        width: auto
-        &:hover
-          color: #fff
-      .ui-group
-        margin-bottom: 20px
-    &__checkbox
-      display: none
-
-    .modal__form-note
+    .btn--modal
       display: block
-
-+r($sm)
-  .reqform
-    padding: 0 16px 70px

@@ -4,9 +4,9 @@ PageList:
   - file: homepage.html
     ready: 100
   - file: services.html
-    ready: 75
+    ready: 90
   - file: services-article.html
-    ready: 75
+    ready: 90
   - file: production.html
     ready: 75
   - file: production-article.html
