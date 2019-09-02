@@ -1,8 +1,15 @@
 
-mixin sidebarMenu(menu)
+mixin sidebarMenu(menu, isStatic)
   .article__sidebar.sidebar(data-aos="fade" data-aos-delay="500")
-    .sidebar__wrapper(js-sticky data-offset-top="100")
-      .sidebar__menu
-        each li in menu
-          li(class={"is-active": li.active})
-            a(href="#")= li.name
+    if isStatic
+      .sidebar__wrapper
+        .sidebar__menu
+          each li in menu
+            li(class={"is-active": li.active})
+              a(href="#")= li.name
+    else
+      .sidebar__wrapper(js-sticky data-offset-top="100")
+        .sidebar__menu
+          each li in menu
+            li(class={"is-active": li.active})
+              a(href="#")= li.name
