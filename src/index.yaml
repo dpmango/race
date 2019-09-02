@@ -25,7 +25,7 @@ PageList:
   - file: clients.html
     ready: 75
   - file: certificates.html
-    ready: 40
+    ready: 75
   - file: vacancies.html
     ready: 40
   - file: news.html
