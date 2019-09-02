@@ -29,6 +29,49 @@
     position: relative
     padding: 0 0
 
+  &__contacts
+    margin: 24px 0
+    display: flex
+    flex-direction: column
+  &__contact-address
+    display: inline-block
+    font-weight: 600
+    font-size: 20px
+    line-height: 1.65
+    transition: color .25s $ease
+    span
+      display: inline
+      margin-right: 0.5em
+    .ico
+      transform: translateY(0.3em)
+      fill: $colorOrange
+      font-size: 20px
+      transition: transform .25s $ease
+    &:hover
+      color: $colorPrimary
+      .ico
+        transform: translateY(0.3em) scale(1.2)
+
+  &__contact-phone
+    display: inline-block
+    margin: 0.8em 0 0.5em
+    font-weight: 700
+    font-size: 30px
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+
+  &__contact-mail
+    display: inline-block
+    font-weight: 500
+    font-size: 18px
+    line-height: 17px
+    color: $colorOrange
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+
+  // нужно вынести в отдельный блок ?
   &__cosmo
     max-width: 1080px
     margin: 75px auto 0
@@ -150,9 +193,18 @@
 
 +r($md)
   .article
-    padding: 90px 16px 0
+    padding: 90px 40px 0px
     &--full-width
       padding: 0
+    &__contacts
+      margin-bottom: 40px
+    &__contact-address
+      font-size: 14px
+    &__contact-phone
+      font-size: 20px
+      margin-bottom: 1em
+    &__contact-mail
+      font-size: 14px
     &__cosmo
       margin-top: 35px
       padding: 50px 16px 250px
@@ -163,6 +215,10 @@
             font-size: 14px
       &-bottom
         margin-top: 170px
+
++r($sm)
+  .article
+    padding: 90px 16px 0px
 
 /* Sidebar
 .sidebar
@@ -210,6 +266,9 @@
         transition: transform .25s $ease, opacity .25s $ease
       &:hover
         color: white
++r($xl)
+  .sidebar
+    margin-top: -50px
 
 +r($hd)
   .sidebar

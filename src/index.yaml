@@ -33,4 +33,4 @@ PageList:
   - file: news-article.html
     ready: 40
   - file: contacts.html
-    ready: 40
+    ready: 90
