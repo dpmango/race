@@ -94,23 +94,32 @@ p + p
     padding: 10px
     padding-right: 37px
     display: inline-block
-    transition: color .25s $ease
-    &::after
+    // transition: color .25s $ease
+    &::before, &::after
       display: inline-block
       content: ' '
       position: absolute
-      right: 0px
       top: 50%
       transform: translateY(-50%)
+      transition: .25s $ease
+    &::before
+      right: 2px
+      background: $colorPrimary
+      size: 15px 1.75px
+    &::after
+      right: 0px
       size: 17px 9px
       background: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorPrimary) no-repeat center
       background-size: contain
-      transition: transform .25s $ease
+      transition: .25s $ease
 
     &:hover
-      color: $colorOrange
+      // color: $colorOrange
       &::after
-        transform: translate(7px, -50%)
+        transform: translate(15px, -50%)
+        background-image: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorOrange)
+      &::before
+        background-color: $colorOrange
 
 +r($xl)
   .ul-list-links
