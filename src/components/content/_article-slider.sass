@@ -1,0 +1,95 @@
+/* article slider
+.article-slider
+  margin-bottom: 3em
+  &__caption
+    padding: 16px 0
+    font-style: italic
+    font-weight: 500
+    font-size: 14px
+    line-height: 1.2
+    color: #828282
+    border-bottom: 1px solid #F2F2F2
+
+  &__image
+    position: relative
+    font-size: 0
+    img
+      width: 100%
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 1
+      height: 120px
+      background: linear-gradient(0.11deg, rgba(32, 32, 32, 0.7) 22.97%, rgba(14, 10, 29, 0) 99.41%)
+
+  &__navigation
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 14px 20px
+
+  .swiper-pagination
+    display: flex
+    padding: 0 30px
+  .swiper-pagination-bullet
+    padding: 12px
+    position: relative
+    cursor: pointer
+    transition: opacity .25s $ease
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      size: 6px
+      border-radius: 50%
+      background: #FFFFFF
+      opacity: 0.4
+    &:hover
+      &::after
+        opacity: 1
+  .swiper-pagination-bullet-active
+    &::after
+      opacity: 1
+
+  .swiper-button-prev, .swiper-button-next
+    flex: 0 0 auto
+    display: block
+    padding: 10px
+    color: white
+    font-size: 0
+    transition: color .25s $ease
+    cursor: pointer
+    .ico
+      pointer-events: none
+      font-size: 18px
+    &:hover
+      color: $colorPrimary
+
++r($md)
+  .article-slider
+    margin-bottom: 0
+    &__navigation
+      padding-bottom: 7px
+
+    &__caption
+      font-size: 10px
+      padding: 8px 0
+      line-height: 1.6
+
+    .swiper-pagination-bullet
+      padding: 6px
+      &:after
+        width: 4px
+        height: 4px

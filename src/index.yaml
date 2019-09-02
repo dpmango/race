@@ -16,15 +16,15 @@ PageList:
   - file: solutions-article.html
     ready: 90
   - file: about.html
-    ready: 75
+    ready: 90
   - file: history.html
-    ready: 75
+    ready: 90
   - file: infrastructure.html
-    ready: 75
+    ready: 90
   - file: clients.html
-    ready: 75
+    ready: 90
   - file: certificates.html
-    ready: 75
+    ready: 80
   - file: vacancies.html
     ready: 75
   - file: news.html

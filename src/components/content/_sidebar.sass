@@ -1,0 +1,62 @@
+/* Sidebar
+.sidebar
+  margin-top: 24px
+  // margin-bottom: 12px
+  &__wrapper
+    background: #2C2F33
+    color: white
+
+  &__menu
+    list-style: none
+    margin: 0
+    padding: 35px 0
+    li
+      display: block
+      font-weight: 600
+      font-size: 14px
+      line-height: 17px
+      margin-bottom: 7px
+      &:last-child
+        margin-bottom: 0
+      &.is-active
+        a
+          color: white
+          &::before
+            opacity: 1
+            transform: none
+    a
+      position: relative
+      display: inline-block
+      padding: 5px 32px
+      color: #D9DBDE
+      transition: color .25s $ease
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 12px
+        left: 5px
+        size: 16px 2px
+        background: $colorPrimary
+        opacity: 0
+        transform: translate(-5px,0)
+        position: none
+        transition: transform .25s $ease, opacity .25s $ease
+      &:hover
+        color: white
++r($xl)
+  .sidebar
+    margin-top: -50px
+    &--title-gap
+      margin-top: 12px
+
+
++r($hd)
+  .sidebar
+    &__menu
+      padding: 25px 0
+      li
+        font-size: 12px
+        margin-bottom: 5px
+      a
+        padding-right: 16px

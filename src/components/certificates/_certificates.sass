@@ -1,6 +1,6 @@
 
-// logo list
-.sertificates
+// certificates
+.certificates
   display: flex
   flex-wrap: wrap
   margin: 0px -10px
@@ -23,26 +23,34 @@
     padding: 24px 15px 24px 25px
     border: 1px solid $borderColor
     width: 100%
-    transition: border-color .25s $ease
+    transition: box-shadow .25s $ease
     &:hover
-      border-color: $fontColor
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      .certificates__icon
+        color: $colorPrimary
+  &__name
+    margin-top: 15px
+    font-size: 12px
+    line-height: 1.65
+    color: #4F4F4F
+    margin-bottom: 0
+  &__icon
+    font-size: 0
+    color: $colorOrange
+    transition: color .25s $ease
+    backface-visibility: hidden
+    .ico
+      font-size: 50px
     img
       max-width: 100%
-    p
-      margin-top: 15px
-      font-size: 12px
-      line-height: 1.65
-      color: #4F4F4F
-      margin-bottom: 0
-  &__icon
-    p
-      margin: 4px 0 0
-      font-size: 10px
-      line-height: 1.2
-      color: #BDBDBD
+  &__filesize
+    margin: 0.8em 0 0
+    font-size: 10px
+    line-height: 1.2
+    color: #BDBDBD
 
 +r($sm)
-  .sertificates
+  .certificates
     margin: 0
     &__col
       flex: 0 0 $col12
@@ -52,12 +60,13 @@
       display: flex
       flex-direction: row
       padding: 16px
-      p
-        margin-top: 0
+    &__name
+      margin-top: 0
 
     &__icon
       flex: 0 0 50px
       max-width: 50px
       margin-right: 15px
-      p
-        margin-top: 4px
+
+    &__filesize
+      margin-top: 4px

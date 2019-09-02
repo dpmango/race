@@ -1,0 +1,94 @@
+/* Article img sep
+.article-img-sep
+  position: relative
+  margin: 20px 0 100px
+  // emulate async background
+  &::before
+    display: inline-block
+    content: ' '
+    position: absolute
+    top: 80px
+    left: 0
+    right: 0
+    bottom: 0
+    background: #D7DED0
+  > .container
+    position: relative
+    z-index: 2
+
+  &__content
+    flex: 0 1 auto
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 80px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    p
+      max-width: 365px
+      font-weight: 500
+      font-size: 18px
+      line-height: 1.67
+      color: #4F4F4F
+  &__bg
+    flex: 0 1 auto
+    margin-left: auto
+    margin-right: -135px
+    padding-left: 15px
+    padding-right: 15px
+    padding-bottom: 24px
+    img
+      max-width: 100%
+
++r($hd)
+  .article-img-sep
+    margin: 0 0 72px
+    &::before
+      top: 50px
+    &__content
+      padding-top: 62px
+      p
+        font-size: 16px
+        line-height: 1.5
+    &__bg
+      margin-right: 20px
+      width: 56%
+
++r($xl)
+  .article-img-sep
+    margin: 10px 0 85px
+
++r($lg)
+  .article-img-sep
+    margin: 35px 0 50px
+    padding: 40px 0
+    &::before
+      top: 0
+    &__bg
+      padding-bottom: 0
+      margin-right: 0
+      padding-left: 30px
+      width: 60%
+    &__content
+      padding-top: 0
+      p
+        font-size: 14px
+        line-height: 1.75
+
++r($md)
+  .article-img-sep
+    margin: 65px 0 40px
+    padding: 0 0 35px
+    &__bg
+      margin: -35px auto 0
+      font-size: 0
+      width: auto
+      padding: 0
+      img
+        height: 229px
+    &__content
+      margin-top: 23px
+  .article
+    &__wrapper
+      flex-direction: column-reverse
+
