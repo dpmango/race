@@ -8,14 +8,13 @@ PageList:
   - file: services-article.html
     ready: 90
   - file: production.html
-    ready: 75
+    ready: 90
   - file: production-article.html
-    ready: 75
+    ready: 80
   - file: solutions.html
-    ready: 75
+    ready: 90
   - file: solutions-article.html
-    ready: 75
-
+    ready: 90
   - file: about.html
     ready: 75
   - file: history.html
