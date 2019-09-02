@@ -19,7 +19,7 @@ PageList:
   - file: about.html
     ready: 75
   - file: history.html
-    ready: 40
+    ready: 75
   - file: infrastructure.html
     ready: 75
   - file: clients.html

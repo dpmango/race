@@ -34,12 +34,17 @@
   &--primary
     h2
       font-size: 40px
+      margin-top: 100px
+      margin-bottom: 0
+      color: $fontColor
     h3
       font-size: 20px
       text-transform: uppercase
     p
       font-size: 18px
       color: $fontColor
+    .p-big
+      font-size: 20px
 
 .img-w100
   width: 100%
@@ -54,6 +59,13 @@
       font-size: 18px
     ul.ul-list, ol.ol-list
       margin: 2.5em 0
+    &--primary
+      p
+        font-size: 16px
+        line-height: 1.65
+      h2
+        font-size: 30px
+        margin-top: 85px
 
 
 +r($xl)
@@ -64,6 +76,14 @@
   .wysiwyg
     p
       font-size: 12px
+    &--primary
+      h2
+        font-size: 26px
+        margin-top: 55px
+      p
+        font-size: 14px
+      .p-big
+        font-size: 18px
 
 
 +r($md)
@@ -87,3 +107,15 @@
     h4
       font-size: 14px
       text-transform: uppercase
+
+    &--primary
+      h2
+        font-size: 20px
+        margin-top: 30px
+      p
+        font-size: 12px
+      .p-big
+        font-size: 14px
+
+      figure
+        margin: 20px 0

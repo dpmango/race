@@ -13,6 +13,7 @@
     min-width: 1px
     min-height: 0
     padding: 0 15px
+    // outline: 1px solid red
   &__content
     flex: 1 1 100%
     max-width: 100%
@@ -22,6 +23,47 @@
     flex: 0 0 370px
     max-width: 370px
     margin-right: -135px
+
+  &--full-width
+    max-width: 100%
+    position: relative
+    padding: 0 0
+
+  &__cosmo
+    max-width: 1080px
+    margin: 75px auto 0
+    padding: 220px 40px 420px
+    &-bg
+      position: absolute 0
+      display: flex
+      flex-direction: column
+      z-index: 1
+      img
+        flex: 1 1 auto
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .article__wrapper
+      max-width: 795px
+      position: relative
+      z-index: 2
+    &-top
+      .wysiwyg
+        h2
+          color: #fff
+          margin-top: 0
+        p
+          color: #fff
+          margin-top: 0px
+          line-height: 1.7
+
+    &-bottom
+      margin-top: 415px
+
+  &--century
+    p
+      max-width: 73%
 
 +r($hd)
   .article
@@ -35,6 +77,25 @@
       flex-basis: 310px
       max-width: 310px
       margin-right: 0
+    &--full-width
+      max-width: 100%
+      padding: 0
+    &__cosmo
+      max-width: 1060px
+      margin-top: 15px
+      padding: 160px 40px 400px
+      margin-bottom: -70px
+      .article__wrapper
+        max-width: 705px
+      &-top
+        .wysiwyg
+          p
+            margin-top: 10px
+          .p-big
+            font-size: 18px
+      &-bottom
+        margin-top: 310px
+
 
 +r($xl)
   .article
@@ -43,6 +104,20 @@
       max-width: calc(100% - 325px)
     &__content
       padding-right: 15px
+    &--full-width
+      padding: 0
+    &__cosmo
+      margin-top: 65px
+      padding-bottom: 290px
+      margin-bottom: -80px
+      .article__wrapper
+        max-width: 70%
+      &-top
+        .wysiwyg
+          p
+            margin-top: 20px
+      &-bottom
+        margin-top: 145px
 
 +r($lg)
   .article
@@ -52,10 +127,42 @@
       max-width: 100%
     &__sidebar
       display: none
+    &--full-width
+      padding: 0
+    &__cosmo
+      margin-top: 70px
+      padding-top: 120px
+      margin-bottom: -70px
+      .article__wrapper
+        max-width: 100%
+      &-top
+        .wysiwyg
+          p
+            margin-top: 10px
+            line-height: 1.65
+          .p-big
+            font-size: 16px
+      &-bottom
+        margin-top: 190px
+    &--century
+      p
+        max-width: 100%
 
 +r($md)
   .article
     padding: 90px 16px 0
+    &--full-width
+      padding: 0
+    &__cosmo
+      margin-top: 35px
+      padding: 50px 16px 250px
+      margin-bottom: -90px
+      &-top
+        .wysiwyg
+          .p-big
+            font-size: 14px
+      &-bottom
+        margin-top: 170px
 
 /* Sidebar
 .sidebar
