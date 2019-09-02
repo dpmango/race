@@ -4,7 +4,7 @@
   .reqform__background(js-parallax-scale-background data-scale-power="2")
     img(src='img/regFormBackground.jpg' srcset='img/regFormBackground@2x.jpg 2x')
   .reqform__content
-    .container(js-teleport data-teleport-to="modal-application" data-teleport-condition="<767")
+    .container
       form(action="ajax-endpoint.php" js-validate-form)
         .reqform__title(data-aos="fade-up") Оставить заявку
         .reqform__fields(data-aos="fade-up")

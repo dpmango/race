@@ -43,7 +43,33 @@
 
 // submit application modal
 .modal.mfp-hide#modal-application
-  .modal__tp(data-teleport-target="modal-application")
+  form(action="ajax-endpoint.php" js-validate-form)
+    .reqform__title(data-aos="fade-up") Оставить заявку
+    .reqform__fields(data-aos="fade-up")
+      .reqform__col.ui-group
+        .ui-input(js-input-focus)
+          label.ui-input__float-label(for="rfm_name") Представьтесь пожалуйста <span class="required">*</span>
+          input(type="text" name="name" id="rfm_name" required)
+      .reqform__col.ui-group
+        .ui-input(js-input-focus)
+          label.ui-input__float-label(for="rfm_email") Напишите ваш e-mail  <span class="required">*</span>
+          input(type="email" name="email" id="rfm_email" required)
+      .reqform__col.ui-group
+        .ui-input(js-input-focus)
+          label.ui-input__float-label(for="rfm_phone") Напишите ваш телефон <span class="required">*</span>
+          input(type="tel" name="phone" id="rfm_phone" required)
+    .reqform__cta(data-aos="fade-up")
+      .ui-group
+        button(type="submit").btn.btn-primary.btn--c-white
+          span Отправить
+      .reqform__checkbox
+        .ui-group
+          .ui-checkbox
+            input(type="checkbox" checked id="rfm_agree" name="agree" required)
+            label(for="rfm_agree")
+              span Я согласен на обработку <a href="#" target="_blank">персональных данных</a>, а также с условиями оферты.
+      .modal__form-note Нажимая кнопку "Отправить" Вы соглашаетесь с политикой конфиденциальности.
+
 
 // thanks modal
 .modal.mfp-hide#modal-thanks

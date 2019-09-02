@@ -35,7 +35,7 @@
     },
     initSwipers: function() {
       // ARTICLE SWIPER
-      new Swiper('[js-swiper-article]', {
+      var articleSwiper = new Swiper('[js-swiper-article]', {
         watchOverflow: true,
         setWrapperSize: false,
         spaceBetween: 0,
@@ -51,6 +51,15 @@
           type: 'bullets',
           clickable: true,
         },
+      });
+
+      // fix pagination by manually setting the class
+      articleSwiper.on('slideChange', function() {
+        var index = articleSwiper.realIndex;
+        var $pagination = $('[js-swiper-article]').find('.swiper-pagination-bullet');
+
+        $pagination.removeClass('swiper-pagination-bullet-active');
+        $pagination.eq(index).addClass('swiper-pagination-bullet-active');
       });
     },
 
