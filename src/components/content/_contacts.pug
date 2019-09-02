@@ -2,21 +2,35 @@
 include ../breadcrumbs/_breadcrumbs
 include _partials/_sidebar
 
-.content
+.content.mb-0.mb-xl-5
   .bc-container
     +breadcrumbs(["Главная", "О компании", "Контакты"])
 
   // article
   article.article
-    h1.h1-title.article__title(data-aos="fade-up") Контакты
+    h1.h1-title.article__title.article__title--big(data-aos="fade-up") Контакты
     .article__wrapper
       // article content
       .article__content
-        // caption
-        //- p.p-big(data-aos="fade-up") «Рэйс-Коммуникейшн» имеет все виды государственных лицензий и сертификатов, необходимых для работы в области системной интеграции, строительства инженерных систем и предоставления услуг связи.
+        .article__contacts(data-aos="fade-up")
+          a(href="https://maps.yandex.ru/" target="_blank").article__contact-address
+            span 141407, МО, Химки, ул. Панфилова, 19, Кантри Парк
+            +svgMono('out-link')
+          a(href="tel:+74956416155").article__contact-phone +7 (495) 641 61 55
+          a(href="mailto:info@race.ru").article__contact-mail info@race.ru
 
         div(js-stick-to-window data-position="right" data-stop="<577")
-          img.img-w100(js-lazy data-src='img/contactsArticle.jpg' data-srcset='img/contactsArticle@2x.jpg 2x')
+          picture.img-w100(
+            js-lazy
+            alt=""
+            data-src='img/contactsArticle.jpg')
+              data-src(
+              media="(min-width: 577px)"
+              srcset='img/contactsArticle.jpg 1x, img/contactsArticle@2x.jpg 2x')
+              data-src(
+              media="(min-width: 0px)"
+              srcset='img/contactsArticleMobile.jpg 1x, img/contactsArticleMobile@2x.jpg 2x')
+
 
       // sidebar
       +sidebarMenu([

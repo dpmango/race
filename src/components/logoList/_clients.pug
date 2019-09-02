@@ -1,29 +1,6 @@
 // LOGO LIST
 .logo-list.logo-list--editable
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_1.png' srcset='img/clientsLogo_1@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_2.png' srcset='img/clientsLogo_2@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_3.png' srcset='img/clientsLogo_3@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_4.png' srcset='img/clientsLogo_4@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_5.png' srcset='img/clientsLogo_5@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_6.png' srcset='img/clientsLogo_6@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_7.png' srcset='img/clientsLogo_7@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_8.png' srcset='img/clientsLogo_8@2x.png 2x')
-  .logo-list__col
-    .logo-list__logo
-      img(src='img/clientsLogo_9.png' srcset='img/clientsLogo_9@2x.png 2x')
+  each logo in [1,2,3,4,5,6,7,8,9]
+    .logo-list__col
+      .logo-list__logo
+        img(src='img/clientsLogo_'+logo+'.png' srcset='img/clientsLogo_'+logo+'@2x.png 2x')
