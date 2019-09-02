@@ -1,0 +1,183 @@
+@keyframes cdp-in {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cdp {
+  position: relative;
+  text-align: center;
+  font-size: 0;
+  z-index: 6;
+  margin: 32px 0 0;
+  animation: cdp-in 500ms ease both;
+  animation-timeout: 200ms;
+  display: flex;
+  align-items: center;
+
+  &_i {
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: background 250ms;
+    align-items: center;
+    text-transform: uppercase;
+    margin: 0 2px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    line-height: 1;
+    font-size: 16px;
+    padding: 0;
+    color: #4F4F4F;
+    font-weight: 600;
+    letter-spacing: .03em;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child,
+    &:last-child {
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        border-color: transparent !important
+      }
+    }
+
+    &:first-child {
+      transform: scale(-1, 1);
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-left: 10px;
+    }
+
+    &:last-child,
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      display: flex;
+    }
+
+    .ico {
+      color: transparent;
+    }
+  }
+
+  &_i:hover {
+    border-color: $colorOrange;
+  }
+
+  &:not([actpage="1"]) &_i:nth-child(1) {
+    display: flex;
+  }
+}
+
+@for $i from 1 through 80 {
+  .cdp[actpage="#{$i}"] {
+
+    // 3 before
+    .cdp_i:nth-child(#{$i - 2}):not(:first-child):not(:nth-child(2)) {
+      display: flex;
+      pointer-events: none;
+      color: transparent;
+      border-color: transparent;
+      width: 40px;
+
+      &:after {
+        content: '...';
+        color: #4F4F4F;
+        font-size: 16px;
+        margin-left: -10px;
+      }
+    }
+
+    // // 2 before
+    // .cdp_i:nth-child(#{$i - 1}):not(:first-child) {
+    //   display: flex;
+    // }
+    // before
+    .cdp_i:nth-child(#{$i}):not(:first-child) {
+      display: flex;
+    }
+
+    // active
+    .cdp_i:nth-child(#{$i + 1}) {
+      border-color: $colorOrange;
+      display: flex;
+
+      +.cdp_i:last-child {
+        display: none !important;
+      }
+    }
+
+    // next
+    .cdp_i:nth-child(#{$i + 2}):not(:last-child) {
+      display: flex;
+    }
+
+    // // 2 next
+    // .cdp_i:nth-child(#{$i + 3}):not(:last-child) {
+    //   display: flex;
+    // }
+    // 3 next
+    .cdp_i:nth-child(#{$i + 4}):not(:last-child):not(:nth-last-child(2)) {
+      display: flex;
+      pointer-events: none;
+      color: transparent;
+      border-color: transparent;
+      width: 40px;
+
+      &:after {
+        content: '...';
+        color: #4F4F4F;
+        font-size: 16px;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @for $i from 1 through 80 {
+    .cdp[actpage="#{$i}"] {
+      .cdp_i:nth-child(#{$i - 2}):not(:first-child):not(:nth-child(2)) {
+        width: 20px;
+
+        &:after {
+          font-size: 12px;
+        }
+      }
+
+      .cdp_i:nth-child(#{$i + 4}):not(:last-child):not(:nth-last-child(2)) {
+        width: 20px;
+
+        &:after {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .cdp {
+    &_i {
+      height: 32px;
+      min-width: 32px;
+      font-size: 12px;
+
+      &:first-child,
+      &:last-child {
+        display: none !important;
+      }
+    }
+  }
+}

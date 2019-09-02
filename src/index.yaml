@@ -28,7 +28,9 @@ PageList:
   - file: vacancies.html
     ready: 75
   - file: news.html
-    ready: 40
+    ready: 75
+  - file: newsArchieve.html
+    ready: 75
   - file: news-article.html
     ready: 90
   - file: contacts.html
