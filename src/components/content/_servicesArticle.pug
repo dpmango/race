@@ -16,7 +16,16 @@ include _partials/_sidebar
         p.p-big(data-aos="fade-up") Группа компаний Race предлагает клиентам широкий спектр услуг по предоставлению круглосуточной технической поддержки наземных и спутниковых сетей передачи данных, а также по ремонту и замене оборудования различных производителей.
 
         div(js-stick-to-window data-position="left" data-stop="<577").mt-3.mb-2
-          img.img-w100(js-lazy data-src='img/articleImage_1.jpg' data-srcset='img/articleImage_1@2x.jpg 2x')
+          picture.img-w100(
+            js-lazy
+            alt=""
+            data-src='img/articleImage_1.jpg')
+              data-src(
+              media="(min-width: 1279px)"
+              srcset='img/articleImage_1.jpg 1x, img/articleImage_1@2x.jpg 2x')
+              data-src(
+              media="(min-width: 0px)"
+              srcset='img/articleImage_1_Mobile.jpg 1x, img/articleImage_1_Mobile@2x.jpg 2x')
 
         .wysiwyg(data-aos="fade-up")
           ol.ol-list.ol-list--bordered
