@@ -31,6 +31,6 @@ PageList:
   - file: news.html
     ready: 40
   - file: news-article.html
-    ready: 40
+    ready: 90
   - file: contacts.html
     ready: 90

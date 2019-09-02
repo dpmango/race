@@ -8,10 +8,11 @@ include _partials/_sidebar
 
   // article
   article.article
-    h1.h1-title.article__title(data-aos="fade-up") Специалисты Группы компаний приняли участие в «SATCOMRUS 2018: SMART SATELLITE – идеи и инновации».
     .article__wrapper
       // article content
       .article__content
+        h1.h1-title.article__title.article__title--compact(data-aos="fade-up") Специалисты Группы компаний приняли участие в «SATCOMRUS 2018: SMART SATELLITE – идеи и инновации».
+        .article__datetime(data-aos="fade-up") 13 марта 2019
 
         .wysiwyg(data-aos="fade-up")
           figure
@@ -30,4 +31,4 @@ include _partials/_sidebar
         {name: "Работа у нас"},
         {name: "Новости", active: true},
         {name: "Контакты"}
-      ])
+      ], false, true)
