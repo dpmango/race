@@ -27,7 +27,7 @@ PageList:
   - file: certificates.html
     ready: 75
   - file: vacancies.html
-    ready: 40
+    ready: 75
   - file: news.html
     ready: 40
   - file: news-article.html

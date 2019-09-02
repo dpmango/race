@@ -47,6 +47,16 @@
           });
 
           return false;
+        })
+        .on('click', '[js-open-vacancy]', function() {
+          $(this)
+            .parent()
+            .toggleClass('is-open');
+          $(this)
+            .next()
+            .slideToggle();
+
+          return false;
         });
     },
     destroy: function() {
