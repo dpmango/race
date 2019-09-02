@@ -1,6 +1,6 @@
 
-mixin sidebarMenu(menu, isStatic)
-  .article__sidebar.sidebar(data-aos="fade" data-aos-delay="500")
+mixin sidebarMenu(menu, isStatic, titleGap)
+  .article__sidebar.sidebar(class={"sidebar--title-gap": titleGap} data-aos="fade" data-aos-delay="500")
     if isStatic
       .sidebar__wrapper
         .sidebar__menu

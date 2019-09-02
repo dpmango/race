@@ -41,6 +41,7 @@
     font-size: 56px
     line-height: 1.2
     padding: 10px
+    transition: color .25s $ease
     &::after
       display: inline-block
       content: ' '
@@ -51,6 +52,9 @@
       height: 1px
       background: rgba(white, .3)
       transition: right .35s ease-out
+    &--no-border
+      &::after
+        display: none
   &:hover
     .next-page__name
       color: rgba(white, .7)
