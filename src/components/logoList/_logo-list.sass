@@ -26,6 +26,15 @@
     img
       max-width: 100%
 
+  &--editable
+    .logo-list__col
+      flex: 0 0 $col3
+      max-width: $col3
+      min-height: 104px
+    .logo-list__logo
+      padding: 5px
+      border-color: $borderColor
+
 
 +r($lg)
   .logo-list
@@ -39,3 +48,7 @@
     &__col
       flex: 0 0 $col6
       max-width: $col6
+    &--editable
+      .logo-list__col
+        flex: 0 0 $col6
+        max-width: $col6

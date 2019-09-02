@@ -23,7 +23,7 @@ PageList:
   - file: infrastructure.html
     ready: 75
   - file: clients.html
-    ready: 40
+    ready: 75
   - file: certificates.html
     ready: 40
   - file: vacancies.html
