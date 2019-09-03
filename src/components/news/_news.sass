@@ -1,23 +1,23 @@
 .news
   margin-top: 24px
   position: relative
-  .btn
+  &__btn
     position: absolute
     right: 0
     top: -80px
-    &:hover
-      color: #fff
-    &::after
-      z-index: -1
-  &--archieve
     .btn
-      color: #fff
-      &::after
-        transform: translateY(0)
       &:hover
-        color: $fontColor
+        color: #fff
+  &--archieve
+    .news__btn
+      .btn
+        color: #fff
         &::after
-          transform: translateY(100%)
+          transform: translateY(0)
+        &:hover
+          color: $fontColor
+          &::after
+            transform: translateY(100%)
   &__grid
     display: flex
     flex-wrap: wrap
@@ -75,11 +75,11 @@
       img
         transform: scale(1.02)
     .news-card__info
-      color: $colorPrimary
+      color: $colorOrange
 
 +r($hd)
   .news
-    .btn
+    &__btn
       top: -70px
   .news-card
     &__cover
@@ -90,7 +90,7 @@
 
 +r($xl)
   .news
-    .btn
+    &__btn
       top: -60px
   .news-card
     &__cover
@@ -106,12 +106,12 @@
 +r($lg)
   .news
     margin-top: 20px
-    .btn
+    &__btn
       top: -55px
 
 +r($md)
   .news
-    .btn
+    &__btn
       top: -45px
   .news-card
     &__cover

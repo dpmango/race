@@ -90,82 +90,10 @@ const spriteSvgMono = () =>
     .pipe(rename({ basename: 'sprite-mono' }))
     .pipe(gulp.dest(config.dest.img));
 
-// preserve colors on icons
-const spriteSvgColor = () =>
-  gulp
-    .src(config.src.iconsSvgColor + '/**/*.svg')
-    .pipe(
-      plumber({
-        errorHandler: config.errorHandler,
-      })
-    )
-    .pipe(
-      svgmin({
-        js2svg: {
-          pretty: true,
-        },
-        plugins: [
-          {
-            removeDesc: true,
-          },
-          {
-            cleanupIDs: true,
-          },
-          {
-            removeViewBox: false,
-          },
-          {
-            mergePaths: false,
-          },
-          {
-            removeDimensions: false,
-          },
-          {
-            removeAttrs: false,
-          },
-        ],
-      })
-    )
-    .pipe(rename({ prefix: 'ico-color-' }))
-    .pipe(svgStore({ inlineSvg: false }))
-    .pipe(
-      through2.obj(function(file, encoding, cb) {
-        var $ = cheerio.load(file.contents.toString(), { xmlMode: true });
-        var data = $('svg > symbol')
-          .map(function() {
-            var $this = $(this);
-            var size = $this
-              .attr('viewBox')
-              .split(' ')
-              .splice(2);
-            var name = $this.attr('id');
-            var ratio = size[0] / size[1]; // symbol width / symbol height
-            return {
-              name: name,
-              ratio: +ratio.toFixed(2),
-            };
-          })
-          .get();
-        this.push(file);
-        gulp
-          .src(__dirname + '/_sprite-svg-color.scss')
-          .pipe(
-            consolidate('lodash', {
-              symbols: data,
-            })
-          )
-          .pipe(gulp.dest(config.src.sassGen));
-        cb();
-      })
-    )
-    .pipe(rename({ basename: 'sprite-color' }))
-    .pipe(gulp.dest(config.dest.img));
-
-const buildSprites = () => gulp.parallel(spriteSvgMono, spriteSvgColor);
+const buildSprites = () => gulp.parallel(spriteSvgMono);
 
 const watch = () => () => {
   gulp.watch(config.src.iconsSvgMono + '/**/*.svg', spriteSvgMono);
-  gulp.watch(config.src.iconsSvgColor + '/**/*.svg', spriteSvgColor);
 };
 
 module.exports.build = buildSprites;

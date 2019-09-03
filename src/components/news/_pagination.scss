@@ -1,23 +1,9 @@
-@keyframes cdp-in {
-  from {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 .cdp {
   position: relative;
   text-align: center;
   font-size: 0;
   z-index: 6;
   margin: 32px 0 0;
-  animation: cdp-in 500ms ease both;
-  animation-timeout: 200ms;
   display: flex;
   align-items: center;
 
@@ -25,7 +11,7 @@
     font-size: 14px;
     text-decoration: none;
 
-    transition: background 250ms;
+    transition: background 250ms, border .25s $ease;
     align-items: center;
     text-transform: uppercase;
     margin: 0 2px;
@@ -69,12 +55,17 @@
     }
 
     .ico {
-      color: transparent;
+      font-size: 11px;
+      // color: transparent;
+      transition: .25s $ease;
     }
   }
 
   &_i:hover {
     border-color: $colorOrange;
+    .ico{
+      fill: $colorOrange;
+    }
   }
 
   &:not([actpage="1"]) &_i:nth-child(1) {
@@ -82,7 +73,7 @@
   }
 }
 
-@for $i from 1 through 80 {
+@for $i from 1 through 20 {
   .cdp[actpage="#{$i}"] {
 
     // 3 before
@@ -148,7 +139,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  @for $i from 1 through 80 {
+  @for $i from 1 through 20 {
     .cdp[actpage="#{$i}"] {
       .cdp_i:nth-child(#{$i - 2}):not(:first-child):not(:nth-child(2)) {
         width: 20px;
