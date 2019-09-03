@@ -17,9 +17,6 @@ include _partials/_sidebar
         .wysiwyg.wysiwyg--primary(data-aos="fade-up")
           p Мы рады специалистам, готовым к творческой работе в сфере новых и быстроразвивающихся технологий. Компания придерживается принципа преемственности поколений и принимает на работу высококвалифицированных специалистов разных возрастов.
 
-        //- // TODO vancies list
-        //- div(style="background-color: tomato; height: 200px; padding: 20px") Вакансии
-
       // sidebar
       +sidebarMenu([
         {name: "История компании"},
@@ -30,21 +27,25 @@ include _partials/_sidebar
         {name: "Новости"},
         {name: "Контакты"}
       ], true)
+
+    // VACANCIES
     .vacancies
       .wysiwyg.wysiwyg--primary(data-aos="fade-up")
-        .vacancies__image
-          div(js-stick-to-window data-position="right" data-stop="<577")
-            img.img-w100(js-lazy data-src='img/vacanciesArticle.jpg' data-srcset='img/vacanciesArticle@2x.jpg 2x')
+        div(js-stick-to-window data-position="right" data-stop="<577")
+          img.img-w100(js-lazy data-src='img/vacanciesArticle.jpg' data-srcset='img/vacanciesArticle@2x.jpg 2x')
+        div(js-stick-to-window data-position="right" data-stop="<1024")
+          // benefits
+          .vacancies__benefits
+            h3.mt-3 Группа компаний Рэйс предлагает
+            ol.ol-list.mt-1
+              li Трудоустройство в соответствии с ТК РФ.
+              li Решение интересных и нестандартных задач
+              li Интенсивное обучение в процессе работы
+              li Профессиональный рост
+              li Трудоустройство в соответствии с ТК РФ.
 
-        .vacancies__benefits
-          h3 Группа компаний Рэйс предлагает
-          ol.ol-list
-            li Трудоустройство в соответствии с ТК РФ.
-            li Решение интересных и нестандартных задач
-            li Интенсивное обучение в процессе работы
-            li Профессиональный рост
-            li Трудоустройство в соответствии с ТК РФ.
-      .vacancies__bottom
+      // bottom
+      .vacancies__scope(data-aos="fade-up")
         .vacancies__left
           h4 Открытые вакансии
           .vacancies__items
@@ -77,10 +78,6 @@ include _partials/_sidebar
                   li Опыт ведения договорной работы;
                   li Опыт ведения претензионной работы;
                   li Опыт подготовки документов по лицензированию, СРО;
-                  li Владение навыками составления и оформления юридических и иных служебных документов, навыки делового письма;
-                  li Знание гражданского, процессуального законодательства, налогового, трудового, договорного права;
-                  li Знание арбитражного процесса;
-                  li Знания ФЗ № 275-от 29.12.2012г. приветствуется.
                 p Обязанности
                 ul
                   li Договорная работа: поставки, субподряд (СМР, пусконаладочные, проектные, транспортно-экспедиторские), услуги, работы;
@@ -100,19 +97,13 @@ include _partials/_sidebar
                   li Знание гражданского, процессуального законодательства, налогового, трудового, договорного права;
                   li Знание арбитражного процесса;
                   li Знания ФЗ № 275-от 29.12.2012г. приветствуется.
-                p Обязанности
-                ul
-                  li Договорная работа: поставки, субподряд (СМР, пусконаладочные, проектные, транспортно-экспедиторские), услуги, работы;
-                  li Оформление, визирование, согласование и контроль над ходом подписания договоров, дополнительных соглашений и протоколов разногласий к ним;
-                  li Работа с контрагентами;
-
 
         .vacancies__right
           h4 Директор по персоналу
-          .vacancies__director
-            .vacancies__director-image
+          .vacancies__person
+            .vacancies__person-image
               img(src='img/director.png' srcset='img/director@2x.png 2x')
-            .vacancies__director-info
+            .vacancies__person-info
               p Бибеева Марина Ивановна
-              a(href="#") +7 (495) 785-0770, доб. 1434
-              a.mail(href="#") ok@sgmt.ru
+              a(href="tel:+74957850770") +7 (495) 785-0770, доб. 1434
+              a.mail(href="mailto:ok@sgmt.ru") ok@sgmt.ru

@@ -29,7 +29,7 @@ PageList:
     ready: 90
   - file: news.html
     ready: 90
-  - file: newsArchieve.html
+  - file: news-archieve.html
     ready: 90
   - file: news-article.html
     ready: 90
