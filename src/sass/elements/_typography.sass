@@ -110,21 +110,28 @@ p + p
       transform: translateY(-50%)
       transition: .25s $ease
     &::before
-      right: 2px
+      left: 0px
       background: $colorPrimary
       size: 15px 2px
     &::after
-      right: 0px
-      size: 17px 9px
-      background: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorPrimary) no-repeat center
-      background-size: contain
+      right: 1px
+      size: 5px
+      border: 2px solid $colorPrimary
+      transform: translateY(-50%) rotate(45deg)
+      border-left: none
+      border-bottom: none
+
+      // background: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorPrimary) no-repeat center
+      // background-size: contain
       transition: .25s $ease
   a:hover
     .ul-ico-arrow
       &::after
-        transform: translate(15px, -50%)
-        background-image: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorOrange)
+        transform: translate(9px, -50%) rotate(45deg)
+        border-color: $colorOrange
+        // background-image: svg-load('../icons/svg-mono/btn-arrow-next.svg', fill=$colorOrange)
       &::before
+        size: 25px 2px
         background-color: $colorOrange
 
 +r($xl)
