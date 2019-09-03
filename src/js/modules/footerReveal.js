@@ -3,11 +3,23 @@
 // //////////////////
 (function($, APP) {
   APP.Plugins.FooterReveal = {
-    init: function() {
+    data: {
+      footerHeight: undefined,
+    },
+    init: function(fromPjax) {
+      if (!fromPjax) {
+        this.getData();
+        this.listenResize();
+      }
       this.revealFooter();
-      this.listenResize();
+    },
+    getData: function() {
+      var footer = $('[js-reveal-footer]').last();
+      console.log('getting data', footer.outerHeight());
+      this.data.footerHeight = footer.outerHeight();
     },
     listenResize: function() {
+      _window.on('resize', throttle(this.getData.bind(this), 50));
       _window.on('resize', throttle(this.revealFooter.bind(this), 100));
     },
     revealFooter: function() {
@@ -18,7 +30,7 @@
           .find('[js-fullpage]').length > 0;
 
       if (footer.length > 0) {
-        var footerHeight = footer.outerHeight();
+        var footerHeight = this.data.footerHeight;
         var maxHeight = _window.height() - footerHeight > 100;
         if (maxHeight && !APP.Browser().data.isIe && (!haveFullpage || window.innerWidth <= 576)) {
           $('body').css({

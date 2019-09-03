@@ -12,11 +12,11 @@
 
 .certificates
   each certificate in list
-    .certificates__col
+    .certificates__col(data-aos="fade-up")
       a.certificates__item(href="#")
         .certificates__icon
           +svgMono('doc-pdf')
           .certificates__filesize 13.5 Mb
         .certificates__name= certificate
-  .certificates__information
+  .certificates__information(data-aos="fade-up")
     p Дополнительная информация предоставляется по запросу.
