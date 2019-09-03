@@ -7,10 +7,12 @@
       pBgElements: [],
     },
     init: function(fromPjax) {
-      this.getData();
-      if (!fromPjax) {
-        this.listenResize();
-        this.listenScroll();
+      if (!APP.Browser().data.isIe) {
+        this.getData();
+        if (!fromPjax) {
+          this.listenResize();
+          this.listenScroll();
+        }
       }
     },
     getData: function() {
