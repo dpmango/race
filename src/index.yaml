@@ -26,11 +26,11 @@ PageList:
   - file: certificates.html
     ready: 90
   - file: vacancies.html
-    ready: 75
+    ready: 90
   - file: news.html
-    ready: 75
+    ready: 90
   - file: newsArchieve.html
-    ready: 75
+    ready: 90
   - file: news-article.html
     ready: 90
   - file: contacts.html
