@@ -51,7 +51,6 @@
     mobileNaviClickListener: function() {
       var _this = this;
 
-      // will close navi on tablet on outside clicks
       _document
         .on('click', '[js-mobile-navi-menu] .mobile-navi__menu-title', function() {
           if (window.innerWidth <= 1024) {
@@ -75,7 +74,7 @@
             var $closestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
 
             if ($closestHeader && $closestNaviWrapper) {
-              // _this.closeMobileMenu();
+              _this.closeMobileMenu();
             }
           }
         })

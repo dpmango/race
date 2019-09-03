@@ -15,7 +15,6 @@
     },
     getData: function() {
       var footer = $('[js-reveal-footer]').last();
-      console.log('getting data', footer.outerHeight());
       this.data.footerHeight = footer.outerHeight();
     },
     listenResize: function() {
