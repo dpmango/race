@@ -8,6 +8,8 @@
         container: undefined,
         bottomPoint: undefined,
         headerNav: undefined,
+        headerNavElements: undefined,
+        headerNavTops: undefined,
       },
       colorControlSections: undefined,
     },
@@ -18,7 +20,6 @@
         this.mobileNaviClickListener();
         this.listenScroll();
         this.listenResize();
-        this.backgroundCheck();
       }
 
       this.setMenuClass();
@@ -28,11 +29,21 @@
       var $header = $('.header');
       var headerOffsetTop = 0;
       var headerHeight = $header.outerHeight() + headerOffsetTop;
+      var $headerNavElements = $('.header-nav__action');
+      var headerNavTops = [];
+
+      $headerNavElements.each(function(i, el) {
+        var $el = $(el);
+        var elPosTop = $el.position().top;
+        headerNavTops.push(elPosTop);
+      });
 
       this.data.header = {
         container: $header,
         bottomPoint: headerHeight,
         headerNav: $('.header-nav'),
+        headerNavElements: $headerNavElements,
+        headerNavTops: headerNavTops,
       };
     },
     closeMobileMenu: function(isOnload) {
@@ -146,22 +157,31 @@
       var scroll = APP.Plugins.ScrollBlock.getData();
 
       // Collect arr of past scroll elements
-      var cur = this.data.colorControlSections.map(function() {
+      var curs = [undefined, undefined, undefined];
+
+      this.data.colorControlSections.map(function() {
+        var _ithis = this;
         var elTop = $(this).offset().top - parseInt($(this).css('marginTop'));
-        if (elTop < scroll.y + _this.data.header.bottomPoint + 75) {
-          return this;
-        }
+        $.each(_this.data.header.headerNavTops, function(i, elPosTop) {
+          if (elTop < scroll.y + elPosTop + 21) {
+            curs[i] = _ithis;
+          }
+        });
       });
 
-      // Get current element
-      cur = $(cur[cur.length - 1]);
-      var headerColorModifier = cur && cur.length ? cur.data('section-color') : '';
+      // Get current element for each nav el
+      $.each(_this.data.header.headerNavElements, function(i, el) {
+        var $el = $(el);
+        var cur = $(curs[i]);
 
-      if (headerColorModifier) {
-        _this.data.header.headerNav.attr('data-scolor-modifier', headerColorModifier);
-      } else {
-        _this.data.header.headerNav.attr('data-scolor-modifier', false);
-      }
+        var headerColorModifier = cur && cur.length ? cur.data('section-color') : '';
+
+        if (headerColorModifier) {
+          $el.attr('data-scolor-modifier', headerColorModifier);
+        } else {
+          $el.attr('data-scolor-modifier', false);
+        }
+      });
     },
     setMenuClass: function() {
       // SET ACTIVE CLASS IN HEADER
@@ -200,6 +220,5 @@
 
       this.scrollHeaderColor();
     },
-    backgroundCheck: function() {},
   };
 })(jQuery, window.APP);
