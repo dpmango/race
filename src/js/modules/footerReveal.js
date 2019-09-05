@@ -31,7 +31,13 @@
       if (footer.length > 0) {
         var footerHeight = this.data.footerHeight;
         var maxHeight = _window.height() - footerHeight > 100;
-        if (maxHeight && !APP.Browser().data.isIe && (!haveFullpage || window.innerWidth <= 576)) {
+        if (
+          maxHeight &&
+          !APP.Browser().data.isIe &&
+          !haveFullpage &&
+          window.innerWidth > 576 &&
+          !APP.Browser().data.isMobile
+        ) {
           $('body').css({
             'margin-bottom': footerHeight,
           });
