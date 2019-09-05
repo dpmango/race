@@ -26,7 +26,7 @@
     flex-direction: column
     &:hover
       .news-home__content
-        color: $colorPrimary
+        color: rgba(white, .7)
 
   &__date
     font-size: 13px
@@ -69,6 +69,10 @@
       font-size: 12px
     &__content
       font-size: 14px
+    &__card
+      &:hover
+        .news-home__content
+          color: $colorPrimary
 
 +r(414)
   .news-home

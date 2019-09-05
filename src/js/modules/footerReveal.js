@@ -49,10 +49,11 @@
           $('body').css({
             'margin-bottom': 0,
           });
-          footer.css({
-            position: 'static',
-            'z-index': 7,
-          });
+          // footer.css({
+          //   position: 'static',
+          //   'z-index': 7,
+          // });
+          footer.attr('style', '');
         }
       }
     },

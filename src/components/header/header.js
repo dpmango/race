@@ -9,6 +9,7 @@
         bottomPoint: undefined,
         headerNav: undefined,
       },
+      colorControlSections: undefined,
     },
     init: function(fromPjax) {
       if (!fromPjax) {
@@ -17,6 +18,7 @@
         this.mobileNaviClickListener();
         this.listenScroll();
         this.listenResize();
+        this.backgroundCheck();
       }
 
       this.setMenuClass();
@@ -118,6 +120,7 @@
     },
     listenScroll: function() {
       _window.on('scroll', this.scrollHeader.bind(this));
+      _window.on('scroll', throttle(this.scrollHeaderColor.bind(this), 25));
     },
     listenResize: function() {
       _window.on('resize', debounce(this.getHeaderParams.bind(this), 100));
@@ -136,6 +139,28 @@
         } else {
           this.data.header.container.removeClass(fixedClass);
         }
+      }
+    },
+    scrollHeaderColor: function() {
+      var _this = this;
+      var scroll = APP.Plugins.ScrollBlock.getData();
+
+      // Collect arr of past scroll elements
+      var cur = this.data.colorControlSections.map(function() {
+        var elTop = $(this).offset().top - parseInt($(this).css('marginTop'));
+        if (elTop < scroll.y + _this.data.header.bottomPoint + 75) {
+          return this;
+        }
+      });
+
+      // Get current element
+      cur = $(cur[cur.length - 1]);
+      var headerColorModifier = cur && cur.length ? cur.data('section-color') : '';
+
+      if (headerColorModifier) {
+        _this.data.header.headerNav.attr('data-scolor-modifier', headerColorModifier);
+      } else {
+        _this.data.header.headerNav.attr('data-scolor-modifier', false);
       }
     },
     setMenuClass: function() {
@@ -167,6 +192,14 @@
         this.data.header.container.attr('data-modifier', $modifierElement.data('class'));
         this.data.header.headerNav.attr('data-modifier', $modifierElement.data('class'));
       }
+
+      // onscroll header nav controls
+      this.data.colorControlSections = $('.page')
+        .last()
+        .find('[data-section-color]');
+
+      this.scrollHeaderColor();
     },
+    backgroundCheck: function() {},
   };
 })(jQuery, window.APP);

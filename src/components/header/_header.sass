@@ -10,6 +10,7 @@
   backface-visibility: hidden
   transform-style: preserve-3d
   pointer-events: none
+  transition: background .25s $ease, box-shadow .25s $ease, transform .25s $ease
   &__logo, &__menu, &__cta, &__hamburger
     pointer-events: all
 
@@ -37,7 +38,7 @@
     align-items: center
     margin: 0
     padding: 0
-    font-family: 'Helvetica'
+    font-family: 'Helvetica', sans-serif
     li
       display: inline-block
       margin-right: 30px
@@ -135,10 +136,10 @@
 
   &.is-fixed
     transform: translate3d(0,0,0) !important
-    transition: transform .25s $ease
+    // transition: transform .25s $ease
 
   &.is-transitioning
-    transition: transform .25s $ease
+    // transition: transform .25s $ease
     transform: translate3d(0,-100%,0) !important
 
   &.is-menu-active
@@ -331,6 +332,10 @@
       &-mono-arrow-top
         font-size: 19px
   &[data-modifier="is-black"]
+    color: $fontColor
+  &[data-scolor-modifier="is-section-dark"]
+    color: white
+  &[data-scolor-modifier="is-section-white"]
     color: $fontColor
 
 +r($hd)
