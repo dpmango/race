@@ -7,6 +7,7 @@
       header: {
         container: undefined,
         bottomPoint: undefined,
+        headerNav: undefined,
       },
     },
     init: function(fromPjax) {
@@ -66,14 +67,14 @@
             $menuContainer.find('ul').slideToggle();
           }
         })
-        .on('click', function(e) {
+        .on('click touchstart', function(e) {
           // close on outside clicks
           if (window.innerWidth <= 1024) {
             var $target = $(e.target);
-            var $closestHeader = $target.closest('.header').length === 0;
-            var $closestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
-
-            if ($closestHeader && $closestNaviWrapper) {
+            var $noclosestHeader = $target.closest('.header').length === 0;
+            var $noclosestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
+            var closingCondition = $noclosestHeader && $noclosestNaviWrapper;
+            if (closingCondition) {
               _this.closeMobileMenu();
             }
           }
@@ -124,36 +125,16 @@
     scrollHeader: function() {
       if (this.data.header.container !== undefined) {
         var fixedClass = 'is-fixed';
-        var visibleClass = 'is-fixed-visible';
 
         // get scroll params from blocker function
         var scroll = APP.Plugins.ScrollBlock.getData();
 
         if (scroll.blocked) return;
 
-        if (scroll.y > this.data.header.bottomPoint) {
+        if (scroll.y > 0) {
           this.data.header.container.addClass(fixedClass);
-          this.data.header.headerNav.addClass(fixedClass);
-
-          if (scroll.y > this.data.header.bottomPoint * 2 && scroll.direction === 'up') {
-            this.data.header.container.addClass(visibleClass);
-            this.data.header.headerNav.addClass(visibleClass);
-          } else {
-            this.data.header.container.removeClass(visibleClass);
-            this.data.header.headerNav.removeClass(visibleClass);
-          }
         } else {
-          // emulate position absolute by giving negative transform on initial scroll
-          var normalized = Math.floor(normalize(scroll.y, this.data.header.bottomPoint, 0, 0, 100));
-          var reverseNormalized = (100 - normalized) * -1;
-          reverseNormalized = reverseNormalized * 1.2; // a bit faster transition
-
-          this.data.header.container.css({
-            transform: 'translate3d(0,' + reverseNormalized + '%,0)',
-          });
-
           this.data.header.container.removeClass(fixedClass);
-          this.data.header.headerNav.removeClass(fixedClass);
         }
       }
     },

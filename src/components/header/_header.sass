@@ -134,13 +134,8 @@
     transition: transform .25s $ease, opacity .25s $ease
 
   &.is-fixed
-    // should be normalized to -100% scroll at this point
-    position: fixed
-    transform: translate3d(0,-100%,0) !important
-    transition: transform .25s $ease
-
-  &.is-fixed-visible
     transform: translate3d(0,0,0) !important
+    transition: transform .25s $ease
 
   &.is-transitioning
     transition: transform .25s $ease
@@ -337,18 +332,6 @@
         font-size: 19px
   &[data-modifier="is-black"]
     color: $fontColor
-  &.is-fixed
-    transform: translate3d(0,-20px,0)
-    opacity: 0
-    .header-nav
-      &__action
-        pointer-events: none
-  &.is-fixed-visible
-    transform: translate3d(0,0,0)
-    opacity: 1
-    .header-nav
-      &__action
-        pointer-events: all
 
 +r($hd)
   .header-nav
