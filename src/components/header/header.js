@@ -80,7 +80,7 @@
             $menuContainer.find('ul').slideToggle();
           }
         })
-        .on('click', '.mobile-navi', function(e) {
+        .on('click touchstart', '.mobile-navi', function(e) {
           // close on outside clicks
           if (window.innerWidth <= 1024) {
             var $target = $(e.target);
