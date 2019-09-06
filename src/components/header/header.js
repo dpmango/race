@@ -80,13 +80,15 @@
             $menuContainer.find('ul').slideToggle();
           }
         })
-        .on('click touchstart', function(e) {
+        .on('click', '.mobile-navi', function(e) {
           // close on outside clicks
           if (window.innerWidth <= 1024) {
             var $target = $(e.target);
-            var $noclosestHeader = $target.closest('.header').length === 0;
-            var $noclosestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
-            var closingCondition = $noclosestHeader && $noclosestNaviWrapper;
+            // var $noclosestHeader = $target.closest('.header').length === 0;
+            // var $noclosestNaviWrapper = $target.closest('.mobile-navi__wrapper').length === 0;
+            // var closingCondition = $noclosestHeader && $noclosestNaviWrapper;
+            var closingCondition = $target.is('.mobile-navi.is-active');
+
             if (closingCondition) {
               _this.closeMobileMenu();
             }
