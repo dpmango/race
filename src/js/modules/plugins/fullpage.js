@@ -46,6 +46,7 @@
         // scrollOverflowReset: true,
         // dragAndMove: true,
         responsiveWidth: 577,
+        loopBottom: true,
         onLeave: function(origin, destination, direction) {
           // APP.Plugins.AOS.refreshSoft();
           $('[js-fullpage-nav] li').removeClass('is-active');
