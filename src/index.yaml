@@ -37,3 +37,5 @@ PageList:
     ready: 90
   - file: search.html
     ready: 90
+  - file: 404.html
+    ready: 90

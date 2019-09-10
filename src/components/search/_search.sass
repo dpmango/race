@@ -59,6 +59,7 @@
       color: $fontColor
       margin: 0
       font-weight: 500
+      transition: color .25s $ease
     &-info
       font-size: 14px
       line-height: 1.85
@@ -76,9 +77,11 @@
       color: #4F4F4F
       font-weight: 600
       margin: 6px 0 0
+      transition: color .25s $ease
     &:hover
-      &-title
-        color: red
+      .search-page__item-title,
+      .search-page__item-news
+        color: $colorPrimary
 
 
 
