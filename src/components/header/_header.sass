@@ -320,7 +320,7 @@
     margin-bottom: 15px
     font-size: 0
     pointer-events: all
-    transition: color .25s $ease
+    transition: color .25s $ease, opacity .25s $ease
     &:last-child
       margin-bottom: 0
     .ico
@@ -338,6 +338,11 @@
 
   &[data-modifier="is-black"]
     color: $fontColor
+
+.fp-viewing-0
+  [js-fullpage-top]
+    pointer-events: none
+    color: #707479
 
 +r($hd)
   .header-nav

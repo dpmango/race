@@ -7,13 +7,13 @@
       footerHeight: undefined,
     },
     init: function(fromPjax) {
+      this.getData(fromPjax);
       if (!fromPjax) {
-        this.getData();
         this.listenResize();
       }
       this.revealFooter();
     },
-    getData: function() {
+    getData: function(fromPjax) {
       var footer = $('[js-reveal-footer]').last();
       this.data.footerHeight = footer.outerHeight();
     },
