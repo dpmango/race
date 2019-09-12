@@ -6,7 +6,10 @@ include ../breadcrumbs/_breadcrumbs
     +breadcrumbs(["Главная", "О компании"])
 
   .about-hero__background(data-aos="blur")
-    img(src='img/aboutHero.jpg' srcset='img/aboutHero@2x.jpg 2x')
+    video(muted loop autoplay poster="img/aboutHero.jpg")
+      source(src="video/testBgVideo.mp4" type="video/mp4")
+      source(src="video/testBgVideo.webm" type="video/webm")
+    //- img(src='img/aboutHero.jpg' srcset='img/aboutHero@2x.jpg 2x')
   .about-hero__content
     .container
       .about-hero__title(data-aos="fade-up") Группа компаний РЭЙС создана в 2007 году с целью совместного продвижения продукции и услуг на телекоммуникационном рынке России и зарубежья.
