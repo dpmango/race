@@ -47,6 +47,9 @@
         // dragAndMove: true,
         responsiveWidth: 577,
         loopBottom: true,
+        scrollingSpeed: 2000,
+        // easing: 'easeInOutCubic',
+        easingCss3: 'cubic-bezier(1, 0, 0, 1)', // expo
         onLeave: function(origin, destination, direction) {
           // APP.Plugins.AOS.refreshSoft();
           $('[js-fullpage-nav] li').removeClass('is-active');
@@ -78,3 +81,12 @@
     },
   };
 })(jQuery, window.APP);
+
+// acron
+// TweenMax.fromTo(this.$bgItems[indexActive], this.DURATIONIMAGE, {
+//   yPercent: 100,
+//   ease: Power4.easeInOut
+// }, {
+//   yPercent: 0,
+//   ease: Power4.easeInOut
+// });
