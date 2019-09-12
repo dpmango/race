@@ -8,7 +8,6 @@
     init: function() {
       this.localize();
       this.validateFormsConstructor();
-      this.validateFormsCustom();
     },
     data: {
       // GENERIC FUNCTIONS
@@ -22,12 +21,17 @@
           error.appendTo(element.parent('div'));
         }
       },
+      successPlacement: function(label) {
+        label.addClass('ui-input__valid');
+      },
       validateHighlight: function(element) {
         var $element = $(element);
 
         if ($element.is('select')) {
+          $element.closest('.selectric-wrapper').removeClass('is-valid');
           $element.closest('.selectric-wrapper').addClass('has-error');
         } else {
+          $(element).removeClass('is-valid');
           $(element).addClass('has-error');
         }
       },
@@ -35,9 +39,11 @@
         var $element = $(element);
 
         if ($element.is('select')) {
+          $element.closest('.selectric-wrapper').addClass('is-valid');
           $element.closest('.selectric-wrapper').removeClass('has-error');
         } else {
           $(element).removeClass('has-error');
+          $(element).addClass('is-valid');
         }
       },
       validateSubmitHandler: function(form) {
@@ -121,6 +127,8 @@
 
         var validationOptions = {
           errorPlacement: _this.data.validateErrorPlacement,
+          // sucess: _this.data.successPlacement,
+          success: 'valid',
           highlight: _this.data.validateHighlight,
           unhighlight: _this.data.validateUnhighlight,
           submitHandler: _this.data.validateSubmitHandler,
@@ -148,29 +156,6 @@
 
         $form.addClass('is-validation-attached');
       });
-    },
-    validateFormsCustom: function() {
-      var _this = this;
-      var requestValidationObject = {
-        errorPlacement: _this.data.validateErrorPlacement,
-        highlight: _this.data.validateHighlight,
-        unhighlight: _this.data.validateUnhighlight,
-        submitHandler: _this.data.validateSubmitHandler,
-        rules: {
-          phone: _this.data.masks.phone,
-        },
-        messages: {
-          phone: {
-            required: 'Заполните это поле',
-            minlength: 'Введите корректный телефон',
-          },
-        },
-      };
-
-      // call/init
-      $('[js-validate-request]').validate(requestValidationObject);
-      // $("[js-subscription-validation-footer]").validate(subscriptionValidationObject);
-      // $("[js-subscription-validation-menu]").validate(subscriptionValidationObject);
     },
   };
 })(jQuery, window.APP);

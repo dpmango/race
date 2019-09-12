@@ -44,6 +44,8 @@
       color: currentColor
     &.has-error
       border-color: $colorRed
+    &.is-valid
+      border-color: #5AD321
 
   &.is-focused
     .ui-input__float-label
@@ -70,16 +72,23 @@
 
 /* validation error
 .ui-input__validation
-  bottom: -1.3em
-  color: $colorRed
-  font-size: 10px
-  left: 0
   position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  right: 12px
+  font-size: 0px
+  background: svg-load('../icons/svg-mono/exclamation.svg') no-repeat center
+  background-size: contain
+  size: 3px 10px
+  &.valid
+    right: 7px
+    background: svg-load('../icons/svg-mono/checkmark.svg', fill=#5AD321) no-repeat center
+    size: 10px 8px
 
 .ui-checkbox
-  + .ui-input__validation
-    bottom: -1.5em
-    left: 30px
+  // + .ui-input__validation
+  //   bottom: -1.5em
+  //   left: 30px
 
 /* Checkbox
 .ui-checkbox
