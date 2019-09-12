@@ -1,0 +1,50 @@
+// .scrolltop
+.scrolltop
+  display: none
+  position: fixed
+  z-index: 8
+  bottom: 50px
+  left: 40px
+  size: 48px
+  border-radius: 50%
+  justify-content: center
+  align-items: center
+  text-align: center
+  background: white
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer
+  transform: translate(0,10px)
+  color: #4F4F4F
+  transition: color .25s $ease
+  opacity: 0
+  pointer-events: none
+  transition: .25s $ease
+  .ico
+    font-size: 16px
+    will-change: transform
+    backface-visibility: hidden
+    transform-style: preserve-3d
+    transition: transform .25s $ease
+  &.is-visible
+    opacity: 1
+    pointer-events: all
+    transform: translate(0,0)
+  &:hover
+    .ico
+      transform: scale(1.3)
+
++r($xl)
+  .scrolltop
+    display: flex
+
++r($lg)
+  .scrolltop
+    bottom: 24px
+    left: 24px
+
+
++r($md)
+  .scrolltop
+    left: 8px
+    bottom: 8px
+    size: 40px
