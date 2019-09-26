@@ -47,9 +47,9 @@
         // dragAndMove: true,
         responsiveWidth: 577,
         loopBottom: true,
-        scrollingSpeed: 2000,
+        scrollingSpeed: 1500,
         // easing: 'easeInOutCubic',
-        easingCss3: 'cubic-bezier(1, 0, 0, 1)', // expo
+        easingcss3: 'cubic-bezier(0.855, 0.005, 0.480, 0.945)', // expo
         onLeave: function(origin, destination, direction) {
           // APP.Plugins.AOS.refreshSoft();
           $('[js-fullpage-nav] li').removeClass('is-active');
