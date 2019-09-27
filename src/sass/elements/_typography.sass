@@ -112,10 +112,12 @@ p + p
     &::before
       left: 0px
       background: $colorPrimary
-      size: 15px 2px
+      // size: 15px 2px
+      size: 12px 2px
+      border-radius: 3px
     &::after
       right: 1px
-      size: 5px
+      size: 7px
       border: 2px solid $colorPrimary
       transform: translateY(-50%) rotate(45deg)
       border-left: none
@@ -194,10 +196,13 @@ p + p
     padding: 0em 12px 0em 24px
     &::before
       content: " "
-      top: 8px
-      size: 10px 8px
-      background: svg-load('../icons/svg-mono/checkmark.svg', fill=$colorPrimary) no-repeat center
-      background-size: cover
+      background: $colorGreen
+      size: 8px
+      top: 9px
+      // top: 8px
+      // size: 10px 8px
+      // background: svg-load('../icons/svg-mono/checkmark.svg', fill=$colorPrimary) no-repeat center
+      // background-size: cover
 
 .ol-list
   counter-reset: ol-counter
