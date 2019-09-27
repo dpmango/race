@@ -71,8 +71,12 @@
   // fp section PROD
   .section(js-teleport data-teleport-to="home-slide-2" data-teleport-condition="<577")
     .home-section
-      .home-section__background
-        img(src='img/homeSectionBg_3.jpg' srcset='img/homeSectionBg_3@2x.jpg 2x')
+      .home-section__background.home-section__background--with-overlay.home-section__background--img-on-top
+        .home-section__background-overlay
+        video(muted loop autoplay poster="img/homeSectionBg_1.png")
+          source(src="video/clouds.mp4" type="video/mp4")
+          source(src="video/clouds.webm" type="video/webm")
+        img(src='img/homeSectionBg_3.jpg' srcset='img/homeSectionBg_3@2x.png 2x')
       .home-section__content
         .home-section__title(data-aos="fade-up") Продукция
         .home-section__description(data-aos="fade-up") Race communications – российский системный интегратор, работающий на рынках ИТ и Телеком с 1997 года и образованный на базе компаний, существующих с 1992 года.
