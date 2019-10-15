@@ -93,11 +93,18 @@
     .production-card__image
       transform: scale(1.02)
 
++r(1760)
+  // js watcher
+  // .production
+  //   &__grid
+  //     padding-left: 80px
 
 +r($hd)
   .production
     &__grid
       margin: 38px 0 0
+      padding-left: 60px
+
     &__col
       &:nth-child(even)
         flex: 0 0 50%
@@ -137,6 +144,7 @@
     padding: 20px 34px
     &__grid
       margin-top: 27px
+      padding-left: 0
 
   .production-card
     &__title

@@ -92,8 +92,13 @@
               watchOverflow: true,
               setWrapperSize: false,
               spaceBetween: 0,
-              slidesPerView: 'auto',
+              slidesPerView: 2,
               normalizeSlideIndex: true,
+              breakpoints: {
+                576: {
+                  slidesPerView: 'auto',
+                },
+              },
             });
           }
         }
