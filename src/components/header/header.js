@@ -141,6 +141,7 @@
     scrollHeader: function() {
       if (this.data.header.container !== undefined) {
         var fixedClass = 'is-fixed';
+        var scrolledClass = 'is-scrolled-top';
 
         // get scroll params from blocker function
         var scroll = APP.Plugins.ScrollBlock.getData();
@@ -149,8 +150,10 @@
 
         if (scroll.y > 0) {
           this.data.header.container.addClass(fixedClass);
+          this.data.header.headerNav.removeClass(scrolledClass);
         } else {
           this.data.header.container.removeClass(fixedClass);
+          this.data.header.headerNav.addClass(scrolledClass);
         }
       }
     },
