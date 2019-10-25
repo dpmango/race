@@ -41,13 +41,25 @@ include _partials/_sidebar
     .article-slider(data-aos="fade-up")
       .swiper-container(js-swiper-article)
         .swiper-wrapper
-          each group in [1,2,3,4,5]
+          each group in [1]
             .swiper-slide
               .article-slider__image
-                img(src='img/articleImageSlider_1.jpg' srcset='img/articleImageSlider_1@2x.jpg 2x')
+                img(src='img/articleImageSlider_1.jpg')
+            //- .swiper-slide
+            //-   .article-slider__image
+            //-     img(src='img/articleImageSlider_2.jpg' srcset='img/articleImageSlider_2@2x.jpg 2x')
             .swiper-slide
               .article-slider__image
-                img(src='img/articleImageSlider_2.jpg' srcset='img/articleImageSlider_2@2x.jpg 2x')
+                img(src='img/articleImageSlider_3.jpg')
+            .swiper-slide
+              .article-slider__image
+                img(src='img/articleImageSlider_4.jpg')
+            .swiper-slide
+              .article-slider__image
+                img(src='img/articleImageSlider_5.jpg')
+            .swiper-slide
+              .article-slider__image
+                img(src='img/articleImageSlider_6.jpg')
 
         // swiper navigation
         .article-slider__navigation

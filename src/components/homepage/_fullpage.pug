@@ -39,11 +39,50 @@
                 span Все новости
                 i.ul-ico-arrow
 
-  // fp section SERVICES
+
+  // fp section PROD
   .section(js-teleport data-teleport-to="home-slide-1" data-teleport-condition="<577")
+    .home-section.home-section--production
+      .home-section__background.home-section__background--with-overlay.home-section__background--img-on-top
+        .home-section__background-overlay
+        video(muted loop autoplay poster="img/homeSectionBg_1.jpg")
+          source(src="video/clouds.mp4" type="video/mp4")
+          source(src="video/clouds.webm" type="video/webm")
+        img(src='img/homeSectionBg_3.jpg' srcset='img/homeSectionBg_3@2x.png 2x')
+        img(src="img/homeSectionBg_3-mob.jpg", alt="").home-section__mob-img
+      .home-section__content
+        .home-section__title(data-aos="fade-up") Продукция
+        .home-section__description(data-aos="fade-up") Race communications – российский системный интегратор, работающий на рынках ИТ и Телеком с 1997 года и образованный на базе компаний, существующих с 1992 года.
+        .home-section__cta(data-aos="fade-up")
+          a(href="#")
+            span Подробнее
+            .home-section__cta-icon
+              +svgMono('btn-arrow-right-2')
+        .home-section__bottom
+          // navmenu
+          .home-section__navmenu.navmenu-home
+            .navmenu-home__title(data-aos="fade-up") НАША ПРОДУКЦИЯ
+            -
+              var servicesList = [
+                "Мобильные спутниковые комплексы CHAPK",
+                "Земные станции спутниковой связи",
+                "Спутниковые усилители BUC",
+                "Телекоммуникационное оборудование",
+              ]
+            .navmenu-home__grid.swiper-container(js-home-navmenu-swiper)
+              .swiper-wrapper
+                each navlink in servicesList
+                  // col
+                  .navmenu-home__col.swiper-slide(data-aos="fade-up")
+                    a(href='#').navmenu-home__link= navlink
+
+
+  // fp section SERVICES
+  .section(js-teleport data-teleport-to="home-slide-2" data-teleport-condition="<577")
     .home-section
       .home-section__background
         img(src='img/homeSectionBg_2.jpg' srcset='img/homeSectionBg_2@2x.jpg 2x')
+        img(src="img/homeSectionBg_2-mob.jpg", alt="").home-section__mob-img
       .home-section__content
         .home-section__title(data-aos="fade-up") Услуги
         .home-section__description(data-aos="fade-up") Группа компаний Рэйс предоставляет услуги высокоскоростного двухстороннего спутникового доступа в Интернет. Сервис запущен в 2008 году под торговой маркой StarBlazer.
@@ -73,46 +112,12 @@
                     a(href='#').navmenu-home__link= navlink
 
 
-  // fp section PROD
-  .section(js-teleport data-teleport-to="home-slide-2" data-teleport-condition="<577")
-    .home-section
-      .home-section__background.home-section__background--with-overlay.home-section__background--img-on-top
-        .home-section__background-overlay
-        video(muted loop autoplay poster="img/homeSectionBg_1.png")
-          source(src="video/clouds.mp4" type="video/mp4")
-          source(src="video/clouds.webm" type="video/webm")
-        img(src='img/homeSectionBg_3.jpg' srcset='img/homeSectionBg_3@2x.png 2x')
-      .home-section__content
-        .home-section__title(data-aos="fade-up") Продукция
-        .home-section__description(data-aos="fade-up") Race communications – российский системный интегратор, работающий на рынках ИТ и Телеком с 1997 года и образованный на базе компаний, существующих с 1992 года.
-        .home-section__cta(data-aos="fade-up")
-          a(href="#")
-            span Подробнее
-            .home-section__cta-icon
-              +svgMono('btn-arrow-right-2')
-        .home-section__bottom
-          // navmenu
-          .home-section__navmenu.navmenu-home
-            .navmenu-home__title(data-aos="fade-up") НАША ПРОДУКЦИЯ
-            -
-              var servicesList = [
-                "Мобильные спутниковые комплексы CHAPK",
-                "Земные станции спутниковой связи",
-                "Спутниковые усилители BUC",
-                "Телекоммуникационное оборудование",
-              ]
-            .navmenu-home__grid.swiper-container(js-home-navmenu-swiper)
-              .swiper-wrapper
-                each navlink in servicesList
-                  // col
-                  .navmenu-home__col.swiper-slide(data-aos="fade-up")
-                    a(href='#').navmenu-home__link= navlink
-
   // fp section SOLUTIONS
   .section(js-teleport data-teleport-to="home-slide-3" data-teleport-condition="<577")
     .home-section
       .home-section__background
         img(src='img/homeSectionBg_4.jpg' srcset='img/homeSectionBg_4@2x.jpg 2x')
+        img(src="img/homeSectionBg_4-mob.jpg", alt="").home-section__mob-img
       .home-section__content
         .home-section__title(data-aos="fade-up") Решения
         .home-section__description(data-aos="fade-up") Race communications – российский системный интегратор, работающий на рынках ИТ и Телеком с 1997 года и образованный на базе компаний, существующих с 1992 года.

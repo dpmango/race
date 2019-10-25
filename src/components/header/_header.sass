@@ -93,7 +93,7 @@
     text-transform: uppercase
     transition: color .25s $ease
     .ico
-      font-size: 10px
+      font-size: 16px
     span
       margin-left: 7px
     &:hover
@@ -113,8 +113,10 @@
     .ico
       font-size: 14px
   &__search
-    .ico
-      font-size: 18px
+    svg
+      width: 24px
+      height: 24px
+      // font-size: 18px
 
   &__lang
     padding: 10px
@@ -162,6 +164,9 @@
       &__phone
         &:hover
           color: $colorPrimary
+      &__search
+        .search-color
+          fill: #000
 
     // &.is-fixed
     //   background: white
@@ -190,6 +195,9 @@
       &__phone
         &:hover
           color: $colorPrimary
+      &__search
+        .search-color
+          fill: #000
 
 
 +r($hd)
@@ -261,6 +269,10 @@
         width: 73px
       .svg-logo-letters
         fill: $fontColor
+
+    &__search
+      .search-color
+        fill: #000
 
     &__cta
       margin-right: 10px
