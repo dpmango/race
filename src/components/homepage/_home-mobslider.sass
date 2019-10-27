@@ -3,16 +3,38 @@
 .home-mobslider
   display: none
   margin: 35px 0px 80px
-  .home-section__title
-    margin-top: 0
   .swiper-slide
     padding-left: 15px
     padding-right: 15px
+    height: auto
+    display: flex
+    flex-direction: column
+  .home-section
+    flex: 1 1 auto
+    height: 100%
+    &__title
+      margin-top: 0
+    &__content
+      flex: 1 1 auto
+      padding-top: 25px
+      background-color: #020102
+    &__bottom
+      margin-top: 30px
+    &__background
+      flex: 0 0 auto
+      position: relative
+      height: 190px
+      video
+        display: none
+      img
+        display: none
+        &.home-section__mob-img
+          display: flex
+
   .swiper-pagination
     position: absolute
     bottom: 10px
-    left: 50%
-    transform: translateX(-50%)
+    left: 30px
     z-index: 2
     display: flex
     flex-wrap: wrap
@@ -30,7 +52,7 @@
       transform: translate3d(-50%,-50%,0)
       size: 4px
       border-radius: 50%
-      background: rgba(#202020, .4)
+      background: rgba(#BDBDBD,.4)
       transition: background .25s $ease
   .swiper-pagination-bullet-active
     &::after
